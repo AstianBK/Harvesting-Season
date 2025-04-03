@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,lit=false": { "model":"harvesting_season:block/kettle" },
+    "facing=east,lit=false": { "model":"harvesting_season:block/kettle", "y": 90 },
+    "facing=south,lit=false": { "model":"harvesting_season:block/kettle", "y": 180 },
+    "facing=west,lit=false": { "model":"harvesting_season:block/kettle", "y": 270 },
+
+    "facing=north,lit=true": { "model":"harvesting_season:block/kettle" },
+    "facing=east,lit=true": { "model":"harvesting_season:block/kettle", "y": 90 },
+    "facing=south,lit=true": { "model":"harvesting_season:block/kettle", "y": 180 },
+    "facing=west,lit=true": { "model":"harvesting_season:block/kettle", "y": 270 }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,lit=false": { "model":"harvesting_season:block/cookingpot" },
+    "facing=east,lit=false": { "model":"harvesting_season:block/cookingpot", "y": 90 },
+    "facing=south,lit=false": { "model":"harvesting_season:block/cookingpot", "y": 180 },
+    "facing=west,lit=false": { "model":"harvesting_season:block/cookingpot", "y": 270 },
+
+    "facing=north,lit=true": { "model":"harvesting_season:block/cookingpot" },
+    "facing=east,lit=true": { "model":"harvesting_season:block/cookingpot", "y": 90 },
+    "facing=south,lit=true": { "model":"harvesting_season:block/cookingpot", "y": 180 },
+    "facing=west,lit=true": { "model":"harvesting_season:block/cookingpot", "y": 270 }
+  }
+}

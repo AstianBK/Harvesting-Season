@@ -1,0 +1,24 @@
+{
+  "item.harvesting_season.hard_cider": "Hard Cider",
+  "item.harvesting_season.journal": "Journal",
+  "item.harvesting_season.brandy": "Brandy",
+  "item.harvesting_season.fine_beer": "Fine Beer",
+  "item.harvesting_season.beer": "Beer",
+  "item.harvesting_season.mead": "Mead",
+  "item.harvesting_season.kvass": "Kvass",
+  "item.harvesting_season.ale": "Ale",
+  "item.harvesting_season.wine": "Wine",
+  "item.harvesting_season.spirit": "Spirit",
+  "item.harvesting_season.reserved_wine": "Reserved Wine",
+
+  "item.harvesting_season.tincture.effect.resistance": "Tincture of Protection",
+  "item.harvesting_season.tincture.effect.regeneration": "Tincture of Restoration",
+  "item.harvesting_season.tincture.effect.night_vision": "Tincture of Night-Seeing",
+  "item.harvesting_season.tincture.effect.strength": "Tincture of Strength",
+  "item.harvesting_season.tincture.effect.haste": "Tincture of Haste",
+  "item.harvesting_season.tincture.effect.absorption": "Tincture of Life",
+  "item.harvesting_season.tincture.effect.swiftness": "Tincture of Enduring",
+
+  "itemGroup.harvesting_season_tab": "Medieval Healing"
+
+}
