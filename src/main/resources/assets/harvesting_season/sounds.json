@@ -1,0 +1,14 @@
+{
+  "cookingpot_boil": {
+    "subtitle": "sounds.harvesting_season.cookingpot_boil",
+    "sounds": [
+      "harvesting_season:cookingpot_boil"
+    ]
+  },
+  "kettle_boil": {
+    "subtitle": "sounds.harvesting_season.kettle_boil",
+    "sounds": [
+      "harvesting_season:kettle_boil"
+    ]
+  }
+}
