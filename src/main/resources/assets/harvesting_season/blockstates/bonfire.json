@@ -1,13 +1,18 @@
 {
   "variants": {
-    "facing=north,lit=false": { "model":"harvesting_season:block/bonfire_off" },
-    "facing=east,lit=false": { "model":"harvesting_season:block/bonfire_off", "y": 90 },
-    "facing=south,lit=false": { "model":"harvesting_season:block/bonfire_off", "y": 180 },
-    "facing=west,lit=false": { "model":"harvesting_season:block/bonfire_off", "y": 270 },
+    "facing=north,lit=false,signal_fire=false": { "model":"harvesting_season:block/bonfire_off" },
+    "facing=east,lit=false,signal_fire=false": { "model":"harvesting_season:block/bonfire_off", "y": 90 },
+    "facing=south,lit=false,signal_fire=false": { "model":"harvesting_season:block/bonfire_off", "y": 180 },
+    "facing=west,lit=false,signal_fire=false": { "model":"harvesting_season:block/bonfire_off", "y": 270 },
 
-    "facing=north,lit=true": { "model":"harvesting_season:block/bonfire" },
-    "facing=east,lit=true": { "model":"harvesting_season:block/bonfire", "y": 90 },
-    "facing=south,lit=true": { "model":"harvesting_season:block/bonfire", "y": 180 },
-    "facing=west,lit=true": { "model":"harvesting_season:block/bonfire", "y": 270 }
+    "facing=north,lit=false,signal_fire=true": { "model":"harvesting_season:block/bonfire_logs" },
+    "facing=east,lit=false,signal_fire=true": { "model":"harvesting_season:block/bonfire_logs", "y": 90 },
+    "facing=south,lit=false,signal_fire=true": { "model":"harvesting_season:block/bonfire_logs", "y": 180 },
+    "facing=west,lit=false,signal_fire=true": { "model":"harvesting_season:block/bonfire_logs", "y": 270 },
+
+    "facing=north,lit=true,signal_fire=true": { "model":"harvesting_season:block/bonfire" },
+    "facing=east,lit=true,signal_fire=true": { "model":"harvesting_season:block/bonfire", "y": 90 },
+    "facing=south,lit=true,signal_fire=true": { "model":"harvesting_season:block/bonfire", "y": 180 },
+    "facing=west,lit=true,signal_fire=true": { "model":"harvesting_season:block/bonfire", "y": 270 }
   }
 }

@@ -4,6 +4,10 @@ import com.TBK.harvesting_season.common.registry.HSMenuType;
 import com.TBK.harvesting_season.common.registry.HSRecipeSerializer;
 import com.TBK.harvesting_season.server.data.recipe.CookingpotRecipe;
 import com.TBK.harvesting_season.server.data.recipe.KettleRecipe;
+import com.google.common.collect.Maps;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -12,9 +16,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+
+import java.util.Map;
 
 public class KettleContainerMenu extends RecipeBookMenu<Container> {
     private final Container container;
@@ -34,22 +41,22 @@ public class KettleContainerMenu extends RecipeBookMenu<Container> {
         this.level = p_38970_.player.level();
         for(int i=0;i<3;i++){
             for(int k=0;k<3;k++){
-                this.addSlot(new Slot(p_38971_, k + 3 * i, 42 + 18 * k, 18 + 18 * i));
+                this.addSlot(new Slot(p_38971_, k + 3 * i, 30 + 18 * k, 14 + 18 * i));
             }
         }
 
 
-        this.addSlot(new FurnaceResultSlot(p_38970_.player, p_38971_, 9, 88, 103));
+        this.addSlot(new FurnaceResultSlot(p_38970_.player, p_38971_, 9, 122, 17));
 
 
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(p_38970_, j + i * 9 + 9, 8 + j * 18, 135 + i * 18));
+                this.addSlot(new Slot(p_38970_, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
         for(int k = 0; k < 9; ++k) {
-            this.addSlot(new Slot(p_38970_, k, 8 + k * 18, 193));
+            this.addSlot(new Slot(p_38970_, k, 8 + k * 18, 142));
         }
 
         this.addDataSlots(p_38972_);
@@ -144,7 +151,24 @@ public class KettleContainerMenu extends RecipeBookMenu<Container> {
     public boolean hasWater(){
         return this.data.get(4)>0;
     }
+    public static Map<String, Ingredient> keyFromJson(JsonObject p_44211_) {
+        Map<String, Ingredient> map = Maps.newHashMap();
 
+        for(Map.Entry<String, JsonElement> entry : p_44211_.entrySet()) {
+            if (entry.getKey().length() != 1) {
+                throw new JsonSyntaxException("Invalid key entry: '" + (String)entry.getKey() + "' is an invalid symbol (must be 1 character only).");
+            }
+
+            if (" ".equals(entry.getKey())) {
+                throw new JsonSyntaxException("Invalid key entry: ' ' is a reserved symbol.");
+            }
+
+            map.put(entry.getKey(), Ingredient.fromJson(entry.getValue(), false));
+        }
+
+        map.put(" ", Ingredient.EMPTY);
+        return map;
+    }
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
         ItemStack itemstack = ItemStack.EMPTY;

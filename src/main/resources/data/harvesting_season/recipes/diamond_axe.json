@@ -1,21 +1,18 @@
 {
-  "type": "harvesting_season:jap_furnace_recipe",
+  "type": "harvesting_season:kettle_recipe",
   "ingredients": [
     { "item": "minecraft:iron_ingot" },
+    { "item": "minecraft:iron_pickaxe" },
+    { "item": "minecraft:iron_axe" },
+    { "item": "minecraft:iron_helmet" },
+    { "item": "minecraft:iron_sword" },
     { "item": "minecraft:gold_ingot" }
   ],
-  "tool1": {
-    "item": "harvesting_season:wooden_spoon"
-  },
   "experience": 10,
   "cooking_time":800,
 
   "result": {
     "item": "minecraft:diamond",
     "count": 6
-  },
-  "result2": {
-    "item": "minecraft:netherite_ingot",
-    "count": 12
   }
 }

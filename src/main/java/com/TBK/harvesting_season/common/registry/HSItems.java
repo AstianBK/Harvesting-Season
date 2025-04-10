@@ -15,7 +15,8 @@ public class HSItems {
     public static final RegistryObject<Item> HARD_CIDER = ITEMS.register("hard_cider",
             ()->new Item(new Item.Properties().food((new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.DIG_SPEED,2400,0),1.0f)
                     .alwaysEat().build()))));
-
+    public static final RegistryObject<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
+            ()->new Item(new Item.Properties().stacksTo(1).durability(30)));
     public static final RegistryObject<Item> BRANDY = ITEMS.register("brandy",
             ()->new Item(new Item.Properties().food((new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,6000,0),1.0f)
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST,6000,0),1.0f)

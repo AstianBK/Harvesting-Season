@@ -20,6 +20,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.crafting.CampfireCookingRecipe;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -70,18 +71,33 @@ public class BrazierBlock extends BaseEntityBlock {
 
     public InteractionResult use(BlockState p_51274_, Level p_51275_, BlockPos p_51276_, Player p_51277_, InteractionHand p_51278_, BlockHitResult p_51279_) {
         BlockEntity blockentity = p_51275_.getBlockEntity(p_51276_);
-        if (blockentity instanceof BrazierBlockEntity brazierBlock) {
-            ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
+        BlockState state = p_51275_.getBlockState(p_51276_);
+        ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
+        if(blockentity instanceof BrazierBlockEntity brazierBlock){
+            if(state.getValue(SIGNAL_FIRE)){
+                if (itemstack.is(Items.FLINT_AND_STEEL)) {
+                    if (!p_51275_.isClientSide && brazierBlock.fire(p_51275_,p_51274_,p_51276_,itemstack)) {
+                        p_51275_.playSound((Player)null, p_51276_, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+                        return InteractionResult.SUCCESS;
+                    }
 
-            if (itemstack.is(ItemTags.LOGS_THAT_BURN)) {
-                if (!p_51275_.isClientSide && brazierBlock.placeLog(p_51275_,p_51274_,p_51276_,itemstack)) {
-                    p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-                    return InteractionResult.SUCCESS;
+                    return InteractionResult.CONSUME;
                 }
+            }else {
+                if(itemstack.is(ItemTags.LOGS_THAT_BURN)){
+                    if (!p_51275_.isClientSide && brazierBlock.placeLog(p_51275_,p_51274_,p_51276_,itemstack)) {
+                        p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+                        p_51275_.playSound((Player)null, p_51276_, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        return InteractionResult.SUCCESS;
+                    }
 
-                return InteractionResult.CONSUME;
+                    return InteractionResult.CONSUME;
+
+                }
             }
         }
+
 
         return InteractionResult.PASS;
     }
@@ -108,7 +124,7 @@ public class BrazierBlock extends BaseEntityBlock {
         LevelAccessor levelaccessor = p_51240_.getLevel();
         BlockPos blockpos = p_51240_.getClickedPos();
         boolean flag = levelaccessor.getFluidState(blockpos).getType() == Fluids.WATER;
-        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(SIGNAL_FIRE, Boolean.valueOf(this.isSmokeSource(levelaccessor.getBlockState(blockpos.below())))).setValue(LIT, Boolean.valueOf(false)).setValue(FACING, p_51240_.getHorizontalDirection());
+        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(SIGNAL_FIRE,false).setValue(LIT, Boolean.valueOf(false)).setValue(FACING, p_51240_.getHorizontalDirection());
     }
 
     public BlockState updateShape(BlockState p_51298_, Direction p_51299_, BlockState p_51300_, LevelAccessor p_51301_, BlockPos p_51302_, BlockPos p_51303_) {
@@ -160,24 +176,7 @@ public class BrazierBlock extends BaseEntityBlock {
         p_152751_.gameEvent(p_152750_, GameEvent.BLOCK_CHANGE, p_152752_);
     }
 
-    public boolean placeLiquid(LevelAccessor p_51257_, BlockPos p_51258_, BlockState p_51259_, FluidState p_51260_) {
-        if (!p_51259_.getValue(BlockStateProperties.WATERLOGGED) && p_51260_.getType() == Fluids.WATER) {
-            boolean flag = p_51259_.getValue(LIT);
-            if (flag) {
-                if (!p_51257_.isClientSide()) {
-                    p_51257_.playSound((Player)null, p_51258_, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                }
 
-                dowse((Entity)null, p_51257_, p_51258_, p_51259_);
-            }
-
-            p_51257_.setBlock(p_51258_, p_51259_.setValue(WATERLOGGED, Boolean.valueOf(true)).setValue(LIT, Boolean.valueOf(false)), 3);
-            p_51257_.scheduleTick(p_51258_, p_51260_.getType(), p_51260_.getType().getTickDelay(p_51257_));
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public void onProjectileHit(Level p_51244_, BlockState p_51245_, BlockHitResult p_51246_, Projectile p_51247_) {
         BlockPos blockpos = p_51246_.getBlockPos();

@@ -39,6 +39,7 @@ public class HarvestingSeason
             .icon(() -> new ItemStack(HSItems.BEER.get()))
             .displayItems((parameters, output) -> {
                 output.accept(HSItems.HARD_CIDER.get());
+                output.accept(HSItems.WOODEN_SPOON.get());
                 output.accept(HSItems.BRANDY.get());
                 output.accept(HSItems.FINE_BEER.get());
                 output.accept(HSItems.BEER.get());
@@ -75,7 +76,7 @@ public class HarvestingSeason
         HSRecipeSerializer.RECIPE_SERIALIZERS.register(modEventBus);
         HSMenuType.MENU_TYPE.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
-
+        HSSounds.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT,()->()->{

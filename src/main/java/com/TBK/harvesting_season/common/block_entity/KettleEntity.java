@@ -8,11 +8,14 @@ import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
 import com.TBK.harvesting_season.common.registry.HSBlocks;
 import com.TBK.harvesting_season.common.registry.HSRecipeSerializer;
+import com.TBK.harvesting_season.common.registry.HSSounds;
 import com.TBK.harvesting_season.server.data.recipe.CookingpotRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.WorldlyContainer;
@@ -74,6 +77,7 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
             return 5;
         }
     };
+    public int loopSound;
     public int hasWater;
     public KettleEntity(BlockPos p_154992_, BlockState p_154993_) {
         super(HSBlockEntity.KETTLE_ENTITY.get(), p_154992_, p_154993_, HSRecipeSerializer.KETTLE_RECIPE_TYPE.get());
@@ -87,6 +91,10 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
         ItemStack itemstack = p_155017_.items.get(9);
         boolean flag2 = p_155017_.fullSlotAddition(p_155017_.items);
         boolean flag3 = true;
+        if(p_155017_.loopSound++>80 && flag && p_155016_.getValue(CookingpotFurnace.WATERLOGGED)){
+            p_155017_.loopSound=0;
+            p_155014_.playSound(null,p_155015_, HSSounds.KETTLE_BOIL.get(), SoundSource.BLOCKS,2.0F,1.0F);
+        }
         if (p_155017_.isLit() || flag3 && flag2) {
             Recipe<?> recipe;
             if (flag2) {
@@ -100,9 +108,7 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
 
                 p_155017_.litTime = p_155017_.getBurnDuration(itemstack);
                 p_155017_.litDuration = p_155017_.litTime;
-                if (p_155017_.isLit()) {
-
-                }
+                p_155017_.isLit();
             }
 
             if (p_155017_.isLit() && p_155017_.hasWater() && p_155017_.canBurn(p_155014_.registryAccess(), recipe, p_155017_.items, i)) {
@@ -174,6 +180,8 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
             return net.minecraftforge.common.ForgeHooks.getBurnTime(p_58390_, HSRecipeSerializer.KETTLE_RECIPE_TYPE.get()) > 0 || p_58390_.is(Items.BUCKET) && !itemstack.is(Items.BUCKET);
         }
     }
+
+
 
     public boolean fullSlotAddition(NonNullList<ItemStack> list){
         return true;
@@ -253,4 +261,5 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
     protected AbstractContainerMenu createMenu(int p_58627_, Inventory p_58628_) {
         return new KettleContainerMenu(p_58627_,p_58628_,this,this.dataAccess);
     }
+
 }

@@ -7,11 +7,13 @@ import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
 import com.TBK.harvesting_season.common.registry.HSBlocks;
 import com.TBK.harvesting_season.common.registry.HSRecipeSerializer;
+import com.TBK.harvesting_season.common.registry.HSSounds;
 import com.TBK.harvesting_season.server.data.recipe.CookingpotRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.WorldlyContainer;
@@ -26,6 +28,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
@@ -73,14 +76,13 @@ public class CookingpotEntity extends AbstractFurnaceBlockEntity {
             return 5;
         }
     };
+    public int loopSound;
+
     public int hasWater;
     public CookingpotEntity(BlockPos p_154992_, BlockState p_154993_) {
         super(HSBlockEntity.COOKINGPOT_ENTITY.get(), p_154992_, p_154993_, HSRecipeSerializer.FURNACE_RECIPE_TYPE.get());
         this.items= NonNullList.withSize(23, ItemStack.EMPTY);
     }
-
-
-
 
     public static void serverTicks(Level p_155014_, BlockPos p_155015_, BlockState p_155016_, CookingpotEntity p_155017_) {
         boolean flag = p_155017_.isLit();
@@ -89,6 +91,10 @@ public class CookingpotEntity extends AbstractFurnaceBlockEntity {
         ItemStack itemstack = p_155017_.items.get(20);
         boolean flag2 = p_155017_.fullSlotAddition(p_155017_.items);
         boolean flag3 = !itemstack.isEmpty();
+        if(p_155017_.loopSound++>80 && flag && p_155016_.getValue(CookingpotFurnace.WATERLOGGED)){
+            p_155017_.loopSound=0;
+            p_155014_.playSound(null,p_155015_, HSSounds.COOKINGPOT_BOIL.get(), SoundSource.BLOCKS,2.0F,1.0F);
+        }
         if (p_155017_.isLit() || flag3 && flag2) {
             Recipe<?> recipe;
             if (flag2) {
@@ -119,9 +125,7 @@ public class CookingpotEntity extends AbstractFurnaceBlockEntity {
                 if (p_155017_.cookingProgress == p_155017_.cookingTotalTime) {
                     p_155017_.cookingProgress = 0;
                     p_155017_.cookingTotalTime = getTotalCookTime(p_155014_, p_155017_);
-                    HarvestingSeason.LOGGER.debug("trata de quemar");
                     if (p_155017_.burn(p_155014_.registryAccess(), recipe, p_155017_.items, i)) {
-                        HarvestingSeason.LOGGER.debug("Se Cocinan");
                         p_155017_.dataAccess.set(4,0);
                         p_155017_.setRecipeUsed(recipe);
                         p_155016_ = p_155016_.setValue(CookingpotFurnace.WATERLOGGED,false);
@@ -168,6 +172,7 @@ public class CookingpotEntity extends AbstractFurnaceBlockEntity {
         }
 
     }
+
     public boolean hasWater() {
         return this.hasWater == 1;
     }
@@ -282,5 +287,9 @@ public class CookingpotEntity extends AbstractFurnaceBlockEntity {
     @Override
     protected AbstractContainerMenu createMenu(int p_58627_, Inventory p_58628_) {
         return new CookingpotContainerMenu(p_58627_,p_58628_,this,this.dataAccess);
+    }
+
+    public static <E extends CookingpotEntity> void clientTicks(Level level, BlockPos pos, BlockState state, E e) {
+
     }
 }
