@@ -75,8 +75,8 @@ public class BrazierBlock extends BaseEntityBlock {
         ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
         if(blockentity instanceof BrazierBlockEntity brazierBlock){
             if(state.getValue(SIGNAL_FIRE)){
-                if (itemstack.is(Items.FLINT_AND_STEEL)) {
-                    if (!p_51275_.isClientSide && brazierBlock.fire(p_51275_,p_51274_,p_51276_,itemstack)) {
+                if (itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.TORCH)) {
+                    if (!p_51275_.isClientSide && brazierBlock.fire(p_51275_,p_51274_,p_51276_,itemstack,p_51277_)) {
                         p_51275_.playSound((Player)null, p_51276_, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
                         p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
                         return InteractionResult.SUCCESS;
@@ -86,7 +86,7 @@ public class BrazierBlock extends BaseEntityBlock {
                 }
             }else {
                 if(itemstack.is(ItemTags.LOGS_THAT_BURN)){
-                    if (!p_51275_.isClientSide && brazierBlock.placeLog(p_51275_,p_51274_,p_51276_,itemstack)) {
+                    if (!p_51275_.isClientSide && brazierBlock.placeLog(p_51275_,p_51274_,p_51276_,itemstack,p_51277_)) {
                         p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
                         p_51275_.playSound((Player)null, p_51276_, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
                         return InteractionResult.SUCCESS;
@@ -162,20 +162,6 @@ public class BrazierBlock extends BaseEntityBlock {
         }
     }
 
-    public static void dowse(@Nullable Entity p_152750_, LevelAccessor p_152751_, BlockPos p_152752_, BlockState p_152753_) {
-        if (p_152751_.isClientSide()) {
-            for(int i = 0; i < 20; ++i) {
-                makeParticles((Level)p_152751_, p_152752_, p_152753_.getValue(SIGNAL_FIRE), true);
-            }
-        }
-
-        BlockEntity blockentity = p_152751_.getBlockEntity(p_152752_);
-        if (blockentity instanceof BrazierBlockEntity) {
-        }
-
-        p_152751_.gameEvent(p_152750_, GameEvent.BLOCK_CHANGE, p_152752_);
-    }
-
 
 
     public void onProjectileHit(Level p_51244_, BlockState p_51245_, BlockHitResult p_51246_, Projectile p_51247_) {
@@ -184,38 +170,6 @@ public class BrazierBlock extends BaseEntityBlock {
             p_51244_.setBlock(blockpos, p_51245_.setValue(BlockStateProperties.LIT, Boolean.valueOf(true)), 11);
         }
 
-    }
-
-    public static void makeParticles(Level p_51252_, BlockPos p_51253_, boolean p_51254_, boolean p_51255_) {
-        RandomSource randomsource = p_51252_.getRandom();
-        SimpleParticleType simpleparticletype = p_51254_ ? ParticleTypes.CAMPFIRE_SIGNAL_SMOKE : ParticleTypes.CAMPFIRE_COSY_SMOKE;
-        p_51252_.addAlwaysVisibleParticle(simpleparticletype, true, (double)p_51253_.getX() + 0.5D + randomsource.nextDouble() / 3.0D * (double)(randomsource.nextBoolean() ? 1 : -1), (double)p_51253_.getY() + randomsource.nextDouble() + randomsource.nextDouble(), (double)p_51253_.getZ() + 0.5D + randomsource.nextDouble() / 3.0D * (double)(randomsource.nextBoolean() ? 1 : -1), 0.0D, 0.07D, 0.0D);
-        if (p_51255_) {
-            p_51252_.addParticle(ParticleTypes.SMOKE, (double)p_51253_.getX() + 0.5D + randomsource.nextDouble() / 4.0D * (double)(randomsource.nextBoolean() ? 1 : -1), (double)p_51253_.getY() + 0.4D, (double)p_51253_.getZ() + 0.5D + randomsource.nextDouble() / 4.0D * (double)(randomsource.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-        }
-
-    }
-
-    public static boolean isSmokeyPos(Level p_51249_, BlockPos p_51250_) {
-        for(int i = 1; i <= 5; ++i) {
-            BlockPos blockpos = p_51250_.below(i);
-            BlockState blockstate = p_51249_.getBlockState(blockpos);
-            if (isLitCampfire(blockstate)) {
-                return true;
-            }
-
-            boolean flag = Shapes.joinIsNotEmpty(VIRTUAL_FENCE_POST, blockstate.getCollisionShape(p_51249_, blockpos, CollisionContext.empty()), BooleanOp.AND); // FORGE: Fix MC-201374
-            if (flag) {
-                BlockState blockstate1 = p_51249_.getBlockState(blockpos.below());
-                return isLitCampfire(blockstate1);
-            }
-        }
-
-        return false;
-    }
-
-    public static boolean isLitCampfire(BlockState p_51320_) {
-        return p_51320_.hasProperty(LIT) && p_51320_.is(BlockTags.CAMPFIRES) && p_51320_.getValue(LIT);
     }
 
     public FluidState getFluidState(BlockState p_51318_) {
@@ -250,11 +204,5 @@ public class BrazierBlock extends BaseEntityBlock {
 
     public boolean isPathfindable(BlockState p_51264_, BlockGetter p_51265_, BlockPos p_51266_, PathComputationType p_51267_) {
         return false;
-    }
-
-    public static boolean canLight(BlockState p_51322_) {
-        return p_51322_.is(BlockTags.CAMPFIRES, (p_51262_) -> {
-            return p_51262_.hasProperty(WATERLOGGED) && p_51262_.hasProperty(LIT);
-        }) && !p_51322_.getValue(WATERLOGGED) && !p_51322_.getValue(LIT);
     }
 }

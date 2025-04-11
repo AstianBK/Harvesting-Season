@@ -27,6 +27,7 @@ public class CookingpotScreenMenu extends AbstractContainerScreen<CookingpotCont
         this.texture = TEXTURE;
         this.imageHeight = 217;
         this.imageWidth = 175;
+        this.inventoryLabelY = this.imageHeight - 94;
     }
 
     public void init() {

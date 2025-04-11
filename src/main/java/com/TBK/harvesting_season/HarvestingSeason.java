@@ -51,7 +51,9 @@ public class HarvestingSeason
                 output.accept(HSItems.RESERVED_WINE.get());
                 output.accept(HSBlocks.BONFIRE.get());
                 output.accept(HSBlocks.BRAZIER.get());
+                output.accept(HSBlocks.BRAZIER_COPPER.get());
                 output.accept(HSBlocks.COOKINGPOT.get());
+                output.accept(HSBlocks.COOKINGPOT_COPPER.get());
                 output.accept(HSBlocks.KETTLE.get());
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), HSPotions.RESISTANCE.get()));
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_REGENERATION));

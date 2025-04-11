@@ -25,21 +25,25 @@ public class HSBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, HarvestingSeason.MODID);
-
     public static final RegistryObject<Block> COOKINGPOT = registerBlock("cookingpot",
-            () -> new CookingpotFurnace(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE).strength(2.0F).sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
+            () -> new CookingpotFurnace(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE).strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion().ignitedByLava()));
+
+    public static final RegistryObject<Block> COOKINGPOT_COPPER = registerBlock("cookingpot_copper",
+            () -> new CookingpotFurnace(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE).strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion().ignitedByLava()));
     public static final RegistryObject<Block> KETTLE = registerBlock("kettle",
             () -> new KettleBlock(BlockBehaviour.Properties.copy(Blocks.BLAST_FURNACE).strength(2.0F).sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
 
     public static final RegistryObject<Block> BONFIRE = registerBlock("bonfire",()->
             new BrazierBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
-
     public static final RegistryObject<Block> BRAZIER = registerBlock("brazier",()->
+            new BrazierBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
+
+    public static final RegistryObject<Block> BRAZIER_COPPER = registerBlock("brazier_copper",()->
             new BrazierBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
 
     private static ToIntFunction<BlockState> litBlockEmission(int p_50760_) {
         return (p_50763_) -> {
-            return p_50760_;
+            return p_50763_.getValue(BrazierBlock.LIT) ? 15 : 0;
         };
     }
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){

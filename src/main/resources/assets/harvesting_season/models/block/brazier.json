@@ -2,13 +2,13 @@
 	"credit": "Made with Blockbench",
 	"parent": "brazier",
 	"ambientocclusion": false,
-	"render_type": "minecraft:translucent",
+	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "harvesting_season:block/brazier",
 		"1": "harvesting_season:block/bonfire_wood",
 		"2": "block/campfire_fire",
-		"particle": "harvesting_season:block/brazier"
+		"particle": "harvesting_season:block/brazier_copper"
 	},
 	"elements": [
 		{

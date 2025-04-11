@@ -60,15 +60,18 @@ public class BrazierBlockEntity extends BlockEntity {
 
     }
 
-    public boolean fire(Level level,BlockState state,BlockPos pos,ItemStack tool1){
+    public boolean fire(Level level,BlockState state,BlockPos pos,ItemStack tool1,Player player){
         if(this.timeBurnTotal==0){
             this.timeBurn=0;
             this.timeBurnTotal=2400;
-            if(tool1.getDamageValue()+1<tool1.getMaxDamage()){
-                tool1.setDamageValue(tool1.getDamageValue()+1);
-            }else {
-                tool1.shrink(1);
+            if (!player.getAbilities().instabuild){
+                if(tool1.getDamageValue()+1<tool1.getMaxDamage()){
+                    tool1.setDamageValue(tool1.getDamageValue()+1);
+                }else {
+                    tool1.shrink(1);
+                }
             }
+
             level.setBlock(pos,state.setValue(BrazierBlock.LIT,true),3);
 
             this.markUpdated();
@@ -80,9 +83,11 @@ public class BrazierBlockEntity extends BlockEntity {
         this.setChanged();
         this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
     }
-    public boolean placeLog(Level level,BlockState state,BlockPos pos,ItemStack stack){
+    public boolean placeLog(Level level,BlockState state,BlockPos pos,ItemStack stack,Player player){
         if(this.timeBurnTotal==0){
-            stack.shrink(1);
+            if(!player.getAbilities().instabuild){
+                stack.shrink(1);
+            }
             level.setBlock(pos,state.setValue(BrazierBlock.SIGNAL_FIRE,true),3);
             this.markUpdated();
             return true;

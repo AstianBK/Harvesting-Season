@@ -46,7 +46,7 @@ public class KettleContainerMenu extends RecipeBookMenu<Container> {
         }
 
 
-        this.addSlot(new FurnaceResultSlot(p_38970_.player, p_38971_, 9, 122, 17));
+        this.addSlot(new FurnaceResultSlot(p_38970_.player, p_38971_, 9, 123, 18));
 
 
         for(int i = 0; i < 3; ++i) {
