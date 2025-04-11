@@ -6,6 +6,7 @@ import com.TBK.harvesting_season.common.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -36,6 +37,7 @@ public class HarvestingSeason
 
     public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("harvesting_season", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.FOOD_AND_DRINKS)
+            .title(Component.translatable("itemGroup.harvesting_season"))
             .icon(() -> new ItemStack(HSItems.BEER.get()))
             .displayItems((parameters, output) -> {
                 output.accept(HSItems.HARD_CIDER.get());

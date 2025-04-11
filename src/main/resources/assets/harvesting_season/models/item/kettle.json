@@ -1,3 +1,6 @@
 {
-  "parent": "harvesting_season:block/kettle"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "harvesting_season:item/kettle_iron"
+  }
 }
