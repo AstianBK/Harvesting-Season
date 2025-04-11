@@ -1,4 +1,9 @@
 {
+  "block.harvesting_season.cookingpot": "Iron Cooking Pot",
+  "block.harvesting_season.kettle": "Iron Kettle",
+  "block.harvesting_season.bonfire": "Bonfire",
+  "block.harvesting_season.brazier": "Iron Brazier",
+
   "item.harvesting_season.hard_cider": "Hard Cider",
   "item.harvesting_season.journal": "Journal",
   "item.harvesting_season.brandy": "Brandy",
@@ -10,6 +15,9 @@
   "item.harvesting_season.wine": "Wine",
   "item.harvesting_season.spirit": "Spirit",
   "item.harvesting_season.reserved_wine": "Reserved Wine",
+  "item.harvesting_season.wooden_spoon": "Wooden Spoon",
+
+
 
   "item.harvesting_season.tincture.effect.resistance": "Tincture of Protection",
   "item.harvesting_season.tincture.effect.regeneration": "Tincture of Restoration",
@@ -19,6 +27,6 @@
   "item.harvesting_season.tincture.effect.absorption": "Tincture of Life",
   "item.harvesting_season.tincture.effect.swiftness": "Tincture of Enduring",
 
-  "itemGroup.harvesting_season_tab": "Medieval Healing"
+  "itemGroup.harvesting_season": "Harvesting Season"
 
 }
