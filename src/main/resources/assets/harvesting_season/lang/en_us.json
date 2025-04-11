@@ -27,6 +27,6 @@
   "item.harvesting_season.tincture.effect.absorption": "Tincture of Life",
   "item.harvesting_season.tincture.effect.swiftness": "Tincture of Enduring",
 
-  "itemGroup.harvesting_season_tab": "Harvesting Season"
+  "itemGroup.harvesting_season": "Harvesting Season"
 
 }
