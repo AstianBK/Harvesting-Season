@@ -8,7 +8,7 @@
 		"0": "harvesting_season:block/brazier_copper",
 		"1": "harvesting_season:block/bonfire_wood",
 		"2": "block/campfire_fire",
-		"particle": "harvesting_season:block/brazier"
+		"particle": "harvesting_season:block/brazier_copper"
 	},
 	"elements": [
 		{

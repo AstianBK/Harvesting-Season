@@ -16,7 +16,7 @@ public class HSBlockEntity {
     public static final RegistryObject<BlockEntityType<CookingpotEntity>> COOKINGPOT_ENTITY =
             BLOCKS_ENTITY.register("cookingpot_entity", () ->
                     BlockEntityType.Builder.of(CookingpotEntity::new,
-                            HSBlocks.COOKINGPOT.get()).build(null));
+                            HSBlocks.COOKINGPOT.get(),HSBlocks.COOKINGPOT_COPPER.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<KettleEntity>> KETTLE_ENTITY =
             BLOCKS_ENTITY.register("kettle_entity", () ->
