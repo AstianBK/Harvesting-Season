@@ -21,7 +21,7 @@ public class HSBlockEntity {
     public static final RegistryObject<BlockEntityType<KettleEntity>> KETTLE_ENTITY =
             BLOCKS_ENTITY.register("kettle_entity", () ->
                     BlockEntityType.Builder.of(KettleEntity::new,
-                            HSBlocks.KETTLE.get()).build(null));
+                            HSBlocks.KETTLE.get(),HSBlocks.KETTLE_COPPER.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BrazierBlockEntity>> BRAZIER =
             BLOCKS_ENTITY.register("brazier_entity", () ->
