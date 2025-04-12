@@ -1,8 +1,11 @@
 {
   "block.harvesting_season.cookingpot": "Iron Cooking Pot",
+  "block.harvesting_season.cookingpot_copper": "Copper Cooking Pot",
   "block.harvesting_season.kettle": "Iron Kettle",
+  "block.harvesting_season.kettle_copper": "Copper Kettle",
   "block.harvesting_season.bonfire": "Bonfire",
   "block.harvesting_season.brazier": "Iron Brazier",
+  "block.harvesting_season.brazier_copper": "Copper Brazier",
 
   "item.harvesting_season.hard_cider": "Hard Cider",
   "item.harvesting_season.journal": "Journal",

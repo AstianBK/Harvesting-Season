@@ -1,5 +1,5 @@
 {
-  "type": "harvesting_season:jap_furnace_recipe",
+  "type": "harvesting_season:pot_recipe",
   "ingredients": [
     { "item": "minecraft:iron_ingot" },
     { "item": "minecraft:gold_ingot" }
