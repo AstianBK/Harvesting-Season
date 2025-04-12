@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class HSRecipeSerializer {
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, HarvestingSeason.MODID);
 
-    public static final RegistryObject<RecipeSerializer<CookingpotRecipe>> NEW_FURNACE_RECIPE = RECIPE_SERIALIZERS.register("jap_furnace_recipe", CookingpotRecipe.Serializer::new);
+    public static final RegistryObject<RecipeSerializer<CookingpotRecipe>> NEW_FURNACE_RECIPE = RECIPE_SERIALIZERS.register("pot_recipe", CookingpotRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<KettleRecipe>> KETTLE_RECIPE = RECIPE_SERIALIZERS.register("kettle_recipe", KettleRecipe.Serializer::new);
 
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, HarvestingSeason.MODID);

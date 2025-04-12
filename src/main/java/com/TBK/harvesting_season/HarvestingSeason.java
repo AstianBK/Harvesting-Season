@@ -57,6 +57,7 @@ public class HarvestingSeason
                 output.accept(HSBlocks.COOKINGPOT.get());
                 output.accept(HSBlocks.COOKINGPOT_COPPER.get());
                 output.accept(HSBlocks.KETTLE.get());
+                output.accept(HSBlocks.KETTLE_COPPER.get());
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), HSPotions.RESISTANCE.get()));
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_REGENERATION));
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_NIGHT_VISION));

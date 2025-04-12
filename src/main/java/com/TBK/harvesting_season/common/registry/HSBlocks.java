@@ -29,9 +29,12 @@ public class HSBlocks {
             () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion().ignitedByLava()));
 
     public static final RegistryObject<Block> COOKINGPOT_COPPER = registerBlock("cookingpot_copper",
-            () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion().ignitedByLava()));
+            () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.COPPER).noOcclusion().ignitedByLava()));
     public static final RegistryObject<Block> KETTLE = registerBlock("kettle",
-            () -> new KettleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.WOOD).noOcclusion().ignitedByLava()));
+            () -> new KettleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).noOcclusion().ignitedByLava()));
+
+    public static final RegistryObject<Block> KETTLE_COPPER = registerBlock("kettle_copper",
+            () -> new KettleBlock(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.COPPER).noOcclusion().ignitedByLava()));
 
     public static final RegistryObject<Block> BONFIRE = registerBlock("bonfire",()->
             new BrazierBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
