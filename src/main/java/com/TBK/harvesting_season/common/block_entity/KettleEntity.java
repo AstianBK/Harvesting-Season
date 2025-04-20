@@ -3,6 +3,7 @@ package com.TBK.harvesting_season.common.block_entity;
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.client.gui.CookingpotContainerMenu;
 import com.TBK.harvesting_season.client.gui.KettleContainerMenu;
+import com.TBK.harvesting_season.common.api.IBurning;
 import com.TBK.harvesting_season.common.blocks.BrazierBlock;
 import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
@@ -34,7 +35,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
-public class KettleEntity extends AbstractFurnaceBlockEntity {
+public class KettleEntity extends AbstractFurnaceBlockEntity implements IBurning {
     protected final ContainerData dataAccess = new ContainerData() {
         public int get(int p_58431_) {
             switch (p_58431_) {
@@ -79,15 +80,22 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
     };
     public int loopSound;
     public int hasWater;
+    public int timeBurn;
+    public int timeBurnTotal;
+
     public KettleEntity(BlockPos p_154992_, BlockState p_154993_) {
         super(HSBlockEntity.KETTLE_ENTITY.get(), p_154992_, p_154993_, HSRecipeSerializer.KETTLE_RECIPE_TYPE.get());
         this.items= NonNullList.withSize(10, ItemStack.EMPTY);
+    }
+    private void markUpdated() {
+        this.setChanged();
+        this.getLevel().sendBlockUpdated(this.getBlockPos(), this.getBlockState(), this.getBlockState(), 3);
     }
 
     public static void serverTicks(Level p_155014_, BlockPos p_155015_, BlockState p_155016_, KettleEntity p_155017_) {
         boolean flag = p_155017_.isLit();
         boolean flag1 = false;
-
+        BrazierBlockEntity.burnTick(p_155014_,p_155015_,p_155016_,p_155017_);
         ItemStack itemstack = p_155017_.items.get(9);
         boolean flag2 = p_155017_.fullSlotAddition(p_155017_.items);
         boolean flag3 = true;
@@ -260,6 +268,36 @@ public class KettleEntity extends AbstractFurnaceBlockEntity {
     @Override
     protected AbstractContainerMenu createMenu(int p_58627_, Inventory p_58628_) {
         return new KettleContainerMenu(p_58627_,p_58628_,this,this.dataAccess);
+    }
+
+    @Override
+    public void setTimeBurn(int time) {
+        this.timeBurn=time;
+    }
+
+    @Override
+    public void plusTimeBurn() {
+        this.timeBurn++;
+    }
+
+    @Override
+    public int getTimeBurn() {
+        return this.timeBurn;
+    }
+
+    @Override
+    public void setTimeBurnTotal(int time) {
+        this.timeBurnTotal=time;
+    }
+
+    @Override
+    public int getTimeBurnTotal() {
+        return this.timeBurnTotal;
+    }
+
+    @Override
+    public void refresh() {
+        this.markUpdated();
     }
 
 }

@@ -1,7 +1,10 @@
 package com.TBK.harvesting_season.common.blocks;
 
+import com.TBK.harvesting_season.common.api.IBurning;
+import com.TBK.harvesting_season.common.api.IBurningTicking;
 import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
+import com.TBK.harvesting_season.common.registry.HSBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -61,9 +64,11 @@ public class BrazierBlock extends BaseEntityBlock {
     private static final int SMOKE_DISTANCE = 5;
     private final boolean spawnParticles;
     private final int fireDamage;
+    private Material material;
 
-    public BrazierBlock(Properties p_51238_) {
+    public BrazierBlock(Properties p_51238_,Material material) {
         super(p_51238_);
+        this.material=material;
         this.spawnParticles=true;
         this.fireDamage=1;
         this.registerDefaultState(this.stateDefinition.any().setValue(LIT, Boolean.valueOf(true)).setValue(SIGNAL_FIRE, Boolean.valueOf(false)).setValue(WATERLOGGED, Boolean.valueOf(false)).setValue(FACING, Direction.NORTH));
@@ -73,31 +78,39 @@ public class BrazierBlock extends BaseEntityBlock {
         BlockEntity blockentity = p_51275_.getBlockEntity(p_51276_);
         BlockState state = p_51275_.getBlockState(p_51276_);
         ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
-        if(blockentity instanceof BrazierBlockEntity brazierBlock){
-            if(state.getValue(SIGNAL_FIRE)){
-                if (itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.TORCH)) {
-                    if (!p_51275_.isClientSide && brazierBlock.fire(p_51275_,p_51274_,p_51276_,itemstack,p_51277_)) {
-                        p_51275_.playSound((Player)null, p_51276_, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                        p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-                        return InteractionResult.SUCCESS;
+        Block block = Block.byItem(itemstack.getItem());
+        if(block instanceof CookingpotFurnace || block instanceof KettleBlock){
+            BlockState state1 = block.defaultBlockState();
+            p_51275_.setBlock(p_51276_,state1.setValue(CookingpotFurnace.LIT,state.getValue(LIT)).setValue(CookingpotFurnace.WOOD,state.getValue(SIGNAL_FIRE))
+                    .setValue(CookingpotFurnace.HAS_CAMPFIRE,true).setValue(CookingpotFurnace.COPPER,this.material==Material.COPPER).setValue(CookingpotFurnace.BRAZIER,true),3);
+            itemstack.shrink(1);
+
+        }else {
+            if(blockentity instanceof BrazierBlockEntity brazierBlock){
+                if(state.getValue(SIGNAL_FIRE)){
+                    if (itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.TORCH)) {
+                        if (!p_51275_.isClientSide && BrazierBlockEntity.fire(p_51275_,p_51274_,p_51276_,itemstack,p_51277_,brazierBlock)) {
+                            p_51275_.playSound((Player)null, p_51276_, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                            p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+                            return InteractionResult.SUCCESS;
+                        }
+
+                        return InteractionResult.CONSUME;
                     }
+                }else {
+                    if(itemstack.is(ItemTags.LOGS_THAT_BURN)){
+                        if (!p_51275_.isClientSide && BrazierBlockEntity.placeLog(p_51275_,p_51274_,p_51276_,itemstack,p_51277_,((IBurning)brazierBlock))){
+                            p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+                            p_51275_.playSound((Player)null, p_51276_, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                            return InteractionResult.SUCCESS;
+                        }
 
-                    return InteractionResult.CONSUME;
-                }
-            }else {
-                if(itemstack.is(ItemTags.LOGS_THAT_BURN)){
-                    if (!p_51275_.isClientSide && brazierBlock.placeLog(p_51275_,p_51274_,p_51276_,itemstack,p_51277_)) {
-                        p_51277_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
-                        p_51275_.playSound((Player)null, p_51276_, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                        return InteractionResult.SUCCESS;
+                        return InteractionResult.CONSUME;
+
                     }
-
-                    return InteractionResult.CONSUME;
-
                 }
             }
         }
-
 
         return InteractionResult.PASS;
     }
@@ -202,7 +215,13 @@ public class BrazierBlock extends BaseEntityBlock {
         }
     }
 
+
     public boolean isPathfindable(BlockState p_51264_, BlockGetter p_51265_, BlockPos p_51266_, PathComputationType p_51267_) {
         return false;
+    }
+
+    public enum Material{
+        COPPER,
+        IRON;
     }
 }

@@ -1,13 +1,13 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "brazier",
+	"parent": "brazier_kettle",
 	"ambientocclusion": false,
-	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "harvesting_season:block/brazier",
 		"1": "harvesting_season:block/bonfire_wood",
 		"2": "block/campfire_fire",
+		"4": "harvesting_season:block/kettle",
 		"5": "harvesting_season:block/bonfire",
 		"particle": "harvesting_season:block/bonfire"
 	},
@@ -121,9 +121,9 @@
 		},
 		{
 			"name": "rod",
-			"from": [2.5, 5.71746, 12.53038],
-			"to": [4.5, 11.71746, 14.53038],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [3.5, 8.71746, 13.53038]},
+			"from": [4, 5.71746, 12.53038],
+			"to": [6, 11.71746, 14.53038],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [5, 8.71746, 13.53038]},
 			"faces": {
 				"north": {"uv": [8, 2.5, 8.25, 3.75], "texture": "#0"},
 				"east": {"uv": [8, 2.5, 8.25, 3.75], "texture": "#0"},
@@ -135,9 +135,9 @@
 		},
 		{
 			"name": "rod",
-			"from": [10.5, 5.71746, 12.53038],
-			"to": [12.5, 11.71746, 14.53038],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [11.5, 8.71746, 13.53038]},
+			"from": [10, 5.71746, 12.53038],
+			"to": [12, 11.71746, 14.53038],
+			"rotation": {"angle": -22.5, "axis": "x", "origin": [11, 8.71746, 13.53038]},
 			"faces": {
 				"north": {"uv": [8, 2.5, 8.25, 3.75], "texture": "#0"},
 				"east": {"uv": [8, 2.5, 8.25, 3.75], "texture": "#0"},
@@ -149,9 +149,9 @@
 		},
 		{
 			"name": "rod",
-			"from": [2.5, 5.71746, 1.46962],
-			"to": [4.5, 11.71746, 3.46962],
-			"rotation": {"angle": 22.5, "axis": "x", "origin": [3.5, 8.71746, 2.46962]},
+			"from": [4, 5.71746, 1.46962],
+			"to": [6, 11.71746, 3.46962],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [5, 8.71746, 2.46962]},
 			"faces": {
 				"north": {"uv": [8.25, 2.5, 8, 3.75], "texture": "#0"},
 				"east": {"uv": [8.25, 2.5, 8, 3.75], "texture": "#0"},
@@ -163,9 +163,9 @@
 		},
 		{
 			"name": "rod",
-			"from": [10.5, 5.71746, 1.46962],
-			"to": [12.5, 11.71746, 3.46962],
-			"rotation": {"angle": 22.5, "axis": "x", "origin": [11.5, 8.71746, 2.46962]},
+			"from": [10, 5.71746, 1.46962],
+			"to": [12, 11.71746, 3.46962],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [11, 8.71746, 2.46962]},
 			"faces": {
 				"north": {"uv": [8.25, 2.5, 8, 3.75], "texture": "#0"},
 				"east": {"uv": [8.25, 2.5, 8, 3.75], "texture": "#0"},
@@ -338,6 +338,12 @@
 							"children": [13, 14, 15, 16, 17, 18, 19, 20]
 						}
 					]
+				},
+				{
+					"name": "kettle",
+					"origin": [7.925, 8, 9.86519],
+					"color": 0,
+					"children": [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
 				}
 			]
 		}

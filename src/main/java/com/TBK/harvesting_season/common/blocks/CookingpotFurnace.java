@@ -1,5 +1,7 @@
 package com.TBK.harvesting_season.common.blocks;
 
+import com.TBK.harvesting_season.common.api.IBurning;
+import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
 import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -8,6 +10,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -33,14 +36,17 @@ import org.jetbrains.annotations.Nullable;
 
 public class CookingpotFurnace extends AbstractFurnaceBlock {
     protected static final VoxelShape AXIS_AABB = Block.box(0.0D, 0.0D, 0.0D,
-            16.0D, 8.0D, 16.0D);
+            16.0D, 16.0D, 16.0D);
 
-
+    public static final BooleanProperty WOOD = BlockStateProperties.SIGNAL_FIRE;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final BooleanProperty BRAZIER = BlockStateProperties.DISARMED;
+    public static final BooleanProperty COPPER = BlockStateProperties.CAN_SUMMON;
+    public static final BooleanProperty HAS_CAMPFIRE = BlockStateProperties.HAS_BOTTLE_0;
 
     public CookingpotFurnace(Properties p_48687_) {
         super(p_48687_);
-        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(LIT, Boolean.valueOf(false)).setValue(WATERLOGGED,false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(COPPER,false).setValue(HAS_CAMPFIRE,false).setValue(WOOD,false).setValue(BRAZIER,false).setValue(FACING, Direction.NORTH).setValue(LIT, Boolean.valueOf(false)).setValue(WATERLOGGED,false));
     }
 
     @Override
@@ -73,15 +79,40 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
     @Override
     public InteractionResult use(BlockState p_48706_, Level p_48707_, BlockPos p_48708_, Player p_48709_, InteractionHand p_48710_, BlockHitResult p_48711_) {
         if(!p_48707_.isClientSide){
-            ItemStack itemStack = p_48709_.getItemInHand(p_48710_);
-            if(itemStack.is(Items.WATER_BUCKET)){
-                itemStack.shrink(1);
+            ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
+            if(itemstack.is(Items.WATER_BUCKET)){
+                itemstack.shrink(1);
                 p_48709_.setItemInHand(p_48710_,new ItemStack(Items.BUCKET));
                 p_48707_.setBlock(p_48708_,p_48706_.setValue(WATERLOGGED,true),2);
                 if(p_48707_.getBlockEntity(p_48708_)!=null){
                     p_48707_.getBlockEntity(p_48708_).setChanged();
                 }
                 return InteractionResult.SUCCESS;
+            }
+
+            if(p_48706_.getValue(HAS_CAMPFIRE)){
+                if(p_48706_.getValue(WOOD)){
+                    if (itemstack.is(Items.FLINT_AND_STEEL) || itemstack.is(Items.TORCH)) {
+                        if (BrazierBlockEntity.fire(p_48707_,p_48706_,p_48708_,itemstack,p_48709_, (IBurning) p_48707_.getBlockEntity(p_48708_))) {
+                            p_48707_.playSound((Player)null, p_48708_, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                            p_48709_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+                            return InteractionResult.SUCCESS;
+                        }
+
+                        return InteractionResult.CONSUME;
+                    }
+                }else {
+                    if(itemstack.is(ItemTags.LOGS_THAT_BURN)){
+                        if (BrazierBlockEntity.placeLog(p_48707_,p_48706_,p_48708_,itemstack,p_48709_, (IBurning) p_48707_.getBlockEntity(p_48708_))){
+                            p_48709_.awardStat(Stats.INTERACT_WITH_CAMPFIRE);
+                            p_48707_.playSound((Player)null, p_48708_, SoundEvents.WOOL_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                            return InteractionResult.SUCCESS;
+                        }
+
+                        return InteractionResult.CONSUME;
+
+                    }
+                }
             }
         }
         return super.use(p_48706_, p_48707_, p_48708_, p_48709_, p_48710_, p_48711_);
@@ -117,7 +148,9 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_48725_) {
-        p_48725_.add(WATERLOGGED);
+        p_48725_.add(WATERLOGGED,COPPER,WOOD,BRAZIER,HAS_CAMPFIRE);
         super.createBlockStateDefinition(p_48725_);
     }
+
+
 }

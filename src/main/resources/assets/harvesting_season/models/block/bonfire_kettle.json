@@ -3,6 +3,7 @@
 	"parent": "bonfire_kettle",
 	"ambientocclusion": false,
 	"texture_size": [64, 64],
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"0": "harvesting_season:block/bonfire",
 		"1": "block/campfire_fire",

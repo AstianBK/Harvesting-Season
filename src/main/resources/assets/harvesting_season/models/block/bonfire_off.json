@@ -1,7 +1,7 @@
 {
 	"parent": "bonfire",
 	"texture_size": [64, 64],
-	"render_type": "minecraft:translucent",
+	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures": {
 		"0": "harvesting_season:block/bonfire",
