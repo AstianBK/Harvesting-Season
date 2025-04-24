@@ -85,7 +85,6 @@ public class BrazierBlock extends BaseEntityBlock {
             p_51275_.setBlock(p_51276_,state1.setValue(CookingpotFurnace.LIT,state.getValue(LIT)).setValue(CookingpotFurnace.WOOD,state.getValue(SIGNAL_FIRE))
                     .setValue(CookingpotFurnace.HAS_CAMPFIRE,true).setValue(CookingpotFurnace.COPPER,this.material==Material.COPPER).setValue(CookingpotFurnace.BRAZIER,isBrazier),3);
             itemstack.shrink(1);
-
         }else {
             if(blockentity instanceof BrazierBlockEntity brazierBlock){
                 if(state.getValue(SIGNAL_FIRE)){
@@ -138,7 +137,7 @@ public class BrazierBlock extends BaseEntityBlock {
         LevelAccessor levelaccessor = p_51240_.getLevel();
         BlockPos blockpos = p_51240_.getClickedPos();
         boolean flag = levelaccessor.getFluidState(blockpos).getType() == Fluids.WATER;
-        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(SIGNAL_FIRE,false).setValue(LIT, Boolean.valueOf(false)).setValue(FACING, p_51240_.getHorizontalDirection());
+        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(SIGNAL_FIRE,p_51240_.getItemInHand().is(HSBlocks.BONFIRE.get().asItem())).setValue(LIT, Boolean.valueOf(false)).setValue(FACING, p_51240_.getHorizontalDirection());
     }
 
     public BlockState updateShape(BlockState p_51298_, Direction p_51299_, BlockState p_51300_, LevelAccessor p_51301_, BlockPos p_51302_, BlockPos p_51303_) {

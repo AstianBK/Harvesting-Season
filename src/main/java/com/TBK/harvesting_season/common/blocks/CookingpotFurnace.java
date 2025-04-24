@@ -4,6 +4,7 @@ import com.TBK.harvesting_season.common.api.IBurning;
 import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
 import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
+import com.TBK.harvesting_season.common.registry.HSBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -29,10 +30,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class CookingpotFurnace extends AbstractFurnaceBlock {
     protected static final VoxelShape AXIS_AABB = Block.box(0.0D, 0.0D, 0.0D,
@@ -47,6 +51,25 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
     public CookingpotFurnace(Properties p_48687_) {
         super(p_48687_);
         this.registerDefaultState(this.stateDefinition.any().setValue(COPPER,false).setValue(HAS_CAMPFIRE,false).setValue(WOOD,false).setValue(BRAZIER,false).setValue(FACING, Direction.NORTH).setValue(LIT, Boolean.valueOf(false)).setValue(WATERLOGGED,false));
+    }
+
+    @Override
+    public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
+        List<ItemStack> list = super.getDrops(p_287732_, p_287596_);
+        if(p_287732_.getValue(HAS_CAMPFIRE)){
+            ItemStack stack;
+            if(p_287732_.getValue(BRAZIER)){
+                if(p_287732_.getValue(COPPER)){
+                    stack=new ItemStack(HSBlocks.BRAZIER_COPPER.get());
+                }else{
+                    stack=new ItemStack(HSBlocks.BRAZIER.get());
+                }
+            }else {
+                stack = new ItemStack(HSBlocks.BONFIRE.get());
+            }
+            list.add(stack);
+        }
+        return list;
     }
 
     @Override
@@ -78,6 +101,7 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
 
     @Override
     public InteractionResult use(BlockState p_48706_, Level p_48707_, BlockPos p_48708_, Player p_48709_, InteractionHand p_48710_, BlockHitResult p_48711_) {
+
         if(!p_48707_.isClientSide){
             ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
             if(itemstack.is(Items.WATER_BUCKET)){
@@ -117,6 +141,7 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
         }
         return super.use(p_48706_, p_48707_, p_48708_, p_48709_, p_48710_, p_48711_);
     }
+
 
     protected void openContainer(Level p_49777_, BlockPos p_49778_, Player p_49779_) {
         BlockEntity blockentity = p_49777_.getBlockEntity( p_49778_);
