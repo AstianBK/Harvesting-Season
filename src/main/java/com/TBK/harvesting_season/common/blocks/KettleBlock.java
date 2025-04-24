@@ -5,6 +5,7 @@ import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
 import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
 import com.TBK.harvesting_season.common.block_entity.KettleEntity;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
+import com.TBK.harvesting_season.common.registry.HSBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -19,6 +20,7 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
@@ -30,10 +32,13 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class KettleBlock extends AbstractFurnaceBlock {
     protected static final VoxelShape AXIS_AABB = Block.box(0.0D, 0.0D, 0.0D,
@@ -59,6 +64,24 @@ public class KettleBlock extends AbstractFurnaceBlock {
     }
 
     @Override
+    public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
+        List<ItemStack> list = super.getDrops(p_287732_, p_287596_);
+        if(p_287732_.getValue(HAS_CAMPFIRE)){
+            ItemStack stack;
+            if(p_287732_.getValue(BRAZIER)){
+                if(p_287732_.getValue(COPPER)){
+                    stack=new ItemStack(HSBlocks.BRAZIER_COPPER.get());
+                }else{
+                    stack=new ItemStack(HSBlocks.BRAZIER.get());
+                }
+            }else {
+                stack = new ItemStack(HSBlocks.BONFIRE.get());
+            }
+            list.add(stack);
+        }
+        return list;
+    }
+    @Override
     public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
         return AXIS_AABB;
     }
@@ -83,10 +106,17 @@ public class KettleBlock extends AbstractFurnaceBlock {
             }
         }
     }
-
     @Override
     public InteractionResult use(BlockState p_48706_, Level p_48707_, BlockPos p_48708_, Player p_48709_, InteractionHand p_48710_, BlockHitResult p_48711_) {
+        Level level = p_48707_;
+        BlockPos pos = p_48708_;
+        BlockState stateBelow = level.getBlockState(pos);
+
+        if (stateBelow.getBlock() instanceof CookingpotFurnace || stateBelow.getBlock() instanceof KettleBlock) {
+            return InteractionResult.FAIL; // ← impide que se coloque y evita que el stack se reduzca
+        }
         if(!p_48707_.isClientSide){
+
             ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
             if(itemstack.is(Items.WATER_BUCKET)){
                 itemstack.shrink(1);

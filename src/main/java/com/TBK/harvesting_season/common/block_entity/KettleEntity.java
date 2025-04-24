@@ -145,7 +145,7 @@ public class KettleEntity extends AbstractFurnaceBlockEntity implements IBurning
             p_155016_ = p_155016_.setValue(AbstractFurnaceBlock.LIT, Boolean.valueOf(p_155017_.isLit()));
             p_155014_.setBlock(p_155015_, p_155016_, 3);
         }
-        boolean hasCampFire=(p_155014_.getBlockState(p_155015_.below()).is(HSBlocks.BONFIRE.get()) || p_155014_.getBlockState(p_155015_.below()).is(HSBlocks.BRAZIER.get())) && p_155014_.getBlockState(p_155015_.below()).getValue(BrazierBlock.LIT);
+        boolean hasCampFire=p_155016_.getValue(CookingpotFurnace.HAS_CAMPFIRE) && p_155016_.getValue(CookingpotFurnace.LIT);
         if(!p_155017_.isLit() && hasCampFire){
             p_155017_.litTime=1;
             p_155017_.litDuration = p_155017_.litTime;

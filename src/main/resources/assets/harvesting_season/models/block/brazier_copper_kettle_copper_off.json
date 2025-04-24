@@ -3,7 +3,6 @@
 	"parent": "brazier_kettle_copper",
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
-
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "harvesting_season:block/bonfire_wood",
@@ -306,19 +305,6 @@
 				"west": {"uv": [7.25, 1.5, 7.5, 1.75], "texture": "#1"},
 				"up": {"uv": [6.75, 1, 7.75, 1.25], "texture": "#1"},
 				"down": {"uv": [6.75, 1, 7.75, 1.25], "texture": "#1"}
-			}
-		},
-		{
-			"from": [7.06893, 6.03717, 1.3578],
-			"to": [8.06893, 7.03717, 6.3578],
-			"rotation": {"angle": 45, "axis": "y", "origin": [7.56893, 6.53717, 3.8578]},
-			"faces": {
-				"north": {"uv": [5.75, 0.5, 6, 0.75], "texture": "#1"},
-				"east": {"uv": [5.25, 0, 6.25, 0.25], "texture": "#1"},
-				"south": {"uv": [5.75, 0.5, 6, 0.75], "texture": "#1"},
-				"west": {"uv": [5.25, 0, 6.25, 0.25], "texture": "#1"},
-				"up": {"uv": [5.25, 0, 6.25, 0.25], "rotation": 270, "texture": "#1"},
-				"down": {"uv": [5.25, 0, 6.25, 0.25], "rotation": 90, "texture": "#1"}
 			}
 		},
 		{
