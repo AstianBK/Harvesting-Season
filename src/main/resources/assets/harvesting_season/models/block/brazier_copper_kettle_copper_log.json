@@ -1,6 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"parent": "brazier_kettle_copper",
+	"render_type": "minecraft:cutout",
+
 	"ambientocclusion": false,
 	"texture_size": [64, 64],
 	"textures": {

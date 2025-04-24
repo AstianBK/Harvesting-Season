@@ -79,10 +79,11 @@ public class BrazierBlock extends BaseEntityBlock {
         BlockState state = p_51275_.getBlockState(p_51276_);
         ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
         Block block = Block.byItem(itemstack.getItem());
+        boolean isBrazier = p_51274_.is(HSBlocks.BRAZIER.get());
         if(block instanceof CookingpotFurnace || block instanceof KettleBlock){
             BlockState state1 = block.defaultBlockState();
             p_51275_.setBlock(p_51276_,state1.setValue(CookingpotFurnace.LIT,state.getValue(LIT)).setValue(CookingpotFurnace.WOOD,state.getValue(SIGNAL_FIRE))
-                    .setValue(CookingpotFurnace.HAS_CAMPFIRE,true).setValue(CookingpotFurnace.COPPER,this.material==Material.COPPER).setValue(CookingpotFurnace.BRAZIER,true),3);
+                    .setValue(CookingpotFurnace.HAS_CAMPFIRE,true).setValue(CookingpotFurnace.COPPER,this.material==Material.COPPER).setValue(CookingpotFurnace.BRAZIER,isBrazier),3);
             itemstack.shrink(1);
 
         }else {

@@ -2,6 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "brazier_kettle_copper",
 	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "harvesting_season:block/bonfire_wood",

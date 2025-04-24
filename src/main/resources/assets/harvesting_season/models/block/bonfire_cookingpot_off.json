@@ -2,6 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "bonfire_cookingpot",
 	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "harvesting_season:block/bonfire",
