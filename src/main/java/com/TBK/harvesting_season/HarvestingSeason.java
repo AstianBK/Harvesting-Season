@@ -40,17 +40,17 @@ public class HarvestingSeason
             .title(Component.translatable("itemGroup.harvesting_season"))
             .icon(() -> new ItemStack(HSItems.BEER.get()))
             .displayItems((parameters, output) -> {
-                output.accept(HSItems.HARD_CIDER.get());
                 output.accept(HSItems.WOODEN_SPOON.get());
-                output.accept(HSItems.BRANDY.get());
-                output.accept(HSItems.FINE_BEER.get());
-                output.accept(HSItems.BEER.get());
-                output.accept(HSItems.MEAD.get());
-                output.accept(HSItems.KVASS.get());
-                output.accept(HSItems.ALE.get());
-                output.accept(HSItems.WINE.get());
-                output.accept(HSItems.SPIRIT.get());
-                output.accept(HSItems.RESERVED_WINE.get());
+                output.accept(PotionUtils.setPotion(HSItems.HARD_CIDER.get().getDefaultInstance(), HSPotions.HASTE_HARD_CIDER.get()));
+                output.accept(PotionUtils.setPotion(HSItems.BRANDY.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.FINE_BEER.get().getDefaultInstance(), HSPotions.FINE_BEER_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.BEER.get().getDefaultInstance(), HSPotions.BEER_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.MEAD.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.KVASS.get().getDefaultInstance(), HSPotions.BEER_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.ALE.get().getDefaultInstance(), HSPotions.ALE_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.WINE.get().getDefaultInstance(), HSPotions.ABSORPTION_WINE.get()));
+                output.accept(PotionUtils.setPotion(HSItems.SPIRIT.get().getDefaultInstance(), HSPotions.SPIRIT_BUFF.get()));
+                output.accept(PotionUtils.setPotion(HSItems.RESERVED_WINE.get().getDefaultInstance(), HSPotions.LUCK_RESERVED_WINE.get()));
                 output.accept(HSBlocks.BONFIRE.get());
                 output.accept(HSBlocks.BRAZIER.get());
                 output.accept(HSBlocks.BRAZIER_COPPER.get());
@@ -94,6 +94,16 @@ public class HarvestingSeason
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(PotionUtils.setPotion(HSItems.HARD_CIDER.get().getDefaultInstance(), HSPotions.HASTE_HARD_CIDER.get()));
+            event.accept(PotionUtils.setPotion(HSItems.BRANDY.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.FINE_BEER.get().getDefaultInstance(), HSPotions.FINE_BEER_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.BEER.get().getDefaultInstance(), HSPotions.BEER_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.MEAD.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.KVASS.get().getDefaultInstance(), HSPotions.BEER_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.ALE.get().getDefaultInstance(), HSPotions.ALE_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.WINE.get().getDefaultInstance(), HSPotions.ABSORPTION_WINE.get()));
+            event.accept(PotionUtils.setPotion(HSItems.SPIRIT.get().getDefaultInstance(), HSPotions.SPIRIT_BUFF.get()));
+            event.accept(PotionUtils.setPotion(HSItems.RESERVED_WINE.get().getDefaultInstance(), HSPotions.LUCK_RESERVED_WINE.get()));
             event.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), HSPotions.RESISTANCE.get()));
             event.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_REGENERATION));
             event.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_NIGHT_VISION));

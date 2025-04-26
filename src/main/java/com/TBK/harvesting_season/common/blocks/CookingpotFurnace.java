@@ -101,7 +101,6 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
 
     @Override
     public InteractionResult use(BlockState p_48706_, Level p_48707_, BlockPos p_48708_, Player p_48709_, InteractionHand p_48710_, BlockHitResult p_48711_) {
-
         if(!p_48707_.isClientSide){
             ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
             if(itemstack.is(Items.WATER_BUCKET)){

@@ -108,15 +108,7 @@ public class KettleBlock extends AbstractFurnaceBlock {
     }
     @Override
     public InteractionResult use(BlockState p_48706_, Level p_48707_, BlockPos p_48708_, Player p_48709_, InteractionHand p_48710_, BlockHitResult p_48711_) {
-        Level level = p_48707_;
-        BlockPos pos = p_48708_;
-        BlockState stateBelow = level.getBlockState(pos);
-
-        if (stateBelow.getBlock() instanceof CookingpotFurnace || stateBelow.getBlock() instanceof KettleBlock) {
-            return InteractionResult.FAIL; // ← impide que se coloque y evita que el stack se reduzca
-        }
         if(!p_48707_.isClientSide){
-
             ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
             if(itemstack.is(Items.WATER_BUCKET)){
                 itemstack.shrink(1);
