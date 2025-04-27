@@ -78,7 +78,7 @@ public class KettleScreenMenu extends AbstractContainerScreen<KettleContainerMen
             p_282928_.blit(this.texture, i + 125 , j+64 , 176, 0, 12, 10);
         }
         if (this.menu.hasWater()) {
-            p_282928_.blit(this.texture, i + 124, j + 53, 176, 10, 15, 11);
+            p_282928_.blit(this.texture, i + 125, j + 53, 176, 10, 15, 11);
         }
         int l = this.menu.getBurnProgress();
         p_282928_.blit(this.texture, i + 128, j + 42, 176, 22,9,  14-l);

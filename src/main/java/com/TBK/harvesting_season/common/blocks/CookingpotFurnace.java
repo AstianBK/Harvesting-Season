@@ -105,6 +105,7 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
             ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
             if(itemstack.is(Items.WATER_BUCKET)){
                 itemstack.shrink(1);
+                p_48707_.playSound((Player)null, p_48708_, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
                 p_48709_.setItemInHand(p_48710_,new ItemStack(Items.BUCKET));
                 p_48707_.setBlock(p_48708_,p_48706_.setValue(WATERLOGGED,true),2);
                 if(p_48707_.getBlockEntity(p_48708_)!=null){

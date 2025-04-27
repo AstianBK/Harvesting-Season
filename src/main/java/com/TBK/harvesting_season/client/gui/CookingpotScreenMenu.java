@@ -79,7 +79,7 @@ public class CookingpotScreenMenu extends AbstractContainerScreen<CookingpotCont
             p_282928_.blit(this.texture, i + 37, j + 110, 176, 0, 14, 10);
         }
         if (this.menu.hasWater()) {
-            p_282928_.blit(this.texture, i + 37, j + 100, 176, 10, 15, 9);
+            p_282928_.blit(this.texture, i + 36, j + 100, 176, 10, 15, 9);
         }
         int l = this.menu.getBurnProgress();
         p_282928_.blit(this.texture, i + 71 , j+105, 176, 19, l, 10);

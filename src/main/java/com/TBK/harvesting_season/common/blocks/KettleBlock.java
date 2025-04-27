@@ -44,6 +44,9 @@ public class KettleBlock extends AbstractFurnaceBlock {
     protected static final VoxelShape AXIS_AABB = Block.box(0.0D, 0.0D, 0.0D,
             16.0D, 16.0D, 16.0D);
 
+    protected static final VoxelShape AXIS_AABB_2 = Block.box(0.0D, 0.0D, 0.0D,
+            16.0D, 8.0D, 16.0D);
+
     public static final BooleanProperty WOOD = BlockStateProperties.SIGNAL_FIRE;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty BRAZIER = BlockStateProperties.DISARMED;
@@ -83,13 +86,13 @@ public class KettleBlock extends AbstractFurnaceBlock {
     }
     @Override
     public VoxelShape getShape(BlockState p_60555_, BlockGetter p_60556_, BlockPos p_60557_, CollisionContext p_60558_) {
-        return AXIS_AABB;
+        return p_60555_.getValue(HAS_CAMPFIRE) ? AXIS_AABB : AXIS_AABB_2;
     }
 
 
     @Override
     public VoxelShape getCollisionShape(BlockState p_60572_, BlockGetter p_60573_, BlockPos p_60574_, CollisionContext p_60575_) {
-        return AXIS_AABB;
+        return p_60572_.getValue(HAS_CAMPFIRE) ? AXIS_AABB : AXIS_AABB_2;
     }
 
 
@@ -112,6 +115,7 @@ public class KettleBlock extends AbstractFurnaceBlock {
             ItemStack itemstack = p_48709_.getItemInHand(p_48710_);
             if(itemstack.is(Items.WATER_BUCKET)){
                 itemstack.shrink(1);
+                p_48707_.playSound((Player)null, p_48708_, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS, 1.0F, 1.0F);
                 p_48709_.setItemInHand(p_48710_,new ItemStack(Items.BUCKET));
                 p_48707_.setBlock(p_48708_,p_48706_.setValue(WATERLOGGED,true),2);
                 if(p_48707_.getBlockEntity(p_48708_)!=null){
