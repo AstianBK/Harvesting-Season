@@ -19,18 +19,21 @@ public class Events {
 
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        Level level = event.getLevel();
-        BlockPos pos = event.getPos();
         if(event.getFace()==null){
             return;
         }
+        Level level = event.getLevel();
+        BlockPos pos = event.getPos();
+
         BlockState stateBellow = level.getBlockState(pos.offset(event.getFace().getNormal()).below());
 
-        if ((stateBellow.getBlock() instanceof CookingpotFurnace || stateBellow.getBlock() instanceof KettleBlock)) {
+        if (event.getEntity().getItemInHand(event.getHand()).getItem() instanceof BlockItem &&
+                (stateBellow.getBlock() instanceof CookingpotFurnace || stateBellow.getBlock() instanceof KettleBlock)) {
 
             event.setCanceled(true);
 
             event.setCancellationResult(InteractionResult.FAIL);
         }
+
     }
 }
