@@ -3,6 +3,8 @@ package com.TBK.harvesting_season.common.blocks;
 import com.TBK.harvesting_season.common.api.IBurning;
 import com.TBK.harvesting_season.common.api.IBurningTicking;
 import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
+import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
+import com.TBK.harvesting_season.common.block_entity.KettleEntity;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
 import com.TBK.harvesting_season.common.registry.HSBlocks;
 import net.minecraft.core.BlockPos;
@@ -79,12 +81,26 @@ public class BrazierBlock extends BaseEntityBlock {
         BlockState state = p_51275_.getBlockState(p_51276_);
         ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
         Block block = Block.byItem(itemstack.getItem());
-        boolean isBrazier = p_51274_.is(HSBlocks.BRAZIER.get());
+        boolean isBonfire = p_51274_.is(HSBlocks.BONFIRE.get());
         if(block instanceof CookingpotFurnace || block instanceof KettleBlock){
             BlockState state1 = block.defaultBlockState();
-            p_51275_.setBlock(p_51276_,state1.setValue(CookingpotFurnace.LIT,state.getValue(LIT)).setValue(CookingpotFurnace.WOOD,state.getValue(SIGNAL_FIRE))
-                    .setValue(CookingpotFurnace.HAS_CAMPFIRE,true).setValue(CookingpotFurnace.COPPER,this.material==Material.COPPER).setValue(CookingpotFurnace.BRAZIER,isBrazier),3);
-            itemstack.shrink(1);
+
+            p_51275_.setBlockAndUpdate(p_51276_,state1.setValue(CookingpotFurnace.LIT,state.getValue(LIT)).setValue(CookingpotFurnace.WOOD,state.getValue(SIGNAL_FIRE))
+                    .setValue(CookingpotFurnace.HAS_CAMPFIRE,true).setValue(CookingpotFurnace.COPPER,this.material==Material.COPPER)
+                    .setValue(CookingpotFurnace.BRAZIER,!isBonfire));
+
+            int burn = blockentity instanceof IBurning burning ? burning.getTimeBurn() : 0;
+            BlockEntity entity = p_51275_.getBlockEntity(p_51276_);
+            if(entity instanceof IBurning furnace){
+                furnace.setTimeBurn(burn);
+                furnace.setTimeBurnTotal(burn>0 ? 2400 : 0);
+                furnace.refresh();
+            }
+
+            if(!p_51277_.getAbilities().instabuild){
+                itemstack.shrink(1);
+            }
+            return InteractionResult.CONSUME;
         }else {
             if(blockentity instanceof BrazierBlockEntity brazierBlock){
                 if(state.getValue(SIGNAL_FIRE)){
