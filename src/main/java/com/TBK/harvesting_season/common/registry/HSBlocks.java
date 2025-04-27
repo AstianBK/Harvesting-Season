@@ -1,6 +1,7 @@
 package com.TBK.harvesting_season.common.registry;
 
 import com.TBK.harvesting_season.HarvestingSeason;
+import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
 import com.TBK.harvesting_season.common.blocks.BrazierBlock;
 import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.blocks.KettleBlock;
@@ -46,7 +47,7 @@ public class HSBlocks {
 
     private static ToIntFunction<BlockState> litBlockEmission(int p_50760_) {
         return (p_50763_) -> {
-            return p_50763_.getValue(BrazierBlock.LIT) ? 15 : 0;
+            return p_50763_.getValue(CookingpotFurnace.LIT) ? 15 : 0;
         };
     }
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
