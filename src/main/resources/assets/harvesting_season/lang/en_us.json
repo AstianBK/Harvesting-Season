@@ -30,6 +30,13 @@
   "item.harvesting_season.tincture.effect.absorption": "Tincture of Life",
   "item.harvesting_season.tincture.effect.swiftness": "Tincture of Enduring",
 
+  "item.harvesting_season.arnica": "Arnica",
+  "item.harvesting_season.sage": "Sage",
+  "item.harvesting_season.lemon_balm": "Lemon Balm",
+  "item.harvesting_season.yellow_wood_sorrel": "Yellow Wood Sorrel",
+  "item.harvesting_season.comfrey": "Comfrey",
+  "item.harvesting_season.yarrow": "Yarrow",
+
   "itemGroup.harvesting_season": "Harvesting Season"
 
 }
