@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "harvesting_season:block/comfrey_stage3"
+  }
+}

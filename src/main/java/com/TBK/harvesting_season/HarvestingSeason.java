@@ -3,9 +3,13 @@ package com.TBK.harvesting_season;
 import com.TBK.harvesting_season.client.gui.CookingpotScreenMenu;
 import com.TBK.harvesting_season.client.gui.KettleScreenMenu;
 import com.TBK.harvesting_season.common.registry.*;
+import com.TBK.harvesting_season.server.world.BKBlockStateProvider;
+import com.TBK.harvesting_season.server.world.BKLootTableProvider;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
@@ -14,6 +18,8 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -58,6 +64,12 @@ public class HarvestingSeason
                 output.accept(HSBlocks.COOKINGPOT_COPPER.get());
                 output.accept(HSBlocks.KETTLE.get());
                 output.accept(HSBlocks.KETTLE_COPPER.get());
+                output.accept(HSBlocks.ARNICA_CROP_BLOCK.get());
+                output.accept(HSBlocks.COMFREY_CROP_BLOCK.get());
+                output.accept(HSBlocks.LEMON_BALM_CROP_BLOCK.get());
+                output.accept(HSBlocks.YARROW_CROP_BLOCK.get());
+                output.accept(HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get());
+                output.accept(HSBlocks.SAGE_CROP_BLOCK.get());
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), HSPotions.RESISTANCE.get()));
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_REGENERATION));
                 output.accept(PotionUtils.setPotion(((Item)HSItems.TINCTURE.get()).getDefaultInstance(), Potions.LONG_NIGHT_VISION));
@@ -88,8 +100,17 @@ public class HarvestingSeason
             modEventBus.addListener(this::registerRenderers);
         });
         modEventBus.addListener(this::addCreative);
-        // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
+        modEventBus.addListener(this::dataSetup);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    private void dataSetup(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+        PackOutput packOutput = generator.getPackOutput();
+        boolean includeServer = event.includeServer();
+        generator.addProvider(includeServer, BKLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeClient(), new BKBlockStateProvider(packOutput, existingFileHelper));
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

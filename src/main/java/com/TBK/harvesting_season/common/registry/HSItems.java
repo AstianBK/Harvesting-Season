@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.PotionItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -13,6 +14,23 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class HSItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HarvestingSeason.MODID);
+    public static final RegistryObject<Item> SAGE = ITEMS.register("sage",
+            ()-> new ItemNameBlockItem(HSBlocks.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> YARROW = ITEMS.register("yarrow",
+            ()-> new ItemNameBlockItem(HSBlocks.YARROW_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> ARNICA = ITEMS.register("arnica",
+            ()-> new ItemNameBlockItem(HSBlocks.ARNICA_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> LEMON_BALM = ITEMS.register("lemon_balm",
+            ()-> new ItemNameBlockItem(HSBlocks.LEMON_BALM_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> COMFREY = ITEMS.register("comfrey",
+            ()-> new ItemNameBlockItem(HSBlocks.COMFREY_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> YELLOW_WOOD_SORREL = ITEMS.register("yellow_wood_sorrel",
+            ()-> new ItemNameBlockItem(HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
             ()->new Item(new Item.Properties().stacksTo(1).durability(30)));
 
