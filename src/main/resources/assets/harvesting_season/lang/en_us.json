@@ -7,18 +7,27 @@
   "block.harvesting_season.brazier": "Iron Brazier",
   "block.harvesting_season.brazier_copper": "Copper Brazier",
 
-  "item.harvesting_season.effect.hard_cider_buff": "Hard Cider",
+  "item.harvesting_season.hard_cider": "Hard Cider",
+  "item.harvesting_season.hard_cider.effect.hard_cider_buff": "Hard Cider",
   "item.harvesting_season.effect.journal_buff": "Journal",
-  "item.harvesting_season.effect.brandy_buff": "Brandy",
-  "item.harvesting_season.effect.fine_beer_buff": "Fine Beer",
-  "item.harvesting_season.effect.beer_buff": "Beer",
-  "item.harvesting_season.effect.mead_buff": "Mead",
-  "item.harvesting_season.effect.kvass_buff": "Kvass",
-  "item.harvesting_season.effect.ale_buff": "Ale",
-  "item.harvesting_season.effect.wine_buff": "Wine",
-  "item.harvesting_season.effect.spirit_buff": "Spirit",
-  "item.harvesting_season.effect.reserved_wine_buff": "Reserved Wine",
-  "item.harvesting_season.effect.wooden_spoon_buff": "Wooden Spoon",
+  "item.harvesting_season.brandy.effect.brandy_buff": "Brandy",
+  "item.harvesting_season.fine_beer.effect.fine_beer_buff": "Fine Beer",
+  "item.harvesting_season.beer.effect.beer_buff": "Beer",
+  "item.harvesting_season.mead.effect.brandy_buff": "Mead",
+  "item.harvesting_season.kvass.effect.beer_buff": "Kvass",
+  "item.harvesting_season.ale.effect.ale_buff": "Ale",
+  "item.harvesting_season.wine.effect.absorption_wine": "Wine",
+  "item.harvesting_season.spirit.effect.spirit_buff": "Spirit",
+  "item.harvesting_season.reserved_wine.effect.luck_reserverd_wine": "Reserved Wine",
+
+  "item.harvesting_season.wooden_spoon": "Wooden Spoon",
+
+  "item.harvesting_season.arnica": "Arnica",
+  "item.harvesting_season.comfrey": "Comfrey",
+  "item.harvesting_season.lemon_balm": "Lemon Balm",
+  "item.harvesting_season.yarrow": "Yarrow",
+  "item.harvesting_season.yellow_wood_sorrel": "Yellow Wood Sorrel",
+  "item.harvesting_season.sage": "Sage",
 
 
 
