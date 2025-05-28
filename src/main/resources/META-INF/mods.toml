@@ -62,3 +62,10 @@ description='''${mod_description}'''
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="bruce_library"
+    mandatory=true
+    versionRange="1.0.0"
+    ordering="NONE"
+    side="BOTH"
