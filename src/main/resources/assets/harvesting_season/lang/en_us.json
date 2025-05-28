@@ -18,9 +18,16 @@
   "item.harvesting_season.ale.effect.ale_buff": "Ale",
   "item.harvesting_season.wine.effect.absorption_wine": "Wine",
   "item.harvesting_season.spirit.effect.spirit_buff": "Spirit",
-  "item.harvesting_season.reserved_wine.effect.luck_reserved_wine": "Reserved Wine",
+  "item.harvesting_season.reserved_wine.effect.luck_reserverd_wine": "Reserved Wine",
 
   "item.harvesting_season.wooden_spoon": "Wooden Spoon",
+
+  "item.harvesting_season.arnica": "Arnica",
+  "item.harvesting_season.comfrey": "Comfrey",
+  "item.harvesting_season.lemon_balm": "Lemon Balm",
+  "item.harvesting_season.yarrow": "Yarrow",
+  "item.harvesting_season.yellow_wood_sorrel": "Yellow Wood Sorrel",
+  "item.harvesting_season.sage": "Sage",
 
 
 
