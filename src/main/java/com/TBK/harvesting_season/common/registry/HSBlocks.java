@@ -2,9 +2,7 @@ package com.TBK.harvesting_season.common.registry;
 
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
-import com.TBK.harvesting_season.common.blocks.BrazierBlock;
-import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
-import com.TBK.harvesting_season.common.blocks.KettleBlock;
+import com.TBK.harvesting_season.common.blocks.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -26,6 +24,23 @@ public class HSBlocks {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, HarvestingSeason.MODID);
+    public static final RegistryObject<Block> SAGE_CROP_BLOCK = BLOCKS.register("sage_crop_block",
+            () -> new SageCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+
+    public static final RegistryObject<Block> YARROW_CROP_BLOCK = BLOCKS.register("yarrow_crop_block",
+            () -> new YarrowCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+
+    public static final RegistryObject<Block> ARNICA_CROP_BLOCK = BLOCKS.register("arnica_crop_block",
+            () -> new ArnicaCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+
+    public static final RegistryObject<Block> YELLOW_WOOD_SORREL_CROP_BLOCK = BLOCKS.register("yellow_wood_sorrel_crop_block",
+            () -> new YellowWoodSorrelCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+
+    public static final RegistryObject<Block> COMFREY_CROP_BLOCK = BLOCKS.register("comfrey_crop_block",
+            () -> new ComfreyCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+
+    public static final RegistryObject<Block> LEMON_BALM_CROP_BLOCK = BLOCKS.register("lemon_balm_crop_block",
+            () -> new LemonBalmCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
     public static final RegistryObject<Block> COOKINGPOT = registerBlock("cookingpot",
             () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
 
