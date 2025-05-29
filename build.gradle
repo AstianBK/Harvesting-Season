@@ -100,11 +100,18 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-
+    maven {
+        url 'https://jitpack.io'
+        credentials {
+            username 'AstianBK'
+            password 'gamas1311'
+        }
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation fg.deobf('com.github.AstianBK:Bruce-s-Library:1.0.0') // Ejemplo: 'com.github.User:ModRepo:v1.0.0'
 
 }
 
