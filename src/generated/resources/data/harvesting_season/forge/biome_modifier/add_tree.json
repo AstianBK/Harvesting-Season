@@ -2,10 +2,8 @@
   "type": "forge:add_features",
   "biomes": [
     "minecraft:meadow",
-    "minecraft:forest_flower",
-    "minecraft:forest",
-    "minecraft:plains",
-    "minecraft:sunflower_plains"
+    "minecraft:flower_forest",
+    "minecraft:forest"
   ],
   "features": [
     "harvesting_season:lemon_tree_placed",

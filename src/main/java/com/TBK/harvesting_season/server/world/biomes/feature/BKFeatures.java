@@ -9,8 +9,10 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.RandomSelectorFeature;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -33,6 +35,9 @@ public class BKFeatures {
             DeferredRegister.create(Registries.FOLIAGE_PLACER_TYPE, HarvestingSeason.MODID);
 
     public static final RegistryObject<FoliagePlacerType<FoliageFruitPlacer>> FRUIT_PLACER = FOLIAGE_PLACER_TYPE.register("foliage_fruit_placer",()->new FoliagePlacerType<>(FoliageFruitPlacer.CODEC));
+    public static final RegistryObject<Feature<RandomFeatureConfiguration>> RANDOM_FRUIT_TREE =
+            FEATURES.register("random_fruit_tree", () -> new RandomSelectorFeature(RandomFeatureConfiguration.CODEC));
+
     public static final RegistryObject<Feature<TreeFruitConfiguration>> LEMON_TREE =
             FEATURES.register("lemon_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));
 

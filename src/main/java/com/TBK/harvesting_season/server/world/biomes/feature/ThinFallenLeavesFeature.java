@@ -60,21 +60,7 @@ public class ThinFallenLeavesFeature extends BambooFeature {
         }
     }
 
-    protected void createFoliage(WorldGenLevel worldGenLevel,BlockPos blockpos, RandomSource p_225746_, int p_225748_, int p_225750_, int p_225751_, int p_225752_) {
-        int i = 1;
-        int j = 2;
-        int k = 0;
 
-        for(int l = p_225752_; l >= -p_225750_; --l) {
-            this.placeLeavesRow(worldGenLevel,p_225746_, blockpos, i, l,false);
-            if (i >= j) {
-                i = 3;
-            } else {
-                ++i;
-            }
-        }
-
-    }
     protected void placeLeavesRow(WorldGenLevel worldgenlevel, RandomSource p_225631_, BlockPos p_225633_, int p_225634_, int p_225635_, boolean p_225636_) {
         int i = p_225636_ ? 1 : 0;
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
