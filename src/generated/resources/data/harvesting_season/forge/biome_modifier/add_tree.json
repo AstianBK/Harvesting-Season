@@ -1,6 +1,12 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:desert",
+  "biomes": [
+    "minecraft:meadow",
+    "minecraft:forest_flower",
+    "minecraft:forest",
+    "minecraft:plains",
+    "minecraft:sunflower_plains"
+  ],
   "features": [
     "harvesting_season:lemon_tree_placed",
     "harvesting_season:cherry_tree_placed",
