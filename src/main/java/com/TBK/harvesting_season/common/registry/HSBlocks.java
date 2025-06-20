@@ -5,10 +5,7 @@ import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
 import com.TBK.harvesting_season.common.blocks.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -41,6 +38,88 @@ public class HSBlocks {
 
     public static final RegistryObject<Block> LEMON_BALM_CROP_BLOCK = BLOCKS.register("lemon_balm_crop_block",
             () -> new LemonBalmCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> LEAVE_LEMON = registerBlock("leave_lemon",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_CHERRY = registerBlock("leave_cherry",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_PEAR = registerBlock("leave_pear",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_GREEN_APPLE = registerBlock("leave_green_apple",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_RED_APPLE = registerBlock("leave_red_apple",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_PLUM = registerBlock("leave_plum",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_PEACH = registerBlock("leave_peach",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_POMEGRANATE = registerBlock("leave_pomegranate",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_OLIVES = registerBlock("leave_olives",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_APRICOT = registerBlock("leave_apricot",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_FIG = registerBlock("leave_fig",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_WALNUT = registerBlock("leave_walnut",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_ALMOND = registerBlock("leave_almond",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_HAZELNUT = registerBlock("leave_hazelnut",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_CHESTNUT = registerBlock("leave_chestnut",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_CINNAMON = registerBlock("leave_cinnamon",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_PEPPERCORN = registerBlock("leave_peppercorn",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+    public static final RegistryObject<Block> WILDPATCH_BLOCK = BLOCKS.register("wildpatch_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_BERRIES_BLOCK = BLOCKS.register("wildpatch_berries_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_FLAX_BLOCK = BLOCKS.register("wildpatch_flax_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_GRAIN_BLOCK = BLOCKS.register("wildpatch_grain_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_HERB_BLOCK = BLOCKS.register("wildpatch_herb_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_MUSHROOM_BLOCK = BLOCKS.register("wildpatch_mushroom_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_SAPLING_BLOCK = BLOCKS.register("wildpatch_sapling_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+
     public static final RegistryObject<Block> COOKINGPOT = registerBlock("cookingpot",
             () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
 

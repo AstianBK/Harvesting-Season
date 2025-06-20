@@ -5,12 +5,15 @@ import com.TBK.harvesting_season.client.gui.KettleScreenMenu;
 import com.TBK.harvesting_season.common.registry.*;
 import com.TBK.harvesting_season.server.world.BKBlockStateProvider;
 import com.TBK.harvesting_season.server.world.BKLootTableProvider;
+import com.TBK.harvesting_season.server.world.biomes.feature.BKFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
@@ -19,6 +22,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.world.BiomeModifier;
+import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -29,6 +34,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
@@ -46,6 +52,9 @@ public class HarvestingSeason
             .title(Component.translatable("itemGroup.harvesting_season"))
             .icon(() -> new ItemStack(HSItems.BEER.get()))
             .displayItems((parameters, output) -> {
+                output.accept(HSItems.ITEM_FLAX_FIBER.get());
+                output.accept(HSItems.ITEM_COTTON.get());
+                output.accept(HSItems.ITEM_BOLETE_MUSHROOM.get());
                 output.accept(HSItems.WOODEN_SPOON.get());
                 output.accept(PotionUtils.setPotion(HSItems.HARD_CIDER.get().getDefaultInstance(), HSPotions.HASTE_HARD_CIDER.get()));
                 output.accept(PotionUtils.setPotion(HSItems.BRANDY.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
@@ -94,11 +103,14 @@ public class HarvestingSeason
         HSMenuType.MENU_TYPE.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
         HSSounds.register(modEventBus);
+        BKFeatures.FEATURES.register(modEventBus);
+        BKFeatures.FOLIAGE_PLACER_TYPE.register(modEventBus);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT,()->()->{
             modEventBus.addListener(this::registerRenderers);
         });
+        
         modEventBus.addListener(this::addCreative);
         modEventBus.addListener(this::dataSetup);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -112,6 +124,9 @@ public class HarvestingSeason
         generator.addProvider(includeServer, BKLootTableProvider.create(packOutput));
         generator.addProvider(event.includeClient(), new BKBlockStateProvider(packOutput, existingFileHelper));
     }
+
+
+
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

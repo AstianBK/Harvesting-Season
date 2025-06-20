@@ -1,0 +1,24 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:desert",
+  "features": [
+    "harvesting_season:lemon_tree_placed",
+    "harvesting_season:cherry_tree_placed",
+    "harvesting_season:pear_tree_placed",
+    "harvesting_season:green_apple_tree_placed",
+    "harvesting_season:red_apple_tree_placed",
+    "harvesting_season:plum_tree_placed",
+    "harvesting_season:peach_tree_placed",
+    "harvesting_season:pomegranate_tree_placed",
+    "harvesting_season:olives_tree_placed",
+    "harvesting_season:apricot_tree_placed",
+    "harvesting_season:fig_tree_placed",
+    "harvesting_season:walnut_tree_placed",
+    "harvesting_season:almond_tree_placed",
+    "harvesting_season:hazelnut_tree_placed",
+    "harvesting_season:chestnut_tree_placed",
+    "harvesting_season:cinnamon_tree_placed",
+    "harvesting_season:peppercorn_tree_placed"
+  ],
+  "step": "vegetal_decoration"
+}

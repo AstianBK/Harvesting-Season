@@ -1,0 +1,6 @@
+{
+  "type": "harvesting_season:wildpatch_flax",
+  "config": {
+    "probability": 0.6
+  }
+}

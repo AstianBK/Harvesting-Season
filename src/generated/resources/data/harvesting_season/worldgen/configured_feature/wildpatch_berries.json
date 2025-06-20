@@ -1,0 +1,6 @@
+{
+  "type": "harvesting_season:wildpatch_berries",
+  "config": {
+    "probability": 0.6
+  }
+}

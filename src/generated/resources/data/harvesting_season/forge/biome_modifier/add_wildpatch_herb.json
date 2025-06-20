@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:desert",
+  "features": "harvesting_season:wildpatch_herb_placed",
+  "step": "vegetal_decoration"
+}

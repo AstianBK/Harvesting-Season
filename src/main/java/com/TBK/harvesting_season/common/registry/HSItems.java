@@ -31,6 +31,13 @@ public class HSItems {
 
     public static final RegistryObject<Item> YELLOW_WOOD_SORREL = ITEMS.register("yellow_wood_sorrel",
             ()-> new ItemNameBlockItem(HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ITEM_FLAX_FIBER = ITEMS.register("flax_fiber",
+            ()->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ITEM_COTTON = ITEMS.register("cotton",
+            ()->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ITEM_BOLETE_MUSHROOM = ITEMS.register("bolete_mushroom",
+            ()->new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
             ()->new Item(new Item.Properties().stacksTo(1).durability(30)));
 

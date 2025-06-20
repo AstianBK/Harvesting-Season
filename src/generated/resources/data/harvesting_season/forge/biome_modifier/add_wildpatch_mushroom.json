@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:desert",
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:savanna"
+  ],
+  "features": "harvesting_season:wildpatch_mushroom_placed",
+  "step": "vegetal_decoration"
+}
