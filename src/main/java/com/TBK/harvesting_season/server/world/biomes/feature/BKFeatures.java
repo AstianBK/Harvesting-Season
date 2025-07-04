@@ -40,8 +40,8 @@ public class BKFeatures {
 
     public static final RegistryObject<Feature<TreeFruitConfiguration>> LEMON_TREE =
             FEATURES.register("lemon_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));
-    public static final RegistryObject<Feature<TreeFruitConfiguration>> GREEN_PEAR_TREE =
-            FEATURES.register("green_pear_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));
+    //public static final RegistryObject<Feature<TreeFruitConfiguration>> GREEN_PEAR_TREE =
+    //        FEATURES.register("green_pear_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));
 
     public static final RegistryObject<Feature<TreeFruitConfiguration>> CHERRY_TREE =
             FEATURES.register("cherry_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));

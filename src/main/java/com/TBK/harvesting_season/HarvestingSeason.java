@@ -69,7 +69,7 @@ public class HarvestingSeason
                 output.accept(HSBlocks.RED_OLIVES.get());
                 output.accept(HSBlocks.PEACH.get());
                 output.accept(HSBlocks.PEAR.get());
-                output.accept(HSBlocks.GREEN_PEAR.get());
+                //output.accept(HSBlocks.GREEN_PEAR.get());
                 output.accept(HSBlocks.PEPPERCORN.get());
                 output.accept(HSBlocks.PLUM.get());
                 output.accept(HSBlocks.POMEGRANATE.get());

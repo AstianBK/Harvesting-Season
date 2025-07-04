@@ -56,7 +56,7 @@ public class HSTreeGrowerRegister {
         register(p_256171_,GREEN_APPLE, (TreeFruitFeature) BKFeatures.GREEN_APPLE_TREE.get(),HSBlocks.LEAVE_GREEN_APPLE.get());
         register(p_256171_,HAZELNUT, (TreeFruitFeature) BKFeatures.HAZELNUT_TREE.get(),HSBlocks.LEAVE_HAZELNUT.get());
         register(p_256171_,PEACH, (TreeFruitFeature) BKFeatures.PEACH_TREE.get(),HSBlocks.LEAVE_PEACH.get());
-        register(p_256171_,GREEN_PEAR, (TreeFruitFeature) BKFeatures.GREEN_PEAR_TREE.get(),HSBlocks.LEAVE_GREEN_PEAR.get());
+        //register(p_256171_,GREEN_PEAR, (TreeFruitFeature) BKFeatures.GREEN_PEAR_TREE.get(),HSBlocks.LEAVE_GREEN_PEAR.get());
         register(p_256171_,PEAR, (TreeFruitFeature) BKFeatures.PEAR_TREE.get(),HSBlocks.LEAVE_PEAR.get());
         register(p_256171_,PEPPERCORN, (TreeFruitFeature) BKFeatures.PEPPERCORN_TREE.get(),HSBlocks.LEAVE_PEPPERCORN.get());
         register(p_256171_,PLUM, (TreeFruitFeature) BKFeatures.PLUM_TREE.get(),HSBlocks.LEAVE_PLUM.get());
