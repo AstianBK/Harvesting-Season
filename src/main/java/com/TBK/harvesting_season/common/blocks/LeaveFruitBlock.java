@@ -104,7 +104,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
     }
 
     protected int getBonemealAgeIncrease(Level p_52262_) {
-        return Mth.nextInt(p_52262_.random, 0, 1);
+        return 1;
     }
 
     protected static float getGrowthSpeed(Block p_52273_, BlockGetter p_52274_, BlockPos p_52275_) {

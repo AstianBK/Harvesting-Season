@@ -35,11 +35,9 @@ public class BKFeatures {
             DeferredRegister.create(Registries.FOLIAGE_PLACER_TYPE, HarvestingSeason.MODID);
 
     public static final RegistryObject<FoliagePlacerType<FoliageFruitPlacer>> FRUIT_PLACER = FOLIAGE_PLACER_TYPE.register("foliage_fruit_placer",()->new FoliagePlacerType<>(FoliageFruitPlacer.CODEC));
-    public static final RegistryObject<Feature<RandomFeatureConfiguration>> RANDOM_FRUIT_TREE =
-            FEATURES.register("random_fruit_tree", () -> new RandomSelectorFeature(RandomFeatureConfiguration.CODEC));
-
     public static final RegistryObject<Feature<TreeFruitConfiguration>> LEMON_TREE =
             FEATURES.register("lemon_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));
+
     //public static final RegistryObject<Feature<TreeFruitConfiguration>> GREEN_PEAR_TREE =
     //        FEATURES.register("green_pear_tree", () -> new TreeFruitFeature(TreeFruitConfiguration.CODEC));
 

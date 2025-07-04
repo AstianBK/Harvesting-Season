@@ -152,8 +152,8 @@ public class HSBlocks {
 
     public static final RegistryObject<Block> PEAR = registerBlockAndItem("pear",
             () -> new SaplingBlock(new TreePearGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
-    //public static final RegistryObject<Block> GREEN_PEAR = registerBlockAndItem("green_pear",
-    //        () -> new SaplingBlock(new TreePearGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> GREEN_PEAR = registerBlockAndItem("green_pear",
+            () -> new SaplingBlock(new TreePearGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> GREEN_APPLE = registerBlockAndItem("green_apple",
             () -> new SaplingBlock(new TreeGreenAppleGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));

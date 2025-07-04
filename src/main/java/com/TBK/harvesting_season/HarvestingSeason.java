@@ -69,11 +69,10 @@ public class HarvestingSeason
                 output.accept(HSBlocks.RED_OLIVES.get());
                 output.accept(HSBlocks.PEACH.get());
                 output.accept(HSBlocks.PEAR.get());
-                //output.accept(HSBlocks.GREEN_PEAR.get());
+                output.accept(HSBlocks.GREEN_PEAR.get());
                 output.accept(HSBlocks.PEPPERCORN.get());
                 output.accept(HSBlocks.PLUM.get());
                 output.accept(HSBlocks.POMEGRANATE.get());
-                output.accept(HSBlocks.RED_APPLE.get());
                 output.accept(HSBlocks.WALNUT.get());
                 output.accept(PotionUtils.setPotion(HSItems.HARD_CIDER.get().getDefaultInstance(), HSPotions.HASTE_HARD_CIDER.get()));
                 output.accept(PotionUtils.setPotion(HSItems.BRANDY.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
@@ -111,8 +110,6 @@ public class HarvestingSeason
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-
-        // Register the Deferred Register to the mod event bus so items get registered
         HSItems.ITEMS.register(modEventBus);
         HSPotions.register(modEventBus);
         HSBlockEntity.BLOCKS_ENTITY.register(modEventBus);

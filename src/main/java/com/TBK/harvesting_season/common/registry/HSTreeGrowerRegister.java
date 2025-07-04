@@ -33,7 +33,7 @@ public class HSTreeGrowerRegister {
     public static ResourceKey<ConfiguredFeature<?, ?>> HAZELNUT = FeatureUtils.createKey("harvesting_season:hazelnut_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> PEACH = FeatureUtils.createKey("harvesting_season:peach_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> PEAR = FeatureUtils.createKey("harvesting_season:pear_tree");
-    public static ResourceKey<ConfiguredFeature<?, ?>> GREEN_PEAR = FeatureUtils.createKey("harvesting_season:green_pear_tree");
+    //public static ResourceKey<ConfiguredFeature<?, ?>> GREEN_PEAR = FeatureUtils.createKey("harvesting_season:green_pear_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> PEPPERCORN = FeatureUtils.createKey("harvesting_season:peppercorn_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> PLUM = FeatureUtils.createKey("harvesting_season:plum_tree");
     public static ResourceKey<ConfiguredFeature<?, ?>> POMEGRANATE = FeatureUtils.createKey("harvesting_season:pomegranate_tree");
