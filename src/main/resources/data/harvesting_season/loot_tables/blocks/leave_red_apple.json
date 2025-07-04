@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "harvesting_season:red_apple"
+          "name": "minecraft:apple"
         }
       ],
       "rolls": 1.0
@@ -44,7 +44,7 @@
                   }
                 }
               ],
-              "name": "harvesting_season:red_apple"
+              "name": "minecraft:apple"
             }
           ]
         }
@@ -76,7 +76,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "harvesting_season:red_apple"
+          "name": "minecraft:apple"
         }
       ],
       "rolls": 1.0

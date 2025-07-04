@@ -66,7 +66,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
     }
 
     public final boolean isMaxAge(BlockState p_52308_) {
-        return this.getAge(p_52308_) >= this.getMaxAge();
+        return this.getAge(p_52308_) >= this.getMaxAge()+1;
     }
 
     public boolean isRandomlyTicking(BlockState p_52288_) {
@@ -96,7 +96,8 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         int i = this.getAge(p_52266_) + this.getBonemealAgeIncrease(p_52264_);
         int j = this.getMaxAge();
         if (i > j) {
-            i = j;
+            i = 0;
+            dropResources(p_52266_,p_52264_,p_52265_);
         }
 
         p_52264_.setBlock(p_52265_, this.getStateForAge(i), 2);
