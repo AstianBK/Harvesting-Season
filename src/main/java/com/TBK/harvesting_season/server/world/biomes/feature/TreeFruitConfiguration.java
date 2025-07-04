@@ -41,7 +41,7 @@ public class TreeFruitConfiguration extends TreeConfiguration {
         })).apply(p_225468_, TreeFruitConfiguration::new);
     });
     public final BlockStateProvider fruitProvider;
-    protected TreeFruitConfiguration(BlockStateProvider p_225457_, TrunkPlacer p_225458_, BlockStateProvider p_225459_,BlockStateProvider fruitProvider, FoliagePlacer p_225460_, Optional<RootPlacer> p_225461_, BlockStateProvider p_225462_, FeatureSize p_225463_, List<TreeDecorator> p_225464_, boolean p_225465_, boolean p_225466_) {
+    public TreeFruitConfiguration(BlockStateProvider p_225457_, TrunkPlacer p_225458_, BlockStateProvider p_225459_,BlockStateProvider fruitProvider, FoliagePlacer p_225460_, Optional<RootPlacer> p_225461_, BlockStateProvider p_225462_, FeatureSize p_225463_, List<TreeDecorator> p_225464_, boolean p_225465_, boolean p_225466_) {
         super(p_225457_, p_225458_, p_225459_, p_225460_, p_225461_, p_225462_, p_225463_, p_225464_, p_225465_, p_225466_);
         this.fruitProvider = fruitProvider;
     }

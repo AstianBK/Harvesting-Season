@@ -1,6 +1,9 @@
 {
   "variants": {
-    "": {
+    "age=0": {
+      "model": "harvesting_season:block/leave_apricot2"
+    },
+    "age=1": {
       "model": "harvesting_season:block/leave_apricot"
     }
   }

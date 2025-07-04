@@ -56,6 +56,25 @@ public class HarvestingSeason
                 output.accept(HSItems.ITEM_COTTON.get());
                 output.accept(HSItems.ITEM_BOLETE_MUSHROOM.get());
                 output.accept(HSItems.WOODEN_SPOON.get());
+                output.accept(HSBlocks.ALMOND.get());
+                output.accept(HSBlocks.APRICOT.get());
+                output.accept(HSBlocks.CHERRY.get());
+                output.accept(HSBlocks.CHESTNUT.get());
+                output.accept(HSBlocks.CINNAMON.get());
+                output.accept(HSBlocks.FIG.get());
+                output.accept(HSBlocks.GREEN_APPLE.get());
+                output.accept(HSBlocks.HAZELNUT.get());
+                output.accept(HSBlocks.LEMON.get());
+                output.accept(HSBlocks.OLIVES.get());
+                output.accept(HSBlocks.RED_OLIVES.get());
+                output.accept(HSBlocks.PEACH.get());
+                output.accept(HSBlocks.PEAR.get());
+                output.accept(HSBlocks.GREEN_PEAR.get());
+                output.accept(HSBlocks.PEPPERCORN.get());
+                output.accept(HSBlocks.PLUM.get());
+                output.accept(HSBlocks.POMEGRANATE.get());
+                output.accept(HSBlocks.RED_APPLE.get());
+                output.accept(HSBlocks.WALNUT.get());
                 output.accept(PotionUtils.setPotion(HSItems.HARD_CIDER.get().getDefaultInstance(), HSPotions.HASTE_HARD_CIDER.get()));
                 output.accept(PotionUtils.setPotion(HSItems.BRANDY.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
                 output.accept(PotionUtils.setPotion(HSItems.FINE_BEER.get().getDefaultInstance(), HSPotions.FINE_BEER_BUFF.get()));
@@ -105,7 +124,7 @@ public class HarvestingSeason
         HSSounds.register(modEventBus);
         BKFeatures.FEATURES.register(modEventBus);
         BKFeatures.FOLIAGE_PLACER_TYPE.register(modEventBus);
-        // Register ourselves for server and other game events we are interested in
+
         MinecraftForge.EVENT_BUS.register(this);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT,()->()->{
             modEventBus.addListener(this::registerRenderers);
@@ -122,6 +141,7 @@ public class HarvestingSeason
         PackOutput packOutput = generator.getPackOutput();
         boolean includeServer = event.includeServer();
         generator.addProvider(includeServer, BKLootTableProvider.create(packOutput));
+        MinecraftForge.EVENT_BUS.addListener(HSTreeGrowerRegister::bootstrap);
         generator.addProvider(event.includeClient(), new BKBlockStateProvider(packOutput, existingFileHelper));
     }
 

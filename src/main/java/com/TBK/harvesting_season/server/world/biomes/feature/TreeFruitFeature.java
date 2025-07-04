@@ -41,22 +41,10 @@ public class TreeFruitFeature extends Feature<TreeFruitConfiguration> {
         });
     }
 
-    public static boolean isAirOrLeaves(LevelSimulatedReader p_67268_, BlockPos p_67269_) {
-        return p_67268_.isStateAtPosition(p_67269_, (p_284924_) -> {
-            return p_284924_.isAir() || p_284924_.is(BlockTags.LEAVES);
-        });
-    }
 
     private static void setBlockKnownShape(LevelWriter p_67257_, BlockPos p_67258_, BlockState p_67259_) {
         p_67257_.setBlock(p_67258_, p_67259_, 19);
     }
-
-    public static boolean validTreePos(LevelSimulatedReader p_67273_, BlockPos p_67274_) {
-        return p_67273_.isStateAtPosition(p_67274_, (p_284925_) -> {
-            return p_284925_.isAir() || p_284925_.is(BlockTags.REPLACEABLE_BY_TREES);
-        });
-    }
-
     private boolean doPlace(WorldGenLevel p_225258_, RandomSource p_225259_, BlockPos p_225260_, BiConsumer<BlockPos, BlockState> p_225261_, BiConsumer<BlockPos, BlockState> p_225262_, FoliagePlacer.FoliageSetter p_273670_, TreeFruitConfiguration p_225264_) {
         int i = p_225264_.trunkPlacer.getTreeHeight(p_225259_);
         int j = p_225264_.foliagePlacer.foliageHeight(p_225259_, i, p_225264_);

@@ -3,6 +3,7 @@ package com.TBK.harvesting_season.common.registry;
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
 import com.TBK.harvesting_season.common.blocks.*;
+import com.TBK.harvesting_season.common.grower.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -39,71 +40,75 @@ public class HSBlocks {
     public static final RegistryObject<Block> LEMON_BALM_CROP_BLOCK = BLOCKS.register("lemon_balm_crop_block",
             () -> new LemonBalmCropBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
     public static final RegistryObject<Block> LEAVE_LEMON = registerBlock("leave_lemon",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_CHERRY = registerBlock("leave_cherry",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_PEAR = registerBlock("leave_pear",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+    );
+
+    public static final RegistryObject<Block> LEAVE_GREEN_PEAR = registerBlock("leave_green_pear",
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_GREEN_APPLE = registerBlock("leave_green_apple",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_RED_APPLE = registerBlock("leave_red_apple",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_PLUM = registerBlock("leave_plum",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_PEACH = registerBlock("leave_peach",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_POMEGRANATE = registerBlock("leave_pomegranate",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_OLIVES = registerBlock("leave_olives",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_APRICOT = registerBlock("leave_apricot",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_FIG = registerBlock("leave_fig",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_WALNUT = registerBlock("leave_walnut",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_ALMOND = registerBlock("leave_almond",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_HAZELNUT = registerBlock("leave_hazelnut",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_CHESTNUT = registerBlock("leave_chestnut",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_CINNAMON = registerBlock("leave_cinnamon",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
 
     public static final RegistryObject<Block> LEAVE_PEPPERCORN = registerBlock("leave_peppercorn",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
+            () -> new LeaveFruitBlock(BlockBehaviour.Properties.copy(Blocks.SPRUCE_LEAVES))
     );
     public static final RegistryObject<Block> WILDPATCH_BLOCK = BLOCKS.register("wildpatch_block",
             () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
@@ -138,7 +143,61 @@ public class HSBlocks {
 
     public static final RegistryObject<Block> BRAZIER_COPPER = registerBlock("brazier_copper",()->
             new BrazierBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava(), BrazierBlock.Material.COPPER));
+    public static final RegistryObject<Block> ALMOND = registerBlock("almond",
+            () -> new SaplingBlock(new TreeAlmondGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING))
+    );
+    public static final RegistryObject<Block> LEMON = registerBlock("lemon",
+            () -> new SaplingBlock(new TreeLemonGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> CHERRY = registerBlock("cherry",
+            () -> new SaplingBlock(new TreeCherryGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    public static final RegistryObject<Block> PEAR = registerBlock("pear",
+            () -> new SaplingBlock(new TreePearGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> GREEN_PEAR = registerBlock("green_pear",
+            () -> new SaplingBlock(new TreePearGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> GREEN_APPLE = registerBlock("green_apple",
+            () -> new SaplingBlock(new TreeGreenAppleGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> RED_APPLE = registerBlock("red_apple",
+            () -> new SaplingBlock(new TreeRedAppleGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> PLUM = registerBlock("plum",
+            () -> new SaplingBlock(new TreePlumGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> PEACH = registerBlock("peach",
+            () -> new SaplingBlock(new TreePeachGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> POMEGRANATE = registerBlock("pomegranate",
+            () -> new SaplingBlock(new TreePomegranateGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> OLIVES = registerBlock("olives",
+            () -> new SaplingBlock(new TreeOlivesGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> RED_OLIVES = registerBlock("red_olive",
+            () -> new SaplingBlock(new TreeOlivesGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> APRICOT = registerBlock("apricot",
+            () -> new SaplingBlock(new TreeApricotGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> FIG = registerBlock("fig",
+            () -> new SaplingBlock(new TreeFigGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> WALNUT = registerBlock("walnut",
+            () -> new SaplingBlock(new TreeWalnutGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+
+
+    public static final RegistryObject<Block> HAZELNUT = registerBlock("hazelnut",
+            () -> new SaplingBlock(new TreeHazelnutGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> CHESTNUT = registerBlock("chestnut",
+            () -> new SaplingBlock(new TreeChestnutGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> CINNAMON = registerBlock("cinnamon",
+            () -> new SaplingBlock(new TreeCinnamonGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> PEPPERCORN = registerBlock("peppercorn",
+            () -> new SaplingBlock(new TreePeppercornGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
     private static ToIntFunction<BlockState> litBlockEmission(int p_50760_) {
         return (p_50763_) -> {
             return p_50763_.getValue(CookingpotFurnace.LIT) ? 15 : 0;
