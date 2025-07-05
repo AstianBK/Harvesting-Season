@@ -64,7 +64,7 @@ public class FoliageFruitPlacer extends FoliagePlacer {
         if (!TreeFeature.validTreePos(p_273596_, p_273406_)) {
             return false;
         } else {
-            BlockState blockstate = p_272977_.nextFloat() < 0.1F ? ((TreeFruitConfiguration)p_273040_).fruitProvider.getState(p_272977_, p_273406_) : p_273040_.foliageProvider.getState(p_272977_, p_273406_);
+            BlockState blockstate = ((TreeFruitConfiguration)p_273040_).fruitProvider.getState(p_272977_, p_273406_);
             if (blockstate.hasProperty(BlockStateProperties.WATERLOGGED)) {
                 blockstate = blockstate.setValue(BlockStateProperties.WATERLOGGED, Boolean.valueOf(p_273596_.isFluidAtPosition(p_273406_, (p_225638_) -> {
                     return p_225638_.isSourceOfType(Fluids.WATER);
