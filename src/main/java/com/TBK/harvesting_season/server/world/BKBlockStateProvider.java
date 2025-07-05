@@ -3,7 +3,7 @@ package com.TBK.harvesting_season.server.world;
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.blocks.SageCropBlock;
 import com.TBK.harvesting_season.common.blocks.YarrowCropBlock;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
+import com.TBK.harvesting_season.common.registry.HSBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -23,12 +23,12 @@ public class BKBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        makeGoldenBeetrootCrop((CropBlock) HSBlocks.YARROW_CROP_BLOCK.get(), "yarrow_stage", "yarrow_stage");
-        makeGoldenBeetrootCrop((CropBlock) HSBlocks.SAGE_CROP_BLOCK.get(), "sage_stage", "sage_stage");
-        makeGoldenBeetrootCrop((CropBlock) HSBlocks.COMFREY_CROP_BLOCK.get(), "comfrey_stage", "comfrey_stage");
-        makeGoldenBeetrootCrop((CropBlock) HSBlocks.ARNICA_CROP_BLOCK.get(), "arnica_stage", "arnica_stage");
-        makeGoldenBeetrootCrop((CropBlock) HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), "yellow_wood_sorrel_stage", "yellow_wood_sorrel_stage");
-        makeGoldenBeetrootCrop((CropBlock) HSBlocks.LEMON_BALM_CROP_BLOCK.get(), "lemon_balm_stage", "lemon_balm_stage");
+        makeGoldenBeetrootCrop((CropBlock) HSBlock.YARROW_CROP_BLOCK.get(), "yarrow_stage", "yarrow_stage");
+        makeGoldenBeetrootCrop((CropBlock) HSBlock.SAGE_CROP_BLOCK.get(), "sage_stage", "sage_stage");
+        makeGoldenBeetrootCrop((CropBlock) HSBlock.COMFREY_CROP_BLOCK.get(), "comfrey_stage", "comfrey_stage");
+        makeGoldenBeetrootCrop((CropBlock) HSBlock.ARNICA_CROP_BLOCK.get(), "arnica_stage", "arnica_stage");
+        makeGoldenBeetrootCrop((CropBlock) HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), "yellow_wood_sorrel_stage", "yellow_wood_sorrel_stage");
+        makeGoldenBeetrootCrop((CropBlock) HSBlock.LEMON_BALM_CROP_BLOCK.get(), "lemon_balm_stage", "lemon_balm_stage");
 
     }
 

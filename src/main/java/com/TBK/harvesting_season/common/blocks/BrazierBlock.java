@@ -1,23 +1,17 @@
 package com.TBK.harvesting_season.common.blocks;
 
 import com.TBK.harvesting_season.common.api.IBurning;
-import com.TBK.harvesting_season.common.api.IBurningTicking;
 import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
-import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
-import com.TBK.harvesting_season.common.block_entity.KettleEntity;
+import com.TBK.harvesting_season.common.registry.HSBlock;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -27,7 +21,6 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.crafting.CampfireCookingRecipe;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -41,19 +34,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
-import java.util.Optional;
 
 
 public class BrazierBlock extends BaseEntityBlock {
@@ -81,7 +69,7 @@ public class BrazierBlock extends BaseEntityBlock {
         BlockState state = p_51275_.getBlockState(p_51276_);
         ItemStack itemstack = p_51277_.getItemInHand(p_51278_);
         Block block = Block.byItem(itemstack.getItem());
-        boolean isBonfire = p_51274_.is(HSBlocks.BONFIRE.get());
+        boolean isBonfire = p_51274_.is(HSBlock.BONFIRE.get());
         if(block instanceof CookingpotFurnace || block instanceof KettleBlock){
             BlockState state1 = block.defaultBlockState();
 
@@ -153,7 +141,7 @@ public class BrazierBlock extends BaseEntityBlock {
         LevelAccessor levelaccessor = p_51240_.getLevel();
         BlockPos blockpos = p_51240_.getClickedPos();
         boolean flag = levelaccessor.getFluidState(blockpos).getType() == Fluids.WATER;
-        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(SIGNAL_FIRE,p_51240_.getItemInHand().is(HSBlocks.BONFIRE.get().asItem())).setValue(LIT, Boolean.valueOf(false)).setValue(FACING, p_51240_.getHorizontalDirection());
+        return this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(flag)).setValue(SIGNAL_FIRE,p_51240_.getItemInHand().is(HSBlock.BONFIRE.get().asItem())).setValue(LIT, Boolean.valueOf(false)).setValue(FACING, p_51240_.getHorizontalDirection());
     }
 
     public BlockState updateShape(BlockState p_51298_, Direction p_51299_, BlockState p_51300_, LevelAccessor p_51301_, BlockPos p_51302_, BlockPos p_51303_) {

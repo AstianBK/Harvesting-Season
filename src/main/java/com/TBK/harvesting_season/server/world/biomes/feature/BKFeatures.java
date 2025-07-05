@@ -1,7 +1,7 @@
 package com.TBK.harvesting_season.server.world.biomes.feature;
 
 import com.TBK.harvesting_season.HarvestingSeason;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
+import com.TBK.harvesting_season.common.registry.HSBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -9,10 +9,7 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.RandomSelectorFeature;
-import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -86,20 +83,20 @@ public class BKFeatures {
     }
 
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH =
-            FEATURES.register("wildpatch", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_BLOCK.get().defaultBlockState()));
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_BERRIES =
-            FEATURES.register("wildpatch_berries", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_BERRIES_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch_berries", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_BERRIES_BLOCK.get().defaultBlockState()));
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_FLAX =
-            FEATURES.register("wildpatch_flax", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_FLAX_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch_flax", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_FLAX_BLOCK.get().defaultBlockState()));
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_GRAIN =
-            FEATURES.register("wildpatch_grain", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_GRAIN_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch_grain", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_GRAIN_BLOCK.get().defaultBlockState()));
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_HERB =
-            FEATURES.register("wildpatch_herb", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_HERB_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch_herb", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_HERB_BLOCK.get().defaultBlockState()));
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_MUSHROOM =
-            FEATURES.register("wildpatch_mushroom", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_MUSHROOM_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch_mushroom", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_MUSHROOM_BLOCK.get().defaultBlockState()));
 
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_SAPLING =
-            FEATURES.register("wildpatch_sapling", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlocks.WILDPATCH_SAPLING_BLOCK.get().defaultBlockState()));
+            FEATURES.register("wildpatch_sapling", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_SAPLING_BLOCK.get().defaultBlockState()));
 
 
 }

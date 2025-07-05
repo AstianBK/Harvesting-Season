@@ -3,7 +3,7 @@ package com.TBK.harvesting_season;
 import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.blocks.KettleBlock;
 import com.TBK.harvesting_season.common.blocks.LeaveFruitBlock;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
+import com.TBK.harvesting_season.common.registry.HSBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
@@ -43,6 +43,7 @@ public class Events {
             event.setCancellationResult(InteractionResult.FAIL);
         }
 
+
     }
 
 
@@ -53,7 +54,7 @@ public class Events {
             BlockState state = event.getLevel().getBlockState(event.getPos());
             ItemStack stack = event.getItemStack();
             if(!state.isAir() && state.is(BlockTags.DIRT) && stack.is(Items.APPLE)){
-                event.getLevel().setBlock(event.getPos(), HSBlocks.RED_APPLE.get().defaultBlockState().setValue(LeaveFruitBlock.AGE,0),2);
+                event.getLevel().setBlock(event.getPos(), HSBlock.RED_APPLE.get().defaultBlockState().setValue(LeaveFruitBlock.AGE,0),2);
             }
         }
     }

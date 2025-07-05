@@ -1,7 +1,7 @@
 {
   "variants": {
     "age=0": {
-      "model": "minecraft:oak_leaves"
+      "model": "harvesting_season:block/leave_nothing"
     },
     "age=1": {
       "model": "harvesting_season:block/leave_fig2"
