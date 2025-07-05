@@ -7,6 +7,30 @@
   "block.harvesting_season.brazier": "Iron Brazier",
   "block.harvesting_season.brazier_copper": "Copper Brazier",
 
+  "block.harvesting_season.almond": "Almond",
+  "block.harvesting_season.apricot": "Apricot",
+  "block.harvesting_season.cherry": "Cherry",
+  "block.harvesting_season.chestnut": "Chestnut",
+  "block.harvesting_season.cinnamon": "Cinnamon",
+  "block.harvesting_season.fig": "Fig",
+  "block.harvesting_season.green_apple": "Green Apple",
+  "block.harvesting_season.hazelnut": "Hazelnut",
+  "block.harvesting_season.lemon": "Lemon",
+  "block.harvesting_season.olives": "Olive",
+  "block.harvesting_season.red_olives": "Red Olive",
+  "block.harvesting_season.peach": "Peach",
+  "block.harvesting_season.pear": "Pear",
+  "block.harvesting_season.green_pear": "Green Pear",
+  "block.harvesting_season.peppercorn": "Peppercorn",
+  "block.harvesting_season.plum": "Plum",
+  "block.harvesting_season.pomegranate": "Pomegranate",
+  "block.harvesting_season.walnut": "Walnut",
+
+
+
+
+
+
   "item.harvesting_season.hard_cider": "Hard Cider",
   "item.harvesting_season.hard_cider.effect.hard_cider_buff": "Hard Cider",
   "item.harvesting_season.effect.journal_buff": "Journal",
