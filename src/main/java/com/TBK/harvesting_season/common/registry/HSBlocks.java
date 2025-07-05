@@ -3,6 +3,7 @@ package com.TBK.harvesting_season.common.registry;
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.blocks.*;
 import com.TBK.harvesting_season.common.grower.*;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -212,6 +213,6 @@ public class HSBlocks {
     }
 
     private static <T extends  Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        HSItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        HSItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(3).build())));
     }
 }

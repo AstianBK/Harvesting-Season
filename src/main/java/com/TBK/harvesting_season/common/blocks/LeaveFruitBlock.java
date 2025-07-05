@@ -23,7 +23,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
 public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,net.minecraftforge.common.IPlantable  {
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public LeaveFruitBlock(Properties p_54422_) {
         super(p_54422_);
         this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
@@ -54,7 +54,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         return getOptionalDistanceAt(p_54464_).orElse(7);
     }
     public int getMaxAge() {
-        return 1;
+        return 2;
     }
 
     public int getAge(BlockState p_52306_) {
@@ -77,7 +77,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         if (!p_221051_.isAreaLoaded(p_221052_, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (p_221051_.getRawBrightness(p_221052_, 0) >= 9) {
             int i = this.getAge(p_221050_);
-            if (i < this.getMaxAge()) {
+            if (i>0 && i < this.getMaxAge()) {
                 float f = getGrowthSpeed(this, p_221051_, p_221052_);
                 if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(p_221051_, p_221052_, p_221050_, p_221053_.nextInt((int)(25.0F / f) + 1) == 0)) {
                     p_221051_.setBlock(p_221052_, this.getStateForAge(i + 1), 2);
