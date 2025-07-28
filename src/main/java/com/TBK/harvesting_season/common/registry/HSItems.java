@@ -44,6 +44,95 @@ public class HSItems {
     public static final RegistryObject<Item> HARD_CIDER = ITEMS.register("hard_cider",
             ()->new Item(new Item.Properties().food((new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.DIG_SPEED,2400,0),1.0f)
                     .alwaysEat().build()))));
+
+    public static final RegistryObject<Item> BARLEY = ITEMS.register("barley",
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> OAT = ITEMS.register("oat",
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RYE = ITEMS.register("rye",
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> UPLAND_RICE = ITEMS.register("upland_rice",
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> WHITE_GRAPE = ITEMS.register("white_grape",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MILLET = ITEMS.register("millet",
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> PURPLE_GRAPES = ITEMS.register("purple_grapes",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TARRAGON = ITEMS.register("tarragon",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PARSLEY = ITEMS.register("parsley",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> EGGPLANT = ITEMS.register("eggplant",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SWEET_PEA = ITEMS.register("sweet_pea",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BROAD_BEAN = ITEMS.register("broad_bean",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> KALE = ITEMS.register("kale",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> HORSERADISH = ITEMS.register("horseradish",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CAULIFLOWER = ITEMS.register("cauliflower",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BRUSSEL_SPROUT = ITEMS.register("brussel_sprout",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHICKPEA = ITEMS.register("chickpea",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ARTICHOKE = ITEMS.register("artichoke",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ASPARAGUS = ITEMS.register("asparagus",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SCALLION = ITEMS.register("scallion",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CORIANDER = ITEMS.register("coriander",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> COLLARD = ITEMS.register("collard",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> KOHLRABI = ITEMS.register("kohlrabi",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> NETTLE = ITEMS.register("nettle",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CHARD = ITEMS.register("chard",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> SPINACH = ITEMS.register("spinach",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> GARLIC = ITEMS.register("garlic",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CELERY = ITEMS.register("celery",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> RADISH = ITEMS.register("radish",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> BROCCOLI = ITEMS.register("broccoli",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> LENTIL = ITEMS.register("lentil",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PARSNIP = ITEMS.register("parsnip",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> LETTUCE = ITEMS.register("lettuce",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> TURNIP = ITEMS.register("turnip",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> ONION = ITEMS.register("onion",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> LEEK = ITEMS.register("leek",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> CABBAGE = ITEMS.register("cabbage",
+            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Item> FLY_AGERIC_MUSHROOM = ITEMS.register("fly_ageric_mushroom",
+            ()-> new ItemNameBlockItem(HSBlock.FLY_AGERIC_MUSHROOM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MILKCAP_MUSHROOM = ITEMS.register("milkcap_mushroom",
+            ()-> new ItemNameBlockItem(HSBlock.MILKCAP_MUSHROOM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> MOREL_MUSHROOM = ITEMS.register("morel_mushroom",
+            ()-> new ItemNameBlockItem(HSBlock.MOREL_MUSHROOM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PARASOL_MUSHROOM = ITEMS.register("parasol_mushroom",
+            ()-> new ItemNameBlockItem(HSBlock.PARASOL_MUSHROOM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> PINE_MUSHROOM = ITEMS.register("pine_mushroom",
+            ()-> new ItemNameBlockItem(HSBlock.PINE_MUSHROOM.get(), new Item.Properties()));
+    public static final RegistryObject<Item> WHITECAP_MUSHROOM = ITEMS.register("whitecap_mushroom",
+            ()-> new ItemNameBlockItem(HSBlock.WHITECAP_MUSHROOM.get(), new Item.Properties()));
     public static final RegistryObject<Item> BRANDY = ITEMS.register("brandy",
             ()->new PotionItem(new Item.Properties().stacksTo(64)));
 

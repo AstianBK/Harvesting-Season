@@ -86,6 +86,53 @@ public class HarvestingSeason
                 output.accept(HSBlock.COOKINGPOT_COPPER.get());
                 output.accept(HSBlock.KETTLE.get());
                 output.accept(HSBlock.KETTLE_COPPER.get());
+
+                output.accept(HSItems.UPLAND_RICE.get());
+                output.accept(HSItems.BARLEY.get());
+                output.accept(HSItems.MILLET.get());
+                output.accept(HSItems.OAT.get());
+                output.accept(HSItems.RYE.get());
+
+                output.accept(HSItems.WHITE_GRAPE.get());
+                output.accept(HSItems.PURPLE_GRAPES.get());
+                output.accept(HSItems.TARRAGON.get());
+                output.accept(HSItems.PARSLEY.get());
+                output.accept(HSItems.EGGPLANT.get());
+                output.accept(HSItems.SWEET_PEA.get());
+                output.accept(HSItems.BROAD_BEAN.get());
+                output.accept(HSItems.KALE.get());
+                output.accept(HSItems.HORSERADISH.get());
+                output.accept(HSItems.CAULIFLOWER.get());
+                output.accept(HSItems.BRUSSEL_SPROUT.get());
+                output.accept(HSItems.CHICKPEA.get());
+                output.accept(HSItems.ARTICHOKE.get());
+                output.accept(HSItems.ASPARAGUS.get());
+                output.accept(HSItems.SCALLION.get());
+                output.accept(HSItems.CORIANDER.get());
+                output.accept(HSItems.COLLARD.get());
+                output.accept(HSItems.KOHLRABI.get());
+                output.accept(HSItems.NETTLE.get());
+                output.accept(HSItems.CHARD.get());
+                output.accept(HSItems.SPINACH.get());
+                output.accept(HSItems.GARLIC.get());
+                output.accept(HSItems.CELERY.get());
+                output.accept(HSItems.RADISH.get());
+                output.accept(HSItems.BROCCOLI.get());
+                output.accept(HSItems.LENTIL.get());
+                output.accept(HSItems.PARSNIP.get());
+                output.accept(HSItems.LETTUCE.get());
+                output.accept(HSItems.TURNIP.get());
+                output.accept(HSItems.ONION.get());
+                output.accept(HSItems.LEEK.get());
+                output.accept(HSItems.CABBAGE.get());
+
+                output.accept(HSBlock.FLY_AGERIC_MUSHROOM.get());
+                output.accept(HSBlock.MILKCAP_MUSHROOM.get());
+                output.accept(HSBlock.MOREL_MUSHROOM.get());
+                output.accept(HSBlock.PINE_MUSHROOM.get());
+                output.accept(HSBlock.PARASOL_MUSHROOM.get());
+                output.accept(HSBlock.WHITECAP_MUSHROOM.get());
+
                 output.accept(HSBlock.ARNICA_CROP_BLOCK.get());
                 output.accept(HSBlock.COMFREY_CROP_BLOCK.get());
                 output.accept(HSBlock.LEMON_BALM_CROP_BLOCK.get());

@@ -4,6 +4,8 @@ import com.TBK.harvesting_season.common.registry.HSItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -97,6 +99,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         int j = this.getMaxAge();
         if (i > j) {
             i = 0;
+            p_52264_.playLocalSound(p_52265_, SoundEvents.SWEET_BERRY_BUSH_PLACE, SoundSource.BLOCKS,2.0F,1.0F,false);
             dropResources(p_52266_,p_52264_,p_52265_);
         }
 
@@ -161,7 +164,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
     }
 
     protected ItemLike getBaseSeedId() {
-        return Items.OAK_SAPLING;
+        return this.defaultBlockState().getBlock().asItem();
     }
 
     public ItemStack getCloneItemStack(BlockGetter p_52254_, BlockPos p_52255_, BlockState p_52256_) {

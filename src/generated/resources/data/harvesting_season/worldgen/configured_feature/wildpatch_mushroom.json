@@ -1,5 +1,5 @@
 {
-  "type": "harvesting_season:wildpatch_grain",
+  "type": "harvesting_season:wildpatch_mushroom",
   "config": {
     "probability": 0.6
   }
