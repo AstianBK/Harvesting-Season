@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
@@ -31,13 +32,17 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,net.minecraftforge.common.IPlantable  {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
+    public static final BooleanProperty HAD_FRUITS = BlockStateProperties.BERRIES;
     public LeaveFruitBlock(Properties p_54422_) {
         super(p_54422_);
-        this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
+        this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)).setValue(HAD_FRUITS,false));
     }
 
     protected IntegerProperty getAgeProperty() {
         return AGE;
+    }
+    public BooleanProperty hadFruitsProperty(){
+        return HAD_FRUITS;
     }
     public BlockState getStateForPlacement(BlockPlaceContext p_54424_) {
         BlockState blockstate = this.defaultBlockState().setValue(PERSISTENT, Boolean.valueOf(true)).setValue(WATERLOGGED, false);
@@ -64,9 +69,13 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         return 2;
     }
 
+    public boolean hadFruits(BlockState state){
+        return state.getValue(this.hadFruitsProperty());
+    }
     public int getAge(BlockState p_52306_) {
         return p_52306_.getValue(this.getAgeProperty());
     }
+
 
     public BlockState getStateForAge(int p_52290_) {
         return this.defaultBlockState().setValue(this.getAgeProperty(), Integer.valueOf(p_52290_));
@@ -82,7 +91,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
 
     public void randomTick(BlockState p_221050_, ServerLevel p_221051_, BlockPos p_221052_, RandomSource p_221053_) {
         if (!p_221051_.isAreaLoaded(p_221052_, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
-        if (p_221051_.getRawBrightness(p_221052_, 0) >= 9) {
+        if (!this.hadFruits(p_221050_) && p_221051_.getRawBrightness(p_221052_, 0) >= 9) {
             int i = this.getAge(p_221050_);
             if (i>0 && i < this.getMaxAge()) {
                 float f = getGrowthSpeed(this, p_221051_, p_221052_);
@@ -106,6 +115,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
             i = 0;
             p_52264_.playLocalSound(p_52265_, SoundEvents.SWEET_BERRY_BUSH_PLACE, SoundSource.BLOCKS,2.0F,1.0F,false);
             dropResources(p_52266_,p_52264_,p_52265_);
+
         }
         p_52264_.setBlock(p_52265_, this.getStateForAge(i), 2);
 
@@ -178,7 +188,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
     }
 
     public boolean isValidBonemealTarget(LevelReader p_255715_, BlockPos p_52259_, BlockState p_52260_, boolean p_52261_) {
-        return this.getAge(p_52260_) != this.getMaxAge();
+        return this.getAge(p_52260_) != this.getMaxAge() && !this.hadFruits(p_52260_);
     }
 
     public boolean isBonemealSuccess(Level p_221045_, RandomSource p_221046_, BlockPos p_221047_, BlockState p_221048_) {
@@ -196,7 +206,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_52286_) {
         super.createBlockStateDefinition(p_52286_);
-        p_52286_.add(AGE);
+        p_52286_.add(AGE).add(HAD_FRUITS);
     }
 
     @Override

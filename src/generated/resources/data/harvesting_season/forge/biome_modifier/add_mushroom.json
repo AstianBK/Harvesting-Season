@@ -11,7 +11,9 @@
     "harvesting_season:huge_morel_mushroom_placed",
     "harvesting_season:huge_parasol_mushroom_placed",
     "harvesting_season:huge_pine_mushroom_placed",
-    "harvesting_season:huge_whitecap_mushroom_placed"
+    "harvesting_season:huge_whitecap_mushroom_placed",
+    "harvesting_season:bolete_mushroom_placed"
+
   ],
   "step": "vegetal_decoration"
 }

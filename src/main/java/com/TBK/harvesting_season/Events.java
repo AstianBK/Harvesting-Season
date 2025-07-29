@@ -41,7 +41,7 @@ public class Events {
         if(level.getBlockState(pos).getBlock() instanceof LeaveFruitBlock fruit && fruit.getAge(level.getBlockState(pos))==fruit.getMaxAge()){
             level.playLocalSound(pos, SoundEvents.SWEET_BERRY_BUSH_PLACE, SoundSource.BLOCKS,2.0F,1.0F,false);
             Block.dropResources(level.getBlockState(pos),level,pos);
-            level.setBlock(pos,level.getBlockState(pos).setValue(LeaveFruitBlock.AGE,0),2);
+            level.setBlock(pos,level.getBlockState(pos).setValue(LeaveFruitBlock.AGE,0).setValue(LeaveFruitBlock.HAD_FRUITS,true),2);
             event.setCanceled(true);
 
             event.setCancellationResult(InteractionResult.CONSUME);

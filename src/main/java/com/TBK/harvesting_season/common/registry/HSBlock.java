@@ -28,6 +28,8 @@ public class HSBlock {
             DeferredRegister.create(ForgeRegistries.BLOCKS, HarvestingSeason.MODID);
 
     public static final RegistryObject<Block> FLY_AGERIC_MUSHROOM = BLOCKS.register("ageric_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    public static final RegistryObject<Block> BOLETE_MUSHROOM = BLOCKS.register("bolete_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+
     public static final RegistryObject<Block> MILKCAP_MUSHROOM = BLOCKS.register("milkcap_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
     public static final RegistryObject<Block> MOREL_MUSHROOM = BLOCKS.register("morel_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
     public static final RegistryObject<Block> PARASOL_MUSHROOM = BLOCKS.register("parasol_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));

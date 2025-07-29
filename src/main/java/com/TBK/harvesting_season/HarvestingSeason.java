@@ -47,9 +47,9 @@ public class HarvestingSeason
             .title(Component.translatable("itemGroup.harvesting_season"))
             .icon(() -> new ItemStack(HSItems.BEER.get()))
             .displayItems((parameters, output) -> {
-                output.accept(HSItems.ITEM_FLAX_FIBER.get());
-                output.accept(HSItems.ITEM_COTTON.get());
-                output.accept(HSItems.ITEM_BOLETE_MUSHROOM.get());
+                output.accept(HSItems.FLAX_FIBER.get());
+                output.accept(HSItems.COTTON.get());
+                output.accept(HSItems.BOLETE_MUSHROOM.get());
                 output.accept(HSItems.WOODEN_SPOON.get());
                 output.accept(HSBlock.ALMOND.get());
                 output.accept(HSBlock.APRICOT.get());
@@ -127,6 +127,7 @@ public class HarvestingSeason
                 output.accept(HSItems.CABBAGE.get());
 
                 output.accept(HSBlock.FLY_AGERIC_MUSHROOM.get());
+                output.accept(HSBlock.BOLETE_MUSHROOM.get());
                 output.accept(HSBlock.MILKCAP_MUSHROOM.get());
                 output.accept(HSBlock.MOREL_MUSHROOM.get());
                 output.accept(HSBlock.PINE_MUSHROOM.get());

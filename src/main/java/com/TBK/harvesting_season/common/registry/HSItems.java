@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class HSItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HarvestingSeason.MODID);
     public static final RegistryObject<Item> SAGE = ITEMS.register("sage",
-            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+            ()-> new Item( new Item.Properties()));
 
     public static final RegistryObject<Item> YARROW = ITEMS.register("yarrow",
             ()-> new ItemNameBlockItem(HSBlock.YARROW_CROP_BLOCK.get(), new Item.Properties()));
@@ -31,11 +31,11 @@ public class HSItems {
 
     public static final RegistryObject<Item> YELLOW_WOOD_SORREL = ITEMS.register("yellow_wood_sorrel",
             ()-> new ItemNameBlockItem(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), new Item.Properties()));
-    public static final RegistryObject<Item> ITEM_FLAX_FIBER = ITEMS.register("flax_fiber",
+    public static final RegistryObject<Item> FLAX_FIBER = ITEMS.register("flax_fiber",
             ()->new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ITEM_COTTON = ITEMS.register("cotton",
+    public static final RegistryObject<Item> COTTON = ITEMS.register("cotton",
             ()->new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ITEM_BOLETE_MUSHROOM = ITEMS.register("bolete_mushroom",
+    public static final RegistryObject<Item> BOLETE_MUSHROOM = ITEMS.register("bolete_mushroom",
             ()->new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
@@ -46,16 +46,16 @@ public class HSItems {
                     .alwaysEat().build()))));
 
     public static final RegistryObject<Item> BARLEY = ITEMS.register("barley",
-            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> OAT = ITEMS.register("oat",
-            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RYE = ITEMS.register("rye",
-            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+            ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> UPLAND_RICE = ITEMS.register("upland_rice",
-            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
+            ()-> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> WHITE_GRAPE = ITEMS.register("white_grape",
-            () -> new ItemNameBlockItem(HSBlock.WILDPATCH_HERB_BLOCK.get(), new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MILLET = ITEMS.register("millet",
             ()-> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
