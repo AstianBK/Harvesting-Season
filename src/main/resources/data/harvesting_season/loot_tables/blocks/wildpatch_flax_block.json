@@ -58,7 +58,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "harvesting_season:flax_fiber"
+          "name": "harvesting_season:cotton"
         }
       ],
       "rolls": 1.0

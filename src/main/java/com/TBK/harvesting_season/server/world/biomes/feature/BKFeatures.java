@@ -98,6 +98,8 @@ public class BKFeatures {
 
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_SAPLING =
             FEATURES.register("wildpatch_sapling", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_SAPLING_BLOCK.get().defaultBlockState()));
+    public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> FEATURE_WILDPATCH_VEGETABLE =
+            FEATURES.register("wildpatch_vegetable", () -> new ThinFallenLeavesFeature(ProbabilityFeatureConfiguration.CODEC,  HSBlock.WILDPATCH_VEGETABLE_BLOCK.get().defaultBlockState()));
 
 
 }

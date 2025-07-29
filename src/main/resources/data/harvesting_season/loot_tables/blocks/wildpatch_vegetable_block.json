@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "item", "name": "harvesting_season:millet", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:white_grape", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:purple_grapes", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:tarragon", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:parsley", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:eggplant", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:sweet_pea", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:broad_bean", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:kale", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:horseradish", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:cauliflower", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:brussel_sprout", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:chickpea", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:artichoke", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:asparagus", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:scallion", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:coriander", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:collard", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:kohlrabi", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:nettle", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:chard", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:spinach", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:garlic", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:celery", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:radish", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:broccoli", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:lentil", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:parsnip", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:lettuce", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:turnip", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:onion", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:leek", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:cabbage", "weight": 1 }
+      ]
+    }
+  ]
+}

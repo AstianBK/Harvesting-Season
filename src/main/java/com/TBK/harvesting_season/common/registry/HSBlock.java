@@ -138,6 +138,8 @@ public class HSBlock {
             () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
     public static final RegistryObject<Block> WILDPATCH_SAPLING_BLOCK = BLOCKS.register("wildpatch_sapling_block",
             () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_VEGETABLE_BLOCK = BLOCKS.register("wildpatch_vegetable_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
 
     public static final RegistryObject<Block> COOKINGPOT = registerBlockAndItem("cookingpot",
             () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));

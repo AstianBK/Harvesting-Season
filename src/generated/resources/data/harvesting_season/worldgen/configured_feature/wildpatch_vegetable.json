@@ -1,0 +1,6 @@
+{
+  "type": "harvesting_season:wildpatch_vegetable",
+  "config": {
+    "probability": 0.6
+  }
+}
