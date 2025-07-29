@@ -15,7 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class HSItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HarvestingSeason.MODID);
     public static final RegistryObject<Item> SAGE = ITEMS.register("sage",
-            ()-> new Item( new Item.Properties()));
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties()));
 
     public static final RegistryObject<Item> YARROW = ITEMS.register("yarrow",
             ()-> new ItemNameBlockItem(HSBlock.YARROW_CROP_BLOCK.get(), new Item.Properties()));
