@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "item", "name": "harvesting_season:milkcap_mushroom", "weight": 1 }
+      ]
+    }
+  ]
+}
