@@ -36,7 +36,7 @@ public class HSItems {
     public static final RegistryObject<Item> COTTON = ITEMS.register("cotton",
             ()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> BOLETE_MUSHROOM = ITEMS.register("bolete_mushroom",
-            ()->new Item(new Item.Properties()));
+            ()-> new ItemNameBlockItem(HSBlock.BOLETE_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
 
     public static final RegistryObject<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
             ()->new Item(new Item.Properties().stacksTo(1).durability(30)));
