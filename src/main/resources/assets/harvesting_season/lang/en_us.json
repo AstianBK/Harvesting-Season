@@ -28,6 +28,10 @@
 
 
   "item.harvesting_season.millet":"Millet",
+  "item.harvesting_season.upland_rice":"Upland Rice",
+  "item.harvesting_season.barley":"Barley",
+  "item.harvesting_season.oat":"Oat",
+  "item.harvesting_season.rye":"Rye",
   "item.harvesting_season.white_grape":"White Grape",
   "item.harvesting_season.purple_grapes":"Purple Grapes",
   "item.harvesting_season.tarragon":"Tarragon",
@@ -60,6 +64,13 @@
   "item.harvesting_season.onion":"Onion",
   "item.harvesting_season.leek":"Leek",
   "item.harvesting_season.cabbage":"Cabbage",
+  "item.harvesting_season.fly_ageric_mushroom":"Fly Ageric Mushroom",
+  "item.harvesting_season.milkcap_mushroom":"Milkcap",
+  "item.harvesting_season.morel_mushroom":"Morel Mushroom",
+  "item.harvesting_season.pine_mushroom":"Pine Mushroom",
+  "item.harvesting_season.parasol_mushroom":"Parasol Mushroom",
+  "item.harvesting_season.whitecap_mushroom":"Whitecap Mushroom",
+
 
 
 
@@ -98,5 +109,8 @@
   "item.harvesting_season.yarrow": "Yarrow",
 
   "itemGroup.harvesting_season": "Harvesting Season"
+
+
+
 
 }
