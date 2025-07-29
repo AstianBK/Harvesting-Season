@@ -70,7 +70,7 @@
   "item.harvesting_season.pine_mushroom":"Pine Mushroom",
   "item.harvesting_season.parasol_mushroom":"Parasol Mushroom",
   "item.harvesting_season.whitecap_mushroom":"Whitecap Mushroom",
-
+  "item.harvesting_season.bolete_mushroom": "Bolete Mushroom",
 
 
 
@@ -89,7 +89,6 @@
 
   "item.harvesting_season.flax_fiber": "Flax Fiber",
   "item.harvesting_season.cotton": "Cotton",
-  "item.harvesting_season.bolete_mushroom": "Bolete Mushroom",
   "item.harvesting_season.wooden_spoon": "Wooden Spoon",
 
 
