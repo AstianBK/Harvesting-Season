@@ -16,16 +16,16 @@ public class HSBlockEntity {
     public static final RegistryObject<BlockEntityType<CookingpotEntity>> COOKINGPOT_ENTITY =
             BLOCKS_ENTITY.register("cookingpot_entity", () ->
                     BlockEntityType.Builder.of(CookingpotEntity::new,
-                            HSBlocks.COOKINGPOT.get(),HSBlocks.COOKINGPOT_COPPER.get()).build(null));
+                            HSBlock.COOKINGPOT.get(), HSBlock.COOKINGPOT_COPPER.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<KettleEntity>> KETTLE_ENTITY =
             BLOCKS_ENTITY.register("kettle_entity", () ->
                     BlockEntityType.Builder.of(KettleEntity::new,
-                            HSBlocks.KETTLE.get(),HSBlocks.KETTLE_COPPER.get()).build(null));
+                            HSBlock.KETTLE.get(), HSBlock.KETTLE_COPPER.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BrazierBlockEntity>> BRAZIER =
             BLOCKS_ENTITY.register("brazier_entity", () ->
                     BlockEntityType.Builder.of(BrazierBlockEntity::new,
-                            HSBlocks.BRAZIER.get(),HSBlocks.BONFIRE.get()).build(null));
+                            HSBlock.BRAZIER.get(), HSBlock.BONFIRE.get()).build(null));
 
 }

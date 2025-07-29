@@ -1,5 +1,5 @@
 {
-  "type": "harvesting_season:wildpatch_grain",
+  "type": "harvesting_season:wildpatch_sapling",
   "config": {
     "probability": 0.6
   }

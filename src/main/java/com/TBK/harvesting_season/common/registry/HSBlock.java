@@ -3,13 +3,18 @@ package com.TBK.harvesting_season.common.registry;
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.blocks.*;
 import com.TBK.harvesting_season.common.grower.*;
+import net.minecraft.core.BlockPos;
+import net.minecraft.data.worldgen.features.TreeFeatures;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -17,10 +22,20 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
-public class HSBlocks {
+public class HSBlock {
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, HarvestingSeason.MODID);
+
+    public static final RegistryObject<Block> FLY_AGERIC_MUSHROOM = BLOCKS.register("ageric_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    public static final RegistryObject<Block> MILKCAP_MUSHROOM = BLOCKS.register("milkcap_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    public static final RegistryObject<Block> MOREL_MUSHROOM = BLOCKS.register("morel_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    public static final RegistryObject<Block> PARASOL_MUSHROOM = BLOCKS.register("parasol_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    public static final RegistryObject<Block> PINE_MUSHROOM = BLOCKS.register("pine_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    public static final RegistryObject<Block> WHITECAP_MUSHROOM = BLOCKS.register("whitecap_mushroom",()-> new MushroomBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).noCollission().randomTicks().instabreak().sound(SoundType.GRASS).hasPostProcess(HSBlock::always).pushReaction(PushReaction.DESTROY), null));
+    private static boolean always(BlockState p_50775_, BlockGetter p_50776_, BlockPos p_50777_) {
+        return true;
+    }
     public static final RegistryObject<Block> SAGE_CROP_BLOCK = BLOCKS.register("sage_crop_block",
             () -> new SageCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
 
@@ -123,6 +138,8 @@ public class HSBlocks {
             () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
     public static final RegistryObject<Block> WILDPATCH_SAPLING_BLOCK = BLOCKS.register("wildpatch_sapling_block",
             () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
+    public static final RegistryObject<Block> WILDPATCH_VEGETABLE_BLOCK = BLOCKS.register("wildpatch_vegetable_block",
+            () -> new BushBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS)));
 
     public static final RegistryObject<Block> COOKINGPOT = registerBlockAndItem("cookingpot",
             () -> new CookingpotFurnace(BlockBehaviour.Properties.of().strength(2.0F).sound(SoundType.BONE_BLOCK).lightLevel(litBlockEmission(15)).noOcclusion().ignitedByLava()));
@@ -212,6 +229,6 @@ public class HSBlocks {
     }
 
     private static <T extends  Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        HSItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        HSItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(3).build())));
     }
 }

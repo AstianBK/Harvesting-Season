@@ -3,8 +3,8 @@ package com.TBK.harvesting_season.common.blocks;
 import com.TBK.harvesting_season.common.api.IBurning;
 import com.TBK.harvesting_season.common.block_entity.BrazierBlockEntity;
 import com.TBK.harvesting_season.common.block_entity.CookingpotEntity;
+import com.TBK.harvesting_season.common.registry.HSBlock;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -60,12 +60,12 @@ public class CookingpotFurnace extends AbstractFurnaceBlock {
             ItemStack stack;
             if(p_287732_.getValue(BRAZIER)){
                 if(p_287732_.getValue(COPPER)){
-                    stack=new ItemStack(HSBlocks.BRAZIER_COPPER.get());
+                    stack=new ItemStack(HSBlock.BRAZIER_COPPER.get());
                 }else{
-                    stack=new ItemStack(HSBlocks.BRAZIER.get());
+                    stack=new ItemStack(HSBlock.BRAZIER.get());
                 }
             }else {
-                stack = new ItemStack(HSBlocks.BONFIRE.get());
+                stack = new ItemStack(HSBlock.BONFIRE.get());
             }
             list.add(stack);
         }

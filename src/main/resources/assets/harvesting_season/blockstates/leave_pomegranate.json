@@ -1,9 +1,12 @@
 {
   "variants": {
     "age=0": {
-      "model": "harvesting_season:block/leave_pomegranate2"
+      "model": "harvesting_season:block/leave_nothing"
     },
     "age=1": {
+      "model": "harvesting_season:block/leave_pomegranate2"
+    },
+    "age=2": {
       "model": "harvesting_season:block/leave_pomegranate"
     }
   }

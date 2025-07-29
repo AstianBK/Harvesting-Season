@@ -1,7 +1,7 @@
 package com.TBK.harvesting_season.server.world;
 
 import com.TBK.harvesting_season.common.blocks.*;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
+import com.TBK.harvesting_season.common.registry.HSBlock;
 import com.TBK.harvesting_season.common.registry.HSItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -28,45 +28,45 @@ public class BKBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         LootItemCondition.Builder lootitemcondition$builder = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(HSBlocks.SAGE_CROP_BLOCK.get())
+                .hasBlockStateProperties(HSBlock.SAGE_CROP_BLOCK.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(SageCropBlock.AGE, 3));
 
         LootItemCondition.Builder lootitemcondition$builder1 = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(HSBlocks.YARROW_CROP_BLOCK.get())
+                .hasBlockStateProperties(HSBlock.YARROW_CROP_BLOCK.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(YarrowCropBlock.AGE, 3));
 
         LootItemCondition.Builder lootitemcondition$builder2 = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(HSBlocks.COMFREY_CROP_BLOCK.get())
+                .hasBlockStateProperties(HSBlock.COMFREY_CROP_BLOCK.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ComfreyCropBlock.AGE, 3));
 
         LootItemCondition.Builder lootitemcondition$builder3 = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(HSBlocks.ARNICA_CROP_BLOCK.get())
+                .hasBlockStateProperties(HSBlock.ARNICA_CROP_BLOCK.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(ArnicaCropBlock.AGE, 3));
 
         LootItemCondition.Builder lootitemcondition$builder4 = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(HSBlocks.LEMON_BALM_CROP_BLOCK.get())
+                .hasBlockStateProperties(HSBlock.LEMON_BALM_CROP_BLOCK.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(LemonBalmCropBlock.AGE, 3));
 
         LootItemCondition.Builder lootitemcondition$builder5 = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get())
+                .hasBlockStateProperties(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(YellowWoodSorrelCropBlock.AGE, 3));
 
-        this.add(HSBlocks.SAGE_CROP_BLOCK.get(), createCropDrops(HSBlocks.SAGE_CROP_BLOCK.get(), HSItems.SAGE.get(), HSItems.SAGE.get(),
+        this.add(HSBlock.SAGE_CROP_BLOCK.get(), createCropDrops(HSBlock.SAGE_CROP_BLOCK.get(), HSItems.SAGE.get(), HSItems.SAGE.get(),
                  lootitemcondition$builder));
 
-        this.add(HSBlocks.YARROW_CROP_BLOCK.get(), createCropDrops(HSBlocks.YARROW_CROP_BLOCK.get(),HSItems.YARROW.get(), HSItems.YARROW.get(),
+        this.add(HSBlock.YARROW_CROP_BLOCK.get(), createCropDrops(HSBlock.YARROW_CROP_BLOCK.get(),HSItems.YARROW.get(), HSItems.YARROW.get(),
                  lootitemcondition$builder1));
 
-        this.add(HSBlocks.SAGE_CROP_BLOCK.get(), createCropDrops(HSBlocks.COMFREY_CROP_BLOCK.get(),HSItems.COMFREY.get(), HSItems.COMFREY.get(),
+        this.add(HSBlock.SAGE_CROP_BLOCK.get(), createCropDrops(HSBlock.COMFREY_CROP_BLOCK.get(),HSItems.COMFREY.get(), HSItems.COMFREY.get(),
                  lootitemcondition$builder2));
 
-        this.add(HSBlocks.ARNICA_CROP_BLOCK.get(), createCropDrops(HSBlocks.ARNICA_CROP_BLOCK.get(),HSItems.ARNICA.get(), HSItems.ARNICA.get(),
+        this.add(HSBlock.ARNICA_CROP_BLOCK.get(), createCropDrops(HSBlock.ARNICA_CROP_BLOCK.get(),HSItems.ARNICA.get(), HSItems.ARNICA.get(),
                  lootitemcondition$builder3));
 
-        this.add(HSBlocks.LEMON_BALM_CROP_BLOCK.get(), createCropDrops(HSBlocks.LEMON_BALM_CROP_BLOCK.get(),HSItems.LEMON_BALM.get(), HSItems.LEMON_BALM.get(),
+        this.add(HSBlock.LEMON_BALM_CROP_BLOCK.get(), createCropDrops(HSBlock.LEMON_BALM_CROP_BLOCK.get(),HSItems.LEMON_BALM.get(), HSItems.LEMON_BALM.get(),
                  lootitemcondition$builder4));
 
-        this.add(HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), createCropDrops(HSBlocks.YELLOW_WOOD_SORREL_CROP_BLOCK.get(),HSItems.YELLOW_WOOD_SORREL.get(), HSItems.YELLOW_WOOD_SORREL.get(),
+        this.add(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), createCropDrops(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(),HSItems.YELLOW_WOOD_SORREL.get(), HSItems.YELLOW_WOOD_SORREL.get(),
                  lootitemcondition$builder5));
     }
 
@@ -80,6 +80,6 @@ public class BKBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return HSBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return HSBlock.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }

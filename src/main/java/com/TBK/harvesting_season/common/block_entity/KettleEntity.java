@@ -1,20 +1,14 @@
 package com.TBK.harvesting_season.common.block_entity;
 
-import com.TBK.harvesting_season.HarvestingSeason;
-import com.TBK.harvesting_season.client.gui.CookingpotContainerMenu;
 import com.TBK.harvesting_season.client.gui.KettleContainerMenu;
 import com.TBK.harvesting_season.common.api.IBurning;
-import com.TBK.harvesting_season.common.blocks.BrazierBlock;
 import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
 import com.TBK.harvesting_season.common.registry.HSRecipeSerializer;
 import com.TBK.harvesting_season.common.registry.HSSounds;
-import com.TBK.harvesting_season.server.data.recipe.CookingpotRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;

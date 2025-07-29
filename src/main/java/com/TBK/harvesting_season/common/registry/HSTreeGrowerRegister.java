@@ -4,18 +4,13 @@ import com.TBK.harvesting_season.server.world.biomes.feature.BKFeatures;
 import com.TBK.harvesting_season.server.world.biomes.feature.FoliageFruitPlacer;
 import com.TBK.harvesting_season.server.world.biomes.feature.TreeFruitConfiguration;
 import com.TBK.harvesting_season.server.world.biomes.feature.TreeFruitFeature;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
-import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
@@ -47,23 +42,23 @@ public class HSTreeGrowerRegister {
     }
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> p_256171_) {
-        register(p_256171_,ALMOND, (TreeFruitFeature) BKFeatures.ALMOND_TREE.get(),HSBlocks.LEAVE_ALMOND.get());
-        register(p_256171_,APRICOT, (TreeFruitFeature) BKFeatures.APRICOT_TREE.get(),HSBlocks.LEAVE_APRICOT.get());
-        register(p_256171_,CHERRY, (TreeFruitFeature) BKFeatures.CHERRY_TREE.get(),HSBlocks.LEAVE_CHERRY.get());
-        register(p_256171_,CHESTNUT, (TreeFruitFeature) BKFeatures.CHESTNUT_TREE.get(),HSBlocks.LEAVE_CHESTNUT.get());
-        register(p_256171_,CINNAMON, (TreeFruitFeature) BKFeatures.CINNAMON_TREE.get(),HSBlocks.LEAVE_CINNAMON.get());
-        register(p_256171_,FIG, (TreeFruitFeature) BKFeatures.FIG_TREE.get(),HSBlocks.LEAVE_FIG.get());
-        register(p_256171_,GREEN_APPLE, (TreeFruitFeature) BKFeatures.GREEN_APPLE_TREE.get(),HSBlocks.LEAVE_GREEN_APPLE.get());
-        register(p_256171_,HAZELNUT, (TreeFruitFeature) BKFeatures.HAZELNUT_TREE.get(),HSBlocks.LEAVE_HAZELNUT.get());
-        register(p_256171_,PEACH, (TreeFruitFeature) BKFeatures.PEACH_TREE.get(),HSBlocks.LEAVE_PEACH.get());
-        //register(p_256171_,GREEN_PEAR, (TreeFruitFeature) BKFeatures.GREEN_PEAR_TREE.get(),HSBlocks.LEAVE_GREEN_PEAR.get());
-        register(p_256171_,PEAR, (TreeFruitFeature) BKFeatures.PEAR_TREE.get(),HSBlocks.LEAVE_PEAR.get());
-        register(p_256171_,PEPPERCORN, (TreeFruitFeature) BKFeatures.PEPPERCORN_TREE.get(),HSBlocks.LEAVE_PEPPERCORN.get());
-        register(p_256171_,PLUM, (TreeFruitFeature) BKFeatures.PLUM_TREE.get(),HSBlocks.LEAVE_PLUM.get());
-        register(p_256171_,POMEGRANATE, (TreeFruitFeature) BKFeatures.POMEGRANATE_TREE.get(),HSBlocks.LEAVE_POMEGRANATE.get());
-        register(p_256171_,OLIVES, (TreeFruitFeature) BKFeatures.OLIVES_TREE.get(),HSBlocks.LEAVE_OLIVES.get());
-        register(p_256171_,LEMON, (TreeFruitFeature) BKFeatures.LEMON_TREE.get(),HSBlocks.LEAVE_LEMON.get());
-        register(p_256171_,RED_APPLE, (TreeFruitFeature) BKFeatures.RED_APPLE_TREE.get(),HSBlocks.LEAVE_RED_APPLE.get());
-        register(p_256171_,WALNUT, (TreeFruitFeature) BKFeatures.WALNUT_TREE.get(),HSBlocks.LEAVE_WALNUT.get());
+        register(p_256171_,ALMOND, (TreeFruitFeature) BKFeatures.ALMOND_TREE.get(), HSBlock.LEAVE_ALMOND.get());
+        register(p_256171_,APRICOT, (TreeFruitFeature) BKFeatures.APRICOT_TREE.get(), HSBlock.LEAVE_APRICOT.get());
+        register(p_256171_,CHERRY, (TreeFruitFeature) BKFeatures.CHERRY_TREE.get(), HSBlock.LEAVE_CHERRY.get());
+        register(p_256171_,CHESTNUT, (TreeFruitFeature) BKFeatures.CHESTNUT_TREE.get(), HSBlock.LEAVE_CHESTNUT.get());
+        register(p_256171_,CINNAMON, (TreeFruitFeature) BKFeatures.CINNAMON_TREE.get(), HSBlock.LEAVE_CINNAMON.get());
+        register(p_256171_,FIG, (TreeFruitFeature) BKFeatures.FIG_TREE.get(), HSBlock.LEAVE_FIG.get());
+        register(p_256171_,GREEN_APPLE, (TreeFruitFeature) BKFeatures.GREEN_APPLE_TREE.get(), HSBlock.LEAVE_GREEN_APPLE.get());
+        register(p_256171_,HAZELNUT, (TreeFruitFeature) BKFeatures.HAZELNUT_TREE.get(), HSBlock.LEAVE_HAZELNUT.get());
+        register(p_256171_,PEACH, (TreeFruitFeature) BKFeatures.PEACH_TREE.get(), HSBlock.LEAVE_PEACH.get());
+        //register(p_256171_,GREEN_PEAR, (TreeFruitFeature) BKFeatures.GREEN_PEAR_TREE.get(),HSBlock.LEAVE_GREEN_PEAR.get());
+        register(p_256171_,PEAR, (TreeFruitFeature) BKFeatures.PEAR_TREE.get(), HSBlock.LEAVE_PEAR.get());
+        register(p_256171_,PEPPERCORN, (TreeFruitFeature) BKFeatures.PEPPERCORN_TREE.get(), HSBlock.LEAVE_PEPPERCORN.get());
+        register(p_256171_,PLUM, (TreeFruitFeature) BKFeatures.PLUM_TREE.get(), HSBlock.LEAVE_PLUM.get());
+        register(p_256171_,POMEGRANATE, (TreeFruitFeature) BKFeatures.POMEGRANATE_TREE.get(), HSBlock.LEAVE_POMEGRANATE.get());
+        register(p_256171_,OLIVES, (TreeFruitFeature) BKFeatures.OLIVES_TREE.get(), HSBlock.LEAVE_OLIVES.get());
+        register(p_256171_,LEMON, (TreeFruitFeature) BKFeatures.LEMON_TREE.get(), HSBlock.LEAVE_LEMON.get());
+        register(p_256171_,RED_APPLE, (TreeFruitFeature) BKFeatures.RED_APPLE_TREE.get(), HSBlock.LEAVE_RED_APPLE.get());
+        register(p_256171_,WALNUT, (TreeFruitFeature) BKFeatures.WALNUT_TREE.get(), HSBlock.LEAVE_WALNUT.get());
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "item", "name": "harvesting_season:bolete_mushroom", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:fly_ageric_mushroom", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:milkcap_mushroom", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:morel_mushroom", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:parasol_mushroom", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:pine_mushroom", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:whitecap_mushroom", "weight": 1 }
+      ]
+    }
+  ]
+}

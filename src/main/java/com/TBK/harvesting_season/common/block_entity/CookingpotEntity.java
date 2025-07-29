@@ -1,12 +1,9 @@
 package com.TBK.harvesting_season.common.block_entity;
 
-import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.client.gui.CookingpotContainerMenu;
 import com.TBK.harvesting_season.common.api.IBurning;
-import com.TBK.harvesting_season.common.blocks.BrazierBlock;
 import com.TBK.harvesting_season.common.blocks.CookingpotFurnace;
 import com.TBK.harvesting_season.common.registry.HSBlockEntity;
-import com.TBK.harvesting_season.common.registry.HSBlocks;
 import com.TBK.harvesting_season.common.registry.HSRecipeSerializer;
 import com.TBK.harvesting_season.common.registry.HSSounds;
 import com.TBK.harvesting_season.server.data.recipe.CookingpotRecipe;
@@ -29,7 +26,6 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AbstractFurnaceBlock;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;

@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:swamp",
+    "minecraft:mushroom_fields",
+    "minecraft:taiga"
+  ],
+  "features": [
+    "harvesting_season:huge_ageric_mushroom_placed",
+    "harvesting_season:huge_milkcap_mushroom_placed",
+    "harvesting_season:huge_morel_mushroom_placed",
+    "harvesting_season:huge_parasol_mushroom_placed",
+    "harvesting_season:huge_pine_mushroom_placed",
+    "harvesting_season:huge_whitecap_mushroom_placed"
+  ],
+  "step": "vegetal_decoration"
+}

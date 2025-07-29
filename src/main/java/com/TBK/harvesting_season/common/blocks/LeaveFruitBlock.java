@@ -1,13 +1,19 @@
 package com.TBK.harvesting_season.common.blocks;
 
+import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.registry.HSItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -21,9 +27,10 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,net.minecraftforge.common.IPlantable  {
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public LeaveFruitBlock(Properties p_54422_) {
         super(p_54422_);
         this.registerDefaultState(this.stateDefinition.any().setValue(this.getAgeProperty(), Integer.valueOf(0)));
@@ -54,7 +61,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         return getOptionalDistanceAt(p_54464_).orElse(7);
     }
     public int getMaxAge() {
-        return 1;
+        return 2;
     }
 
     public int getAge(BlockState p_52306_) {
@@ -77,7 +84,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         if (!p_221051_.isAreaLoaded(p_221052_, 1)) return; // Forge: prevent loading unloaded chunks when checking neighbor's light
         if (p_221051_.getRawBrightness(p_221052_, 0) >= 9) {
             int i = this.getAge(p_221050_);
-            if (i < this.getMaxAge()) {
+            if (i>0 && i < this.getMaxAge()) {
                 float f = getGrowthSpeed(this, p_221051_, p_221052_);
                 if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(p_221051_, p_221052_, p_221050_, p_221053_.nextInt((int)(25.0F / f) + 1) == 0)) {
                     p_221051_.setBlock(p_221052_, this.getStateForAge(i + 1), 2);
@@ -97,10 +104,12 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
         int j = this.getMaxAge();
         if (i > j) {
             i = 0;
+            p_52264_.playLocalSound(p_52265_, SoundEvents.SWEET_BERRY_BUSH_PLACE, SoundSource.BLOCKS,2.0F,1.0F,false);
             dropResources(p_52266_,p_52264_,p_52265_);
         }
-
         p_52264_.setBlock(p_52265_, this.getStateForAge(i), 2);
+
+
     }
 
     protected int getBonemealAgeIncrease(Level p_52262_) {
@@ -161,7 +170,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
     }
 
     protected ItemLike getBaseSeedId() {
-        return Items.OAK_SAPLING;
+        return this.defaultBlockState().getBlock().asItem();
     }
 
     public ItemStack getCloneItemStack(BlockGetter p_52254_, BlockPos p_52255_, BlockState p_52256_) {
@@ -169,7 +178,7 @@ public class LeaveFruitBlock extends LeavesBlock implements BonemealableBlock,ne
     }
 
     public boolean isValidBonemealTarget(LevelReader p_255715_, BlockPos p_52259_, BlockState p_52260_, boolean p_52261_) {
-        return !this.isMaxAge(p_52260_);
+        return this.getAge(p_52260_) != this.getMaxAge();
     }
 
     public boolean isBonemealSuccess(Level p_221045_, RandomSource p_221046_, BlockPos p_221047_, BlockState p_221048_) {
