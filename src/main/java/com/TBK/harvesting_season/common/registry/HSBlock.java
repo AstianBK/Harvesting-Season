@@ -2,9 +2,9 @@ package com.TBK.harvesting_season.common.registry;
 
 import com.TBK.harvesting_season.HarvestingSeason;
 import com.TBK.harvesting_season.common.blocks.*;
+import com.TBK.harvesting_season.common.blocks.doubleTall.*;
 import com.TBK.harvesting_season.common.grower.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -38,6 +38,59 @@ public class HSBlock {
     private static boolean always(BlockState p_50775_, BlockGetter p_50776_, BlockPos p_50777_) {
         return true;
     }
+    public static final RegistryObject<Block> BLUEBERRY_BUSH = registerBlockAndItem("blueberry_bush",
+            () -> new BlueberryBushBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> GOOSEBERRY_BUSH = registerBlockAndItem("gooseberry_bush",
+            () -> new GooseberryBushBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> STRAWBERRY_BUSH = registerBlockAndItem("strawberry_bush",
+            () -> new StrawberryBushBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> CLOUDBERRY_BUSH = registerBlockAndItem("cloudberry_bush",
+            () -> new CloudberryBushBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> UVA_URSI_BUSH = registerBlockAndItem("uva_ursi_bush",
+            () -> new UviUrsiBushBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+
+    public static final RegistryObject<Block> BLACKBERRY_HEAD = registerBlockAndItem("blackberry_head",
+            () -> new BlackberryHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> BLACKBERRY_BODY = registerBlockAndItem("blackberry_body",
+            () -> new BlackberryBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> ELDERBERRY_HEAD = registerBlockAndItem("elderberry_head",
+            () -> new ElderberryHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> ELDERBERRY_BODY = registerBlockAndItem("elderberry_body",
+            () -> new ElderberryBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> RASPBERRY_HEAD = registerBlockAndItem("raspberry_head",
+            () -> new RaspberryHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> RASPBERRY_BODY = registerBlockAndItem("raspberry_body",
+            () -> new RaspberryBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> HAWTHORN_HEAD = registerBlockAndItem("hawthorn_head",
+            () -> new HawthornHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> HAWTHORN_BODY = registerBlockAndItem("hawthorn_body",
+            () -> new HawthornBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> ROSESHIP_HEAD = registerBlockAndItem("roseship_head",
+            () -> new RoseshipHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> ROSESHIP_BODY = registerBlockAndItem("roseship_body",
+            () -> new RoseshipBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> HEMP_BODY = registerBlockAndItem("hemp_body",
+            () -> new HempVinesBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> HEMP_HEAD = registerBlockAndItem("hemp_head",
+            () -> new HempVinesHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+
+    public static final RegistryObject<Block> SUNFLOWER_HEAD = registerBlockAndItem("sunflower_head",
+            () -> new SunflowerVinesHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> SUNFLOWER_BODY = registerBlockAndItem("sunflower_body",
+            () -> new SunflowerVinesBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> LEMON_GRASS_HEAD = registerBlockAndItem("lemon_grass_head",
+            () -> new LemonGrassVinesHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> LEMON_GRASS_BODY = registerBlockAndItem("lemon_grass_body",
+            () -> new LemonGrassVinesBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> HOP_HEAD = registerBlockAndItem("hop_head",
+            () -> new HopVinesHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> HOP_BODY = registerBlockAndItem("hop_body",
+            () -> new HopVinesBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> JUNIPER_HEAD = registerBlockAndItem("juniper_head",
+            () -> new JuniperVinesHeadBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+    public static final RegistryObject<Block> JUNIPER_BODY = registerBlockAndItem("juniper_body",
+            () -> new JuniperVinesBodyBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
+
     public static final RegistryObject<Block> SAGE_CROP_BLOCK = BLOCKS.register("sage_crop_block",
             () -> new SageCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS)));
 

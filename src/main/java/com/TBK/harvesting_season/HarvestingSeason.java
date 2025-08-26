@@ -47,6 +47,31 @@ public class HarvestingSeason
             .title(Component.translatable("itemGroup.harvesting_season"))
             .icon(() -> new ItemStack(HSItems.BEER.get()))
             .displayItems((parameters, output) -> {
+                output.accept(HSBlock.HEMP_HEAD.get());
+
+                output.accept(HSBlock.HOP_HEAD.get());
+
+                output.accept(HSBlock.JUNIPER_HEAD.get());
+
+                output.accept(HSBlock.LEMON_GRASS_HEAD.get());
+
+                output.accept(HSBlock.SUNFLOWER_HEAD.get());
+                output.accept(HSBlock.HAWTHORN_HEAD.get());
+
+                output.accept(HSBlock.BLACKBERRY_HEAD.get());
+
+                output.accept(HSBlock.ELDERBERRY_HEAD.get());
+
+                output.accept(HSBlock.RASPBERRY_HEAD.get());
+
+                output.accept(HSBlock.ROSESHIP_HEAD.get());
+
+                output.accept(HSItems.BLUEBERRY.get());
+                output.accept(HSItems.GOOSEBERRY.get());
+                output.accept(HSItems.CLOUDBERRY.get());
+                output.accept(HSItems.UVA_URSI.get());
+                output.accept(HSItems.STRAWBERRY.get());
+
                 output.accept(HSItems.FLAX_FIBER.get());
                 output.accept(HSItems.COTTON.get());
                 output.accept(HSItems.BOLETE_MUSHROOM.get());

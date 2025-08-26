@@ -57,6 +57,17 @@ public class HSItems {
     public static final RegistryObject<Item> WHITE_GRAPE = ITEMS.register("white_grape",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberry",
+            ()-> new ItemNameBlockItem(HSBlock.BLUEBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> GOOSEBERRY = ITEMS.register("gooseberry",
+            ()-> new ItemNameBlockItem(HSBlock.GOOSEBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
+            ()-> new ItemNameBlockItem(HSBlock.STRAWBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> CLOUDBERRY = ITEMS.register("cloudberry",
+            ()-> new ItemNameBlockItem(HSBlock.CLOUDBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> UVA_URSI = ITEMS.register("uva_ursi",
+            ()-> new ItemNameBlockItem(HSBlock.UVA_URSI_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+
     public static final RegistryObject<Item> MILLET = ITEMS.register("millet",
             ()-> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> PURPLE_GRAPES = ITEMS.register("purple_grapes",
@@ -113,6 +124,17 @@ public class HSItems {
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> LETTUCE = ITEMS.register("lettuce",
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> ROSESHIP = ITEMS.register("roseship",
+            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> BLACKBERRY = ITEMS.register("blackberry",
+            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> ELDERBERRY = ITEMS.register("elderberry",
+            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> RASPBERRY = ITEMS.register("raspberry",
+            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+    public static final RegistryObject<Item> HAWTHORN = ITEMS.register("hawthorn",
+            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+
     public static final RegistryObject<Item> TURNIP = ITEMS.register("turnip",
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> ONION = ITEMS.register("onion",
@@ -121,7 +143,6 @@ public class HSItems {
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> CABBAGE = ITEMS.register("cabbage",
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
-
     public static final RegistryObject<Item> FLY_AGERIC_MUSHROOM = ITEMS.register("fly_ageric_mushroom",
             ()-> new ItemNameBlockItem(HSBlock.FLY_AGERIC_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> MILKCAP_MUSHROOM = ITEMS.register("milkcap_mushroom",

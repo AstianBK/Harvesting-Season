@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "delay=0": {
+      "model": "harvesting_season:block/hawthorn_head_stage0"
+    },
+    "delay=1": {
+      "model": "harvesting_season:block/hawthorn_head_stage1"
+    }
+  }
+}

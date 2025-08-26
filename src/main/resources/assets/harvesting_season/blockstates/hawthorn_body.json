@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "harvesting_season:block/hawthorn_body_stage0"
+    },
+    "age=1": {
+      "model": "harvesting_season:block/hawthorn_body_stage1"
+    }
+  }
+}
