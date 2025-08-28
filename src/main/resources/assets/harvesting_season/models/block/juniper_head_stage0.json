@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "harvesting_season:block/uva_ursi_bush_stage1"
+    "cross": "harvesting_season:block/juniper_top_stage0"
   }
 }

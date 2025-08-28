@@ -19,16 +19,12 @@ public class HSItems {
 
     public static final RegistryObject<Item> YARROW = ITEMS.register("yarrow",
             ()-> new ItemNameBlockItem(HSBlock.YARROW_CROP_BLOCK.get(), new Item.Properties()));
-
     public static final RegistryObject<Item> ARNICA = ITEMS.register("arnica",
             ()-> new ItemNameBlockItem(HSBlock.ARNICA_CROP_BLOCK.get(), new Item.Properties()));
-
     public static final RegistryObject<Item> LEMON_BALM = ITEMS.register("lemon_balm",
             ()-> new ItemNameBlockItem(HSBlock.LEMON_BALM_CROP_BLOCK.get(), new Item.Properties()));
-
     public static final RegistryObject<Item> COMFREY = ITEMS.register("comfrey",
             ()-> new ItemNameBlockItem(HSBlock.COMFREY_CROP_BLOCK.get(), new Item.Properties()));
-
     public static final RegistryObject<Item> YELLOW_WOOD_SORREL = ITEMS.register("yellow_wood_sorrel",
             ()-> new ItemNameBlockItem(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<Item> FLAX_FIBER = ITEMS.register("flax_fiber",
@@ -37,14 +33,11 @@ public class HSItems {
             ()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> BOLETE_MUSHROOM = ITEMS.register("bolete_mushroom",
             ()-> new ItemNameBlockItem(HSBlock.BOLETE_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
-
     public static final RegistryObject<Item> WOODEN_SPOON = ITEMS.register("wooden_spoon",
             ()->new Item(new Item.Properties().stacksTo(1).durability(30)));
-
     public static final RegistryObject<Item> HARD_CIDER = ITEMS.register("hard_cider",
             ()->new Item(new Item.Properties().food((new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.DIG_SPEED,2400,0),1.0f)
                     .alwaysEat().build()))));
-
     public static final RegistryObject<Item> BARLEY = ITEMS.register("barley",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> OAT = ITEMS.register("oat",
@@ -53,10 +46,8 @@ public class HSItems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> UPLAND_RICE = ITEMS.register("upland_rice",
             ()-> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> WHITE_GRAPE = ITEMS.register("white_grape",
             () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> BLUEBERRY = ITEMS.register("blueberry",
             ()-> new ItemNameBlockItem(HSBlock.BLUEBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> GOOSEBERRY = ITEMS.register("gooseberry",
@@ -67,7 +58,6 @@ public class HSItems {
             ()-> new ItemNameBlockItem(HSBlock.CLOUDBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> UVA_URSI = ITEMS.register("uva_ursi",
             ()-> new ItemNameBlockItem(HSBlock.UVA_URSI_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
-
     public static final RegistryObject<Item> MILLET = ITEMS.register("millet",
             ()-> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> PURPLE_GRAPES = ITEMS.register("purple_grapes",
@@ -124,16 +114,21 @@ public class HSItems {
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> LETTUCE = ITEMS.register("lettuce",
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+
+
+    public static final RegistryObject<Item> JUNIPER_BERRY = ITEMS.register("juniper_berry",
+            () -> new ItemNameBlockItem( HSBlock.JUNIPER_HEAD.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> ROSESHIP = ITEMS.register("roseship",
-            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+            () -> new ItemNameBlockItem(HSBlock.ROSESHIP_HEAD.get() , new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> BLACKBERRY = ITEMS.register("blackberry",
-            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+            () -> new ItemNameBlockItem(HSBlock.BLACKBERRY_HEAD.get() , new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> ELDERBERRY = ITEMS.register("elderberry",
-            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+            () -> new ItemNameBlockItem(HSBlock.ELDERBERRY_HEAD.get() , new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> RASPBERRY = ITEMS.register("raspberry",
-            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+            () -> new ItemNameBlockItem(HSBlock.RASPBERRY_HEAD.get() , new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
     public static final RegistryObject<Item> HAWTHORN = ITEMS.register("hawthorn",
-            () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+            () -> new ItemNameBlockItem(HSBlock.HAWTHORN_HEAD.get() , new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));
+
 
     public static final RegistryObject<Item> TURNIP = ITEMS.register("turnip",
             () -> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(3).build())));

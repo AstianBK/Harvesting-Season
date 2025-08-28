@@ -51,20 +51,15 @@ public class HarvestingSeason
 
                 output.accept(HSBlock.HOP_HEAD.get());
 
-                output.accept(HSBlock.JUNIPER_HEAD.get());
-
                 output.accept(HSBlock.LEMON_GRASS_HEAD.get());
 
                 output.accept(HSBlock.SUNFLOWER_HEAD.get());
-                output.accept(HSBlock.HAWTHORN_HEAD.get());
 
-                output.accept(HSBlock.BLACKBERRY_HEAD.get());
-
-                output.accept(HSBlock.ELDERBERRY_HEAD.get());
-
-                output.accept(HSBlock.RASPBERRY_HEAD.get());
-
-                output.accept(HSBlock.ROSESHIP_HEAD.get());
+                output.accept(HSItems.BLACKBERRY.get());
+                output.accept(HSItems.RASPBERRY.get());
+                output.accept(HSItems.ELDERBERRY.get());
+                output.accept(HSItems.HAWTHORN.get());
+                output.accept(HSItems.ROSESHIP.get());
 
                 output.accept(HSItems.BLUEBERRY.get());
                 output.accept(HSItems.GOOSEBERRY.get());

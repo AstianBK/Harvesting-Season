@@ -1,9 +1,9 @@
 {
   "variants": {
-    "delay=0": {
+    "bites=0": {
       "model": "harvesting_season:block/elderberry_head_stage0"
     },
-    "delay=1": {
+    "bites=1": {
       "model": "harvesting_season:block/elderberry_head_stage1"
     }
   }

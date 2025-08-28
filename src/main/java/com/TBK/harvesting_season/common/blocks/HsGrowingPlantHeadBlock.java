@@ -1,10 +1,12 @@
 package com.TBK.harvesting_season.common.blocks;
 
+import com.TBK.harvesting_season.HarvestingSeason;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,7 +17,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GrowingPlantHeadBlock;
@@ -28,18 +32,47 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import javax.annotation.Nullable;
+
 public class HsGrowingPlantHeadBlock extends GrowingPlantHeadBlock {
-    public static final IntegerProperty DELAY = BlockStateProperties.DELAY;
+    public static final IntegerProperty DELAY = BlockStateProperties.BITES;
     public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
 
     protected HsGrowingPlantHeadBlock(Properties p_53928_) {
         super(p_53928_ ,Direction.UP, SHAPE, false, 0.1D);
+        registerDefaultState(this.stateDefinition.any().setValue(DELAY,0));
+    }
+
+    @Nullable
+    public BlockState getStateForPlacement(BlockPlaceContext p_53868_) {
+        BlockPos above = p_53868_.getClickedPos().above();
+        BlockPos below = p_53868_.getClickedPos().below();
+        BlockState state = p_53868_.getLevel().getBlockState(below);
+        if(state.is(BlockTags.DIRT)){
+            p_53868_.getLevel().setBlock(above,this.defaultBlockState(),3);
+            p_53868_.getLevel().setBlock(p_53868_.getClickedPos(),this.getBodyBlock().defaultBlockState(),3);
+        }
+        return null;
     }
 
     public Item getFruit(){
         return null;
     }
 
+    public boolean canSurvive(BlockState p_53876_, LevelReader p_53877_, BlockPos p_53878_) {
+        boolean flag = super.canSurvive(p_53876_,p_53877_,p_53878_);
+        BlockPos below = p_53878_.below();
+
+        return flag && p_53877_.getBlockState(below).is(getBodyBlock());
+    }
+
+    @Override
+    public void destroy(LevelAccessor p_49860_, BlockPos p_49861_, BlockState p_49862_) {
+        if(p_49860_ instanceof ServerLevel serverLevel){
+            tick(p_49862_, serverLevel,p_49861_.below(),p_49860_.getRandom());
+        }
+        super.destroy(p_49860_, p_49861_, p_49862_);
+    }
 
     public boolean isRandomlyTicking(BlockState p_57284_) {
         return p_57284_.getValue(DELAY) < 1;
@@ -55,6 +88,8 @@ public class HsGrowingPlantHeadBlock extends GrowingPlantHeadBlock {
         }
 
     }
+
+
 
     public void entityInside(BlockState p_57270_, Level p_57271_, BlockPos p_57272_, Entity p_57273_) {
         if (p_57273_ instanceof LivingEntity && p_57273_.getType() != EntityType.FOX && p_57273_.getType() != EntityType.BEE) {
@@ -76,14 +111,14 @@ public class HsGrowingPlantHeadBlock extends GrowingPlantHeadBlock {
             return InteractionResult.CONSUME;
         }
         int i = p_57275_.getValue(DELAY);
-        boolean flag = i == 0;
+        boolean flag = i == 1;
         if (!flag && p_57278_.getItemInHand(p_57279_).is(Items.BONE_MEAL)) {
             return InteractionResult.PASS;
-        } else if (i > 1) {
+        } else if (i > 0) {
             int j = 1 + p_57276_.random.nextInt(2);
             popResource(p_57276_, p_57277_, new ItemStack(fruit, j + (flag ? 1 : 0)));
             p_57276_.playSound((Player)null, p_57277_, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + p_57276_.random.nextFloat() * 0.4F);
-            BlockState blockstate = p_57275_.setValue(DELAY, Integer.valueOf(1));
+            BlockState blockstate = p_57275_.setValue(DELAY, 0);
             p_57276_.setBlock(p_57277_, blockstate, 2);
             p_57276_.gameEvent(GameEvent.BLOCK_CHANGE, p_57277_, GameEvent.Context.of(p_57278_, blockstate));
             return InteractionResult.sidedSuccess(p_57276_.isClientSide);
@@ -119,8 +154,10 @@ public class HsGrowingPlantHeadBlock extends GrowingPlantHeadBlock {
 
     @Override
     protected boolean canGrowInto(BlockState p_53968_) {
-        return false;
+        return true;
     }
+
+
 
     @Override
     protected Block getBodyBlock() {

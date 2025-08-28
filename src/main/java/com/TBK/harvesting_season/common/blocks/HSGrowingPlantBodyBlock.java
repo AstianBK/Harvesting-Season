@@ -41,7 +41,6 @@ public class HSGrowingPlantBodyBlock extends GrowingPlantBodyBlock implements Bo
         return null;
     }
 
-
     public boolean isRandomlyTicking(BlockState p_57284_) {
         return p_57284_.getValue(AGE) < 1;
     }
@@ -80,11 +79,11 @@ public class HSGrowingPlantBodyBlock extends GrowingPlantBodyBlock implements Bo
         boolean flag = i == 1;
         if (!flag && p_57278_.getItemInHand(p_57279_).is(Items.BONE_MEAL)) {
             return InteractionResult.PASS;
-        } else if (i > 1) {
+        } else if (i > 0) {
             int j = 1 + p_57276_.random.nextInt(2);
             popResource(p_57276_, p_57277_, new ItemStack(fruit, j + (flag ? 1 : 0)));
             p_57276_.playSound((Player)null, p_57277_, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + p_57276_.random.nextFloat() * 0.4F);
-            BlockState blockstate = p_57275_.setValue(AGE, Integer.valueOf(1));
+            BlockState blockstate = p_57275_.setValue(AGE, 0);
             p_57276_.setBlock(p_57277_, blockstate, 2);
             p_57276_.gameEvent(GameEvent.BLOCK_CHANGE, p_57277_, GameEvent.Context.of(p_57278_, blockstate));
             return InteractionResult.sidedSuccess(p_57276_.isClientSide);

@@ -3,6 +3,6 @@
   "render_type": "minecraft:cutout",
 
   "textures": {
-    "cross": "harvesting_season:block/juniper_top"
+    "cross": "harvesting_season:block/juniper_bottom_stage1"
   }
 }

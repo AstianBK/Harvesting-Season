@@ -54,7 +54,6 @@ public class Events {
 
             event.setCancellationResult(InteractionResult.FAIL);
         }
-
     }
 
 
