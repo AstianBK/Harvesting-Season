@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "item", "name": "harvesting_season:juniper_berry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:roseship", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:blackberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:elderberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:raspberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:hawthorn", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:blueberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:gooseberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:strawberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:cloudberry", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:uva_ursi", "weight": 1 }
+      ]
+    }
+  ]
+}

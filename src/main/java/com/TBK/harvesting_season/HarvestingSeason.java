@@ -60,12 +60,40 @@ public class HarvestingSeason
                 output.accept(HSItems.ELDERBERRY.get());
                 output.accept(HSItems.HAWTHORN.get());
                 output.accept(HSItems.ROSESHIP.get());
+                output.accept(HSItems.JUNIPER_BERRY.get());
 
                 output.accept(HSItems.BLUEBERRY.get());
                 output.accept(HSItems.GOOSEBERRY.get());
                 output.accept(HSItems.CLOUDBERRY.get());
                 output.accept(HSItems.UVA_URSI.get());
                 output.accept(HSItems.STRAWBERRY.get());
+
+                output.accept(HSItems.HEMLOCK.get());
+                output.accept(HSItems.LOVAGE.get());
+                output.accept(HSItems.THYME.get());
+                output.accept(HSItems.LAVENDER.get());
+                output.accept(HSItems.GINSENG.get());
+                output.accept(HSItems.WOAD_TINCTORIA.get());
+                output.accept(HSItems.BASIL.get());
+                output.accept(HSItems.MUGWORT.get());
+                output.accept(HSItems.CHIVES.get());
+                output.accept(HSItems.MARIGOLD.get());
+                output.accept(HSItems.CHICKWEED.get());
+                output.accept(HSItems.EYEBRIGHT.get());
+                output.accept(HSItems.THISTLE.get());
+                output.accept(HSItems.DAISY.get());
+                output.accept(HSItems.CHICORY.get());
+                output.accept(HSItems.MUSTARD.get());
+                output.accept(HSItems.GINGER.get());
+                output.accept(HSItems.SAFFRON.get());
+                output.accept(HSItems.ROSEMARY.get());
+
+                output.accept(HSItems.COMMON_BROADLEAF.get());
+                output.accept(HSItems.COMMON_CLOVE.get());
+                output.accept(HSItems.COMMON_EDIBLE_ROOT.get());
+                output.accept(HSItems.COMMON_MALLOW.get());
+                output.accept(HSItems.COMMON_MINT.get());
+                output.accept(HSItems.COMMON_VETCH.get());
 
                 output.accept(HSItems.FLAX_FIBER.get());
                 output.accept(HSItems.COTTON.get());

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "item", "name": "harvesting_season:hemlock", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:lovage", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:thyme", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:lavender", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:ginseng", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:woad_tinctoria", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:basil", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:mugwort", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:chives", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:marigold", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:oregano", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:chickweed", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:eyebright", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:thistle", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:daisy", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:mustard", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:ginger", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:saffron", "weight": 1 },
+        { "type": "item", "name": "harvesting_season:rosemary", "weight": 1 }
+      ]
+    }
+  ]
+}
