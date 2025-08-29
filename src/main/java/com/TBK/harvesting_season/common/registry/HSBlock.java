@@ -287,7 +287,7 @@ public class HSBlock {
     private static <T extends  Block> void registerBlockItem(String name, RegistryObject<T> block,boolean isFood) {
         Item.Properties properties;
         if(isFood){
-            properties = new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(3).build());
+            properties = new Item.Properties().food(new FoodProperties.Builder().nutrition(0).saturationMod(1).build());
         }else {
             properties = new Item.Properties();
         }

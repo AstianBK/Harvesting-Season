@@ -140,13 +140,13 @@ public class HarvestingSeason
                 output.accept(HSItems.MILLET.get());
                 output.accept(HSItems.OAT.get());
                 output.accept(HSItems.RYE.get());
-
                 output.accept(HSItems.WHITE_GRAPE.get());
                 output.accept(HSItems.PURPLE_GRAPES.get());
                 output.accept(HSItems.TARRAGON.get());
                 output.accept(HSItems.PARSLEY.get());
                 output.accept(HSItems.EGGPLANT.get());
                 output.accept(HSItems.SWEET_PEA.get());
+                output.accept(HSItems.OREGANO.get());
                 output.accept(HSItems.BROAD_BEAN.get());
                 output.accept(HSItems.KALE.get());
                 output.accept(HSItems.HORSERADISH.get());
