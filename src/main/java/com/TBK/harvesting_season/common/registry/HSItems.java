@@ -203,7 +203,7 @@ public class HSItems {
             ()-> new ItemNameBlockItem(HSBlock.FLY_AGERIC_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
 
     public static final RegistryObject<Item> MILKCAP_MUSHROOM = ITEMS.register("milkcap_mushroom",
-            ()-> new ItemNameBlockItem(HSBlock.MILKCAP_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.MILKCAP_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).effect(new MobEffectInstance(MobEffects.POISON,200,0),1.0F).build())));
 
     public static final RegistryObject<Item> MOREL_MUSHROOM = ITEMS.register("morel_mushroom",
             ()-> new ItemNameBlockItem(HSBlock.MOREL_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
@@ -215,7 +215,7 @@ public class HSItems {
             ()-> new ItemNameBlockItem(HSBlock.PINE_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
 
     public static final RegistryObject<Item> WHITECAP_MUSHROOM = ITEMS.register("whitecap_mushroom",
-            ()-> new ItemNameBlockItem(HSBlock.WHITECAP_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.WHITECAP_MUSHROOM.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).effect(new MobEffectInstance(MobEffects.POISON,200,0),1.0F).nutrition(1).build())));
     public static final RegistryObject<Item> BRANDY = ITEMS.register("brandy",
             ()->new PotionItem(new Item.Properties().stacksTo(64)));
 

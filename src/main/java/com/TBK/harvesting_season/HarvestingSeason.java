@@ -117,6 +117,7 @@ public class HarvestingSeason
                 output.accept(HSBlock.PLUM.get());
                 output.accept(HSBlock.POMEGRANATE.get());
                 output.accept(HSBlock.WALNUT.get());
+
                 output.accept(PotionUtils.setPotion(HSItems.HARD_CIDER.get().getDefaultInstance(), HSPotions.HASTE_HARD_CIDER.get()));
                 output.accept(PotionUtils.setPotion(HSItems.BRANDY.get().getDefaultInstance(), HSPotions.BRANDY_BUFF.get()));
                 output.accept(PotionUtils.setPotion(HSItems.FINE_BEER.get().getDefaultInstance(), HSPotions.FINE_BEER_BUFF.get()));
@@ -127,6 +128,7 @@ public class HarvestingSeason
                 output.accept(PotionUtils.setPotion(HSItems.WINE.get().getDefaultInstance(), HSPotions.ABSORPTION_WINE.get()));
                 output.accept(PotionUtils.setPotion(HSItems.SPIRIT.get().getDefaultInstance(), HSPotions.SPIRIT_BUFF.get()));
                 output.accept(PotionUtils.setPotion(HSItems.RESERVED_WINE.get().getDefaultInstance(), HSPotions.LUCK_RESERVED_WINE.get()));
+
                 output.accept(HSBlock.BONFIRE.get());
                 output.accept(HSBlock.BRAZIER.get());
                 output.accept(HSBlock.BRAZIER_COPPER.get());

@@ -48,11 +48,13 @@ public class HsGrowingPlantHeadBlock extends GrowingPlantHeadBlock {
         BlockPos above = p_53868_.getClickedPos().above();
         BlockPos below = p_53868_.getClickedPos().below();
         BlockState state = p_53868_.getLevel().getBlockState(below);
+        BlockState old = p_53868_.getLevel().getBlockState(above);
         if(state.is(BlockTags.DIRT)){
-            p_53868_.getLevel().setBlock(above,this.defaultBlockState(),3);
-            p_53868_.getLevel().setBlock(p_53868_.getClickedPos(),this.getBodyBlock().defaultBlockState(),3);
+            BlockState newState = this.defaultBlockState();
+            p_53868_.getLevel().setBlock(above,newState,Block.UPDATE_ALL);
+            p_53868_.getLevel().sendBlockUpdated(above, old, newState, 3);
         }
-        return null;
+        return this.getBodyBlock().defaultBlockState();
     }
 
     public Item getFruit(){
@@ -94,14 +96,6 @@ public class HsGrowingPlantHeadBlock extends GrowingPlantHeadBlock {
     public void entityInside(BlockState p_57270_, Level p_57271_, BlockPos p_57272_, Entity p_57273_) {
         if (p_57273_ instanceof LivingEntity && p_57273_.getType() != EntityType.FOX && p_57273_.getType() != EntityType.BEE) {
             p_57273_.makeStuckInBlock(p_57270_, new Vec3((double)0.8F, 0.75D, (double)0.8F));
-            if (!p_57271_.isClientSide && p_57270_.getValue(DELAY) > 0 && (p_57273_.xOld != p_57273_.getX() || p_57273_.zOld != p_57273_.getZ())) {
-                double d0 = Math.abs(p_57273_.getX() - p_57273_.xOld);
-                double d1 = Math.abs(p_57273_.getZ() - p_57273_.zOld);
-                if (d0 >= (double)0.003F || d1 >= (double)0.003F) {
-                    p_57273_.hurt(p_57271_.damageSources().sweetBerryBush(), 1.0F);
-                }
-            }
-
         }
     }
 

@@ -33,12 +33,11 @@ public class LemonGrassVinesHeadBlock extends GrowingPlantHeadBlock {
         BlockState state = p_53868_.getLevel().getBlockState(below);
         BlockState old = p_53868_.getLevel().getBlockState(above);
         if(state.is(BlockTags.DIRT)){
-            BlockState newState = this.defaultBlockState();
-            p_53868_.getLevel().setBlock(p_53868_.getClickedPos(),this.getBodyBlock().defaultBlockState(),Block.UPDATE_ALL);
+            BlockState newState = this.defaultBlockState().setValue(AGE,1);
             p_53868_.getLevel().setBlock(above,newState,Block.UPDATE_ALL);
             p_53868_.getLevel().sendBlockUpdated(above, old, newState, 3);
         }
-        return null;
+        return this.getBodyBlock().defaultBlockState();
     }
     public boolean isRandomlyTicking(BlockState p_53961_) {
         return p_53961_.getValue(AGE) < 1;
