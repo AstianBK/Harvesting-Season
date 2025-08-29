@@ -15,18 +15,18 @@ import net.minecraftforge.registries.RegistryObject;
 public class HSItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HarvestingSeason.MODID);
     public static final RegistryObject<Item> SAGE = ITEMS.register("sage",
-            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.SAGE_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).alwaysEat().build())));
 
     public static final RegistryObject<Item> YARROW = ITEMS.register("yarrow",
-            ()-> new ItemNameBlockItem(HSBlock.YARROW_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.YARROW_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).alwaysEat().build())));
     public static final RegistryObject<Item> ARNICA = ITEMS.register("arnica",
-            ()-> new ItemNameBlockItem(HSBlock.ARNICA_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.ARNICA_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).alwaysEat().build())));
     public static final RegistryObject<Item> LEMON_BALM = ITEMS.register("lemon_balm",
-            ()-> new ItemNameBlockItem(HSBlock.LEMON_BALM_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.LEMON_BALM_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).alwaysEat().build())));
     public static final RegistryObject<Item> COMFREY = ITEMS.register("comfrey",
-            ()-> new ItemNameBlockItem(HSBlock.COMFREY_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.COMFREY_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).alwaysEat().build())));
     public static final RegistryObject<Item> YELLOW_WOOD_SORREL = ITEMS.register("yellow_wood_sorrel",
-            ()-> new ItemNameBlockItem(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.YELLOW_WOOD_SORREL_CROP_BLOCK.get(), new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).alwaysEat().build())));
     public static final RegistryObject<Item> FLAX_FIBER = ITEMS.register("flax_fiber",
             ()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> COTTON = ITEMS.register("cotton",
@@ -129,7 +129,7 @@ public class HSItems {
     public static final RegistryObject<Item> CLOUDBERRY = ITEMS.register("cloudberry",
             ()-> new ItemNameBlockItem(HSBlock.CLOUDBERRY_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
     public static final RegistryObject<Item> UVA_URSI = ITEMS.register("uva_ursi",
-            ()-> new ItemNameBlockItem(HSBlock.UVA_URSI_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(3.0F).nutrition(1).build())));
+            ()-> new ItemNameBlockItem(HSBlock.UVA_URSI_BUSH.get() ,new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(1).build())));
     public static final RegistryObject<Item> MILLET = ITEMS.register("millet",
             ()-> new Item( new Item.Properties().food(new FoodProperties.Builder().saturationMod(0.0F).nutrition(2).build())));
     public static final RegistryObject<Item> PURPLE_GRAPES = ITEMS.register("purple_grapes",
